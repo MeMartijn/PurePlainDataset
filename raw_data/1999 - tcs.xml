@@ -1,0 +1,1914 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document   xsi:schemaLocation="req_document.xsd req_document.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="req_document.xsd">
+
+<title>Tactical Control System (TCS)
+System/Subsystem Specification</title>
+<version>2.0</version>
+<issue_date>1999-02-12</issue_date>
+<file_number>TCS102</file_number>
+<p id= "1">
+<title>Scope</title>
+<p id="1.1">
+<title>Identification</title>
+<text_body>
+This TACTICAL CONTROL SYSTEM (TCS) - SYSTEM / SUBSYSTEM SPECIFICATION (SSS) -
+VERSION 1.0 identifies, specifies, and establishes the detailed system requirements for the Tactical
+Control System as set forth by the OPERATIONAL REQUIREMENTS DOCUMENT FOR THE
+UNMANNED AERIAL VEHICLE (UAV) TACTICAL CONTROL SYSTEM (TCS) - VERSION 5.0.
+The SSS further specifies the methods to be used to ensure that each requirement has been met.
+Requirements pertaining to the TCS external interfaces are covered in separate Interface Design
+Descriptions (IDDs) to be published. The SSS is published IAW DID DI-IPSC-81431, dated 941205.
+</text_body>
+</p>
+<p id="1.2">
+<title>System Overview</title>
+<text_body>
+The purpose of the TCS is to provide the military services with a single command, control, data receipt,
+data processing, data export and dissemination system that is interoperable with the family of all present
+and future tactical unmanned aerial vehicles. These UAVs shall include the Tactical Unmanned Aerial
+Vehicle (TUAV) and the Medium Altitude and Endurance (MAE) UAV (henceforth referred to as Outrider
+and Predator respectively), their associated payloads, and other network communication systems. TCS will
+also be capable of receiving and processing information from High Altitude and Endurance (HAE) UAVs,
+their associated payloads, future development UAVs and payloads.
+</text_body>
+<p id="1.2.1">
+<title>TCS Program, Phases, and UAV Interaction</title>
+<text_body>
+The Unmanned Aerial Vehicle Joint Project Office (UAV JPO) has undertaken development of a TCS for
+UAVs. Design and development of the TCS will be conducted in two phases. Phase 1 is defined as the
+Program Definition and Risk Reduction phase, and Phase 2 is defined as the Engineering and
+Manufacturing Development phase in accordance with Department Of Defense Instruction (DODI) -
+5000.2R. During Phase 2, TCS Low Rate Initial Production (LRIP) will commence. Phase 1 will be a 24
+month period and will demonstrate Level 1 through Level 5 interaction (as defined below) in an Incremental
+and Evolutionary strategy as described in accordance with MIL-STD-498. The five discrete levels of
+multiple UAV interaction to be provided by the TCS are:
+<itemize>
+<item>Level 1: receipt and transmission of secondary imagery and/or data</item>
+<item>Level 2: direct receipt of imagery and/or data</item>
+<item>Level 3: control of the UAV payload in addition to direct receipt of imagery/data</item>
+<item>Level 4: control of the UAV, less launch and recovery, plus all the functions of level three</item>
+<item>Level 5: capability to have full function and control of the UAV from takeoff to landing</item>
+</itemize>
+</text_body>
+</p>
+<p id="1.2.2">
+<title>1.2.2 Tactical Control System</title>
+<text_body>
+The TCS consists of the software, software-related hardware and the extra ground support hardware
+necessary for the control of the Outrider, and the Predator UAV, and future tactical UAVs. The TCS will
+also provide connectivity to specifically identified Command, Control, Communications, Computers, and
+Intelligence (C4I) systems. TCS will have the objective capability of receiving High Altitude Endurance
+(HAE) UAV payload information. Although developed as a total package, the TCS will be scaleable to
+meet the user's requirements for deployment. TCS will provide a common Human-Computer Interface
+(HCI) for tactical airborne platforms to simplify user operations, training, and facilitate seamless
+integration into the Services’ joint C4I infrastructure across all levels of interaction.
+</text_body>
+<p id="1.2.2.1">
+<title>Software</title>
+<text_body>
+The major focus of the TCS program is software. The software will provide the UAV operator the
+necessary tools for computer related communications, mission tasking, mission planning, mission
+execution, data receipt, data processing, limited data exploitation, and data dissemination. The software
+will provide a high resolution computer generated graphical user interface that enables a UAV operator
+trained on one system to control different types of UAVs or UAV payloads with a minimum of additional
+training. The TCS will operate in an open architecture and be capable of being hosted on computers that
+are typically supported by the using Service. Software developed will be Defense Information
+Infrastructure / Common Operating Environment (DII/COE) compliant, non-proprietary, and the
+architectural standard for all future tactical UAVs. To the extent possible, the TCS will use standard
+Department of Defense (DoD) software components to achieve commonality. TCS will provide software
+portability, scaleable functionality, and support for operational configurations tailored to the users’ needs.
+</text_body>
+</p>
+<p id="1.2.2.2">
+<title>Hardware</title>
+<text_body>
+To the extent possible, the TCS will use standard DoD components in order to achieve commonality. The
+TCS will use the computing hardware specified by the service specific procurement contracts. The
+individual armed services will identify TCS computing hardware, the desired level of TCS functionality,
+the battlefield C4I connectivity, and the particular type of air vehicle and payloads to be operated
+depending upon the deployment concept and area of operations. TCS hardware must be scaleable or
+modular to meet varying Service needs. TCS hardware will permit long range communications from one
+TCS to another, data storage expansion, access to other computers to share in processing capability, and
+multiple external peripherals.
+</text_body>
+</p>
+</p> <!-- 1.2.2 -->
+<p id="1.2.3">
+<title>Integration with Joint C4I Systems</title>
+<text_body>
+TCS integration with C4I systems will be accomplished through development of interfaces that permit
+information exchange between the TCS and specified C4I systems. TCS will be capable of entering
+DII/COE compliant networks. Network interoperability will include but not be limited to:
+<itemize>
+<item>Advanced Tomahawk Weapons Control Station (ATWCS)</item>
+<item>Advanced Field Artillery Tactical Data System (AFATDS)</item>
+<item>All Source Analysis System (ASAS)</item>
+<item>Automated Target Hand-off System (ATHS)</item>
+<item>Closed Circuit Television (CCTV)</item>
+<item>Common Operational Modeling, Planning, and Simulation Strategy (COMPASS)</item>
+<item>Contingency Airborne Reconnaissance System (CARS)</item>
+<item>Enhanced Tactical Radar Correlator (ETRAC)</item>
+<item>Guardrail Common Sensor/Aerial Common Sensor (ACS) Integrated Processing Facility (IPF)</item>
+<item>Intelligence Analysis System (IAS)</item>
+<item>Joint Deployable Intelligence Support System (JDISS)</item>
+<item>Joint Maritime Command Information System (JMCIS)</item>
+<item>Joint Service Imagery Processing System – Air Force (JSIPS-AF)</item>
+<item>Joint Service Imagery Processing System - Navy (JSIPS-N)</item>
+<item>Joint Surveillance Target Attack Radar System (JSTARS) Ground Station Module/Common</item>
+<item>Ground Station (GSM/CGS)</item>
+<item>Modernized Imagery Exploitation System (MIES)</item>
+<item>Service Specific Mission Planners
+<itemize>
+<item>Army Mission Planning System (AMPS)</item>
+<item>Air Force Mission Support System (AFMSS)</item>
+<item>Tactical Aircraft Mission Planning System (TAMPS)</item>
+</itemize>
+</item>
+<item>Tactical Exploitation Group (TEG)</item>
+<item>Tactical Exploitation Systeme (TES)</item>
+<item>Theater Battle Management Core System (TBMCS)</item>
+<item>TROJAN Special Purpose Integrated Remote Intelligence Terminal (SPIRIT) II</item>
+</itemize>
+Table 3.3.1.1-1 shows the planned implementation schedule for C4I interface realization. The TCS will
+export and disseminate UAV imagery products, tactical communication messages, as well as mission plans
+and target coordinates. The TCS will also receive, process, and display tasking orders, and operational
+information from Service specific mission planning systems.
+</text_body>
+</p>
+<p id="1.2.4">
+<title>System Compliance</title>
+<text_body>
+The TCS will be developed in compliance with the following military and commercial computing systems
+architecture, communications processing, and imagery architecture standards:
+<itemize>
+<item>Defense Information Infrastructure (DII) / Common Operating Environment (COE)</item>
+<item>Computer Open Systems Interface Processor (COSIP)</item>
+<item>Common Imagery Ground/Surface System (CIGSS) Handbook</item>
+<item>Variable Message Format (VMF) and Joint Message Format (JMF)</item>
+<item>National Imagery Transmission Format (NITF)</item>
+<item>Assistant Secretary of Defense (ASD) (C3I) Joint Technical Architecture (JTA)</item>
+</itemize>
+</text_body>
+</p>
+</p> <!-- 1.2 -->
+<p id="1.3">
+<title>Document Overview</title>
+<text_body>
+This section has been tailored out. See Table of Contents.
+</text_body>
+</p>
+</p> <!-- 1 -->
+<p id="2">
+<p id="2.1">
+<title>Government Documents</title>
+<text_body>
+Only documents that are directly referred to in this document are included in the document lists.
+<itemize>
+<item>MIL-STD-2500A Military Standard National Imagery Transmission Format (Version 2.0), 18 June 1993.</item>
+<item>MIL-STD-498 Software Development and Documentation, 5 December 94.</item>
+<item>Operational Requirements Document for the Unmanned Aerial Vehicle Tactical Control System (Version 5.0)</item>
+<item>Operational Requirements Document (ORD) for the Tactical Unmanned Aerial Vehicle (TUAV), October 96</item>
+<item>Operational Requirements Document (ORD) for the Medium Altitude Endurance (MAE) Unmanned Aerial Vehicle, (Not available for publication at this time)</item>
+<item>Operational Concept Document for Tactical Control System (TCS), 18 February 1997.</item>
+<item>MIL-STD-1472 Human Engineering Design Criteria for Military Systems, Equipment, and Facilities.</item>
+<item>MIL STD 882 Safety</item>
+<item>UAV TCS Program Management Plan (Version 1), 19 February 1997</item>
+<item>Joint Requirements Oversight Council (JROC) Memorandum</item>
+<item>TCS - C4I Interface Design Description
+Tactical Control System (TCS) to Army Mission Planning System (AMPS) IDD, TCS 235
+<itemize>
+<item>TCS to Advanced Tomahawk Weapons Control System (ATWCS) IDD, TCS 203</item>
+<item>TCS to Advanced Field Artillery Tactical Data System (AFATDS) IDD, TCS 200</item>
+<item>TCS to Air Force Mission Support System (AFMSS) IDD, TCS 220</item>
+<item>TCS to All Source Analysis System (ASAS) IDD, TCS 201</item>
+<item>TCS to Automated Target Hand-off System (ATHS) IDD, TCS 208</item>
+<item>TCS to Closed Circuit Television (CCTV) IDD, TCS 205</item>
+<item>TCS to Common Operational Modeling, Planning, and Simulation Strategy (COMPASS) IDD, TCS 222</item>
+<item>TCS to Contingency Airborne Reconnaissance System (CARS) IDD, TCS 21/7</item>
+<item>TCS to Enhanced Tactical Radar Correlator (ETRAC) IDD, TCS 218</item>
+<item>TCS to Guardrail Common Sensor/Aerial Common Sensor (ACS) Integrated Processing Facility (IPF) IDD, TCS 215</item>
+<item>TCS to Intelligence Analysis System (IAS) IDD, TCS 206</item>
+<item>TCS to Joint Deployable Intelligence Support System (JDISS) IDD, TCS 212</item>
+<item>TCS to Joint Maritime Command Information System (JMCIS) IDD, TCS 214</item>
+<item>TCS to Joint Service Imagery Processing System - Air Force (JSIPS-AF) IDD, TCS 211</item>
+<item>TCS to Joint Service Imagery Processing System - Navy (JSIPS-N) IDD, TCS 210</item>
+<item>TCS to Joint Surveillance Target Attack Radar System (JSTARS)Ground Station Module/Common Ground Station (GSM/CGS) IDD, TCS 209</item>
+<item>TCS to Modernized Imagery Exploitation System (MIES) IDD, TCS 216</item>
+<item>TCS to Tactical Aircraft Mission Planning System (TAMPS) IDD, TCS 219</item>
+<item>TCS to Tactical Exploitation Group (TEG) IDD, TCS 207</item>
+<item>TCS to Tactical Exploitation System (TES) IDD, TCS 236</item>
+<item>TCS to Theater Battle Management Core System (TBMCS) IDD, TCS 221</item>
+<item>TCS to TROJAN Special Purpose Integrated Remote Intelligence Terminal (SPIRIT) II IDD, TCS 213</item>
+</itemize>
+</item>
+<item>TCS to Integrated Data Terminal IDD, TCS 237</item>
+<item>TCS to Printer IDD, TCS 255</item>
+<item>TCS to External Data Storage IDD, TCS 256</item>
+<item>AV Standard IDD, TCS 229</item>
+<item>TCS NRT to Data Server IDD, TCS 238</item>
+<item>TCS to SAR Processor IDD, TCS 240</item>
+<item>TCS to Intercom IDD - TCS 253</item>
+<item>TCS to VCR IDD, TCS 246</item>
+<item>TCS TEMP, TCS 101</item>
+</itemize>
+</text_body>
+</p>
+<p id="2.2">
+<title>Non-Government Documents</title>
+<text_body>
+(None)
+</text_body>
+</p>
+</p> <!-- 2 -->
+<p id="3">
+<title>Engineering Requirements</title>
+<text_body>
+The TCS system will be capable of controlling the Predator and Outrider AVs with a single control system,
+using existing military services standard hardware and software, and supporting interfaces with various
+C4I systems.
+The TCS shall consist of the TCS workstation Hardware Configuration Items (HWCIs), TCS Computer
+Software Configuration Items (CSCIs), and additional TCS Support HWCIs and CSCIs. [SSS004]
+All TCS HWCI’s and CSCI’s shall be Year 2000 compliant. [SSS567].
+The primary function of the TCS is to provide command and control of the payload, Air Vehicle (AV), data
+link, and other necessary support equipment in order to employ tactical UAVs to conduct reconnaissance,
+surveillance, target acquisition, and target identification missions. The TCS will interface with and export
+and disseminate payload data to military supported units via external (not part of TCS) tactical
+communications systems, and C4I systems. Communications procedures, formats, and interfaces will be
+interoperable with selected standard DoD C4I systems, architectures, and protocols.
+The operational capabilities to be performed by the system will be determined by task analysis in
+accordance with MIL STD 1388 Task 401 as a guide based on a thorough understanding of Outrider and
+Predator mission requirements. Tasks will be evaluated and allocated based on operator skills and
+proficiencies. The initial TCS task analysis will produce a system baseline which will be optimized by
+engineering analysis and operator evaluations.
+The TCS shall meet the applicable capability and characteristic criteria established by the Operational
+Requirements Document (ORD) CAF 003-90-I-A for the RQ-1A Predator Medium Altitude Endurance
+Unmanned Aerial Vehicle/System (MAE UAV) and the Close Range – Tactical Unmanned Aerial Vehicle
+(CR-TUAV). [SSS008] Appendix B and C identify applicable capability and characteristic criteria to
+TCS.
+The TCS shall support 5 levels of UAV interaction: [SSS010]
+<itemize>
+<item>Level 1: receipt and transmission of secondary imagery and/or [as well as] data</item>
+<item>Level 2: direct receipt of imagery and/or [as well as] data</item>
+<item>Level 3: control of the UAV payload in addition to direct receipt of imagery/data</item>
+<item>Level 4: control of the UAV, less launch and recovery, plus all the functions of level three</item>
+<item>Level 5: capability to have full function and control of the UAV from takeoff to landing</item>
+</itemize>
+The TCS system shall provide software capabilities and hardware configurations necessary to fulfill the
+operational tasking requirements across the 5 levels of interaction. [SSS009]
+Table 3-2 identifies the payloads with which the TCS shall be interoperable. [SSS013]
+</text_body>
+<p id="Table 3-2"></p>
+<p id="3.1">
+<title>Required States And Modes</title>
+<text_body>
+The states of operation of the TCS shall include Startup, Operation, and Shutdown. [SSS014]
+The TCS states shall not exist concurrently. [SSS015] Figure 3.1-1 shows the existing states of the TCS.
+</text_body>
+<p id="figure 3.1-1"/>
+<p id="3.1.1">
+<title>Startup State</title>
+<text_body>
+Upon application of power the TCS shall enter the Startup State. [SSS016]
+The Startup State shall be comprised of the following modes: Normal Startup Mode and Recovery Startup
+Mode. [SSS017]
+Figure 3.1.1-1 shows the modes that exist in the Startup State
+
+The TCS will execute the particular startup mode which corresponds with the manner in which the TCS
+Software was halted.
+When the TCS Software is terminated normally the TCS shall enter the Normal Startup Mode of operation
+upon application of power. [SSS019]
+When the TCS software is halted due to an unplanned power interruption as well as abnormal program
+termination, then the TCS shall enter the Recovery Startup Mode upon application of power. [SSS020]
+During startup, the TCS shall determine which of the 5 levels of interaction are achievable by the TCS
+configuration. [SSS021]
+Levels of interaction higher than those achievable by a particular TCS configuration shall be prohibited.
+[SSS022]
+The TCS shall inform the operator if the operator attempts to execute a function prohibited as a result of
+the determined level of interaction. [SSS023]
+</text_body>
+<p id="figure 3.1.1-1"/>
+<p id="3.1.1.1">
+<title>Normal Startup Mode</title>
+<text_body>
+When executing in the Normal Startup Mode, the TCS shall provide the system functionality necessary to
+initialize the system to place it in the Operations State within 60 seconds from the time power is supplied
+and the TCS application is launched. [SSS024]
+Initialization of the TCS HWCIs shall include startup of HWCIs [SSS542], download of software
+[SSS026], startup of CSCIs [SSS027], execution of Startup FD/L [SSS025], and establishment of the
+state of readiness of all interfaces. [SSS028]
+</text_body>
+</p>
+<p id="3.1.1.2">
+<title>Recovery Startup Mode</title>
+<text_body>
+The TCS in the Recovery Startup Mode shall provide the system functionality to resume the Operations
+State within 45 seconds. [SSS029]
+10
+Recovery of the TCS HWCIs shall include startup of HWCIs [SSS543], download of software [SSS544],
+startup of CSCIs [SSS545], and establishment of the state of readiness of all interfaces. [SSS546]
+The TCS shall be capable of automatically recording system state data, interface communications and other
+information necessary to support event reconstruction. [SSS528]
+**DELETED**. [SSS030]
+For recovery from abnormal termination, TCS shall prompt the operator to select the type of recovery to be
+executed: (1)Resume in the Same Modes And Data; (2)Resume in the Same Modes but Review and Modify
+the Command Data as Necessary; or, (3) Perform a Command Shutdown and Startup Via the Normal
+Startup Mode. [SSS031]
+</text_body>
+</p>
+</p> <!-- 3.1.1 -->
+<p id="3.1.2">
+<title>Operations State</title>
+<text_body>
+When in the Operations State the TCS shall be capable of operating in three modes: normal operations
+mode, training operations mode, and maintenance operations mode. [SSS032]
+Figure 3.1.2-1 shows the Mode Diagram for the Operations State of TCS.
+
+The Operations State modes shall not exist concurrently. [SSS033]
+The operator shall have the capability to command the system to the Shutdown State from all modes under
+the Operations State. [SSS035]
+The TCS hardware and software shall execute periodic Fault Detection/Location (FD/L) while in the
+Normal Operations Mode and Training Mode, to include a periodic determination of level of interaction.
+[SSS036]
+</text_body>
+<p id="figure 3.1.2-1"/>
+<p id="3.1.2.1">
+<title>Normal Operations Mode</title>
+<text_body>
+In the Normal Operations Mode the TCS shall support the following functions: [SSS037]
+<itemize>
+<item>Mission Planning</item>
+<item>Mission Control and Monitoring</item>
+<item>Payload Product Management</item>
+<item>Target Coordinate Development</item>
+<item>C4I Systems Interface</item>
+</itemize>
+Functions under the Normal Operations Mode shall operate concurrently without precluding or excluding
+any of the other functions, in accordance with allowable operations as determined by the appropriate levels
+of interaction. [SSS038]
+Figure 3.1.2.1-1 shows the functions that exist under the Normal Operations Mode.
+</text_body>
+<p id="figure 3.1.2.1-1"/>
+</p>
+<p id="3.1.2.2">
+<title>Training Operations Mode</title>
+<text_body>
+In the Training Operations Mode the TCS shall support the following functions: [SSS039]
+<itemize>
+<item>Mission Planning</item>
+<item>Mission Control and Monitoring</item>
+<item>Payload Product Management</item>
+<item>Target Coordinate Development</item>
+<item>C4I Systems Interface</item>
+</itemize>
+Functions under the Training Operations Mode shall operate concurrently without precluding or excluding
+any of the other functions, in accordance with allowable operations as determined by the appropriate levels
+of interaction. [SSS040]
+Figure 3.1.2.2-1 shows the functions that exist under the Training Operations Mode.
+</text_body>
+<p id="figure 3.1.2.2-1"/>
+</p>
+<p id="3.1.2.3">
+<title>Maintenance Operations Mode</title>
+<text_body>
+In the Maintenance Operations Mode, if computer workstation Human Computer Interface (HCI) is
+required, the TCS shall support the following functions: [SSS041]
+<itemize>
+<item>Conduct AV maintenance</item>
+<item>Conduct payload maintenance</item>
+<item>Conduct Data Link Terminal maintenance</item>
+<item>Conduct workstation and peripheral equipment maintenance</item>
+<item>Perform Fault Detection/Location (FD/L)</item>
+<item>Perform Software Upgrades</item>
+<item>Perform Software Debug and Monitoring</item>
+</itemize>
+Functions, except for software upgrade and software debug, under the Maintenance Operations Mode
+shall operate concurrently without precluding or excluding any of the other functions in accordance with
+allowable operations as determined by the appropriate levels of interaction. [SSS042]
+13
+Figure 3.1.2.3-1 shows the functions that exist under the Maintenance Operations Mode.
+</text_body>
+<p id="figure 3.1.2.3-1"/>
+</p>
+</p> <!-- 3.1.2 -->
+<p id="3.1.3">
+<title>Shutdown State</title>
+<text_body>
+Upon the selection of a shutdown command the TCS shall enter the Shutdown State, which will cause the
+TCS to be placed in a condition where power can be removed without impacting operations as well as
+causing damage to the system, and from which restart of the system can be accomplished normally.
+[SSS043]
+Shutdown of the TCS shall include storage as well as deletion, as specified by the operator, of mission data
+files [SSS044], shutdown of appropriate functions [SSS045], shutdown of HCIs [SSS046], and proper
+termination of all active interfaces [SSS047].
+There shall be no modes of operation in the shutdown state. [SSS048]
+</text_body>
+</p> <!-- 3.1.3 -->
+</p> <!-- 3.1 -->
+<p id="3.2">
+<title>System Capability Requirements</title>
+<text_body>
+The TCS will provide the hardware and software necessary to allow the operator to conduct the following
+major functions 1) mission planning, 2) mission control and monitoring, 3) payload product management,
+4) targeting, and 5) C4I system interface.
+</text_body>
+<p id="3.2.1">
+<title>Mission Planning Function</title>
+<text_body>
+The TCS shall have the functionality to allow the operator to generate a UAV mission plan. [SSS050]
+The TCS shall have the functionality to receive and process UAV mission plans from service specific
+mission planning systems. [SSS053]
+The TCS Mission plan shall include all necessary information required to be interoperable with the service
+specific mission planning systems including the Tactical Aircraft Mission Planning System (TAMPS),
+Aviation Mission Planning System (AMPS), and Air Force Mission Support System (AFMSS). [SSS051]
+The TCS shall have the functionality to transmit UAV mission plans to service specific mission planning
+systems. [SSS055]
+The TCS shall facilitate automated processing of mission plan data received via C4I interfaces in order to
+extract the appropriate mission planning data. [SSS052]
+The TCS shall have the functionality to receive and process UAV mission plans from other TCSs.
+[SSS054]
+The TCS shall have the functionality to transmit UAV mission plans to other TCSs. [SSS056]
+A Mission Plan shall include a Flight Route Plan for a selected AV, a Payload Plan for the selected
+payload, and a Communications Plan. [SSS057] A Flight Route Plan is defined in Section 3.2.1.1. A
+Communications Plan is Defined in Section 3.2.1.3. A Payload Plan is defined in section 3.2.1.2.
+The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later
+retrieval. [SSS058]
+The TCS mission planning function shall provide a graphical user interface that gives the operator the
+ability to define waypoints on a map based display using a pointing device with full keyset redundancy.
+[SSS059]
+The TCS shall provide the capability to compute the range and bearing between two geographic positions
+on the map display. [SSS561].
+As an objective, the TCS shall have the capability to import as well as create and modify map display
+overlays for fire support coordination measures [SSS547], airspace control measures [SSS548], and threat
+identification measures. [SSS060]
+Upon completion of radar cross section analysis and characterization by the Government for each UAV
+type, TCS shall utilize a UAV signature versus threat lookup table (database) that identities the lethality of
+the threat to the UAV [SSS065], and shall provide the capability of displaying aircraft signature versus
+threat, before and during flight. [SSS066]
+The TCS shall permit dynamic mission and payload retasking during all phases of operational mission
+execution. [SSS067]
+The TCS shall allow the operator to enter as well as review mission plan parameters, including AV flight
+parameters, payload control parameters, data link control parameters, AV VCR control parameters (if
+applicable to the selected AV), and AV loiter patterns. [SSS068]
+The TCS shall provide the capability to enter system configuration characteristics in the mission plan, to
+include selected AV type, AV identification number, selected payload type, ground control authorization
+information, and required communications pre-set for data links, tactical communications, and C4I data
+dissemination. [SSS069]
+The TCS shall provide the system functionality necessary to upload a flight route plan and payload plan (if
+applicable) to the AV via the selected system data link as well as direct ground connection. [SSS070]
+TCS shall provide the capability for the operator to retrieve a mission plan for viewing, modification, as
+well as deletion at the operator's discretion [SSS071], and allow the operator to save the mission plan under
+a different name, for future retrieval [SSS072].
+The TCS shall automatically check the validity of the intended mission plan prior to being uploaded
+including altitude constraints, payload constraints, data link range constraints, airspace restrictions, fuel
+limitations, threat constraints, data link terrain masking effects, and Loss of Link (LOL) Plan. [SSS073]
+The TCS shall notify the operator of all discrepancies found during the mission plan check as well as
+indicate successful completion of the mission plan check. [SSS074]
+The TCS shall provide the capability to override validation faults after the fault is acknowledged by the
+operator. [SSS540]
+The TCS shall allow the operator to set the LOL delay timer(s) during mission planning. [SSS075] The
+LOL delay is the time from when the AV detects an unplanned LOL to the time it initiates LOL procedures.
+The TCS shall provide the capability to print waypoint data in alphanumeric format. [SSS553]
+</text_body>
+<p id="3.2.1.1">
+<title>Flight Route Planning Capability</title>
+<text_body>
+The Flight Route Plan, as a minimum, shall include AV flight path information, Loss of Link plan, AV
+VCR control tasking (if applicable to the selected AV), and data link control information. [SSS079]
+The TCS shall allow the operator to define the desired AV route in waypoint format [SSS551], and shall
+provide the capability to include up to 500 waypoints in each flight route plan. [SSS080]
+The TCS shall provide the capability to display mission waypoints and flight path graphically. [SSS081]
+The TCS shall provide the capability to enter waypoint data in alphanumeric format. [SSS082]
+The TCS flight route planner shall include, as a minimum, the following flight planning tools:
+<itemize>
+<item>Weight and balance take off data calculations. [SSS083]</item>
+<item>Fuel Calculations. [SSS084]</item>
+<item>Terrain avoidance warning for line of sight flights. [SSS085]</item>
+<item>Minimum data link reception altitude calculations for line of sight flights. [SSS554]</item>
+<item>Payload search area information such as: visual acuity range due to atmospheric conditions, diurnal transition periods for thermal imagery, and lunar and solar terrain shadowing. [SSS086]</item>
+<item>Ability to designate flight corridors and restricted air space. [SSS087]</item>
+</itemize>
+The TCS shall present to the operator the estimated time of arrival and fuel status at each programmed waypoint of the proposed mission plan. [SSS088]
+At every waypoint and every 5 minutes, the TCS shall compute the AV's flight range based on remaining fuel. [SSS076]
+The TCS shall analyze the flight route plan selected for uplink to determine that the flight constraints of the AV and the limitation of the data link are not violated prior to transmission of the flight route plan to the AV. [SSS089]
+The algorithmic accuracy of all flight planning calculations shall not deviate by more than 10% when compared with a mission flown by a validated 6 degree-of-freedom air vehicle simulator. [SSS090]
+The flight route plan, as a minimum, shall provide the necessary AV commands to autonomously execute a programmed flight and return to a designated recovery area. [SSS091]
+The TCS shall provide the operator with an interactive graphics and map based flight route planning capability. [SSS092]
+The TCS shall provide the capability to create waypoints that define the desired flight path, define AV Altitude and Airspeed associated with the waypoint. [SSS093]
+</text_body>
+<p id="3.2.1.1.1">
+<title>Map Display Task</title>
+<text_body>
+The TCS shall provide the capability of displaying overlays each containing 100 simultaneous icons of known fire support coordination zones [SSS549], airspace control zones [SSS550], threat systems [SSS061], and displaying the threat engagement envelopes with associated radar terrain masking for those threats [SSS062].
+A de-clutter capability shall be provided that allows the operator to display only a selected number of the most significant threats. [SSS063]
+The TCS shall provide the capability to modify the maximum number of threats displayed, when de-clutter is selected. [SSS064]
+The TCS shall provide the capability to display waypoint data in alphanumeric format. [SSS552]
+The TCS shall have the capability to load a map onto the display, to zoom in and out, to scroll, to print, and to clear a map on the map display. [SSS095]
+The TCS shall provide the operator with a clearly indicated map scale. [SSS535]
+Upon operator request, the following icons shall be displayed on the map display (when the coordinates reside on the displayed portion of the map).
+<itemize>
+<item>Display an icon indicating AV position when receiving downlink from the desired AV. [SSS096]</item>
+<item>Display an icon indicating payload center field of view and footprint when receiving downlink from the desired AV. [SSS097]</item>
+<item>Display an icon, in variable sizes, indicating target position and type at coordinates selected by the operator. [SSS098]</item>
+<item>Display icons indicating TCS position and Ground Data Terminal (GDT) position. [SSS099]</item>
+<item>Display an icon indicating Launch, Handover, and Recovery site (when applicable). [SSS100]</item>
+<item>Display icons indicating Flight Plan waypoints. [SSS101]</item>
+</itemize>
+The TCS shall be capable of displaying the positions of the icons in Lat./Lon., Universal Transverse Mercator (UTM), and Military Grid Reference System (MGRS) formats and provide conversion to multiple spheroid scales. [SSS102]
+The TCS shall provide the capability to graphically display Line of Sight versus terrain profile (DTED). [SSS538]
+</text_body>
+</p>
+</p> <!-- 3.2.1.1 -->
+<p id="3.2.1.2">
+<title>Payload Planning Capability</title>
+<text_body>
+For those payloads identified in Table 3-2, the TCS shall be able to generate payload planning information
+to be uplinked to the AV separate from a flight route plan. [SSS103]
+The TCS shall provide the system functionality necessary to generate a payload plan that, as a minimum,
+shall include the following information: [SSS104]
+<itemize>
+<item>Payload type</item>
+<item>Payload commands</item>
+<item>Payload mode settings</item>
+<item>Payload pointing commands, manual as well as automated</item>
+<item>Payload field of view settings, manual as well as automated</item>
+</itemize>
+The TCS shall provide the capability to display the payload swath for the selected payload for planning purposes. [SSS541]
+</text_body>
+</p>
+<p id="3.2.1.3">
+<title>Communications Planning Capability</title>
+<text_body>
+**DELETED** [SSS105]
+**DELETED** [SSS106]
+**DELETED** [SSS107]
+</text_body>
+</p>
+</p> <!-- 3.2.1 -->
+<p id="3.2.2">
+<title>Mission Control And Monitoring Functions</title>
+<text_body>
+The TCS will have the capability to control and monitor an AV, payload, data link, and C4I interfaces during the execution of a mission.
+While flying two MAE AVs Beyond Line Of Sight (BLOS), the TCS shall provide full control functionality of each AV. [SSS108]
+AV specific components used to perform ground based closed loop command and control functions for TCS shall be initialized upon operator selection of a specific AV. [SSS109]
+The TCS shall transmit command and control information to the AV via the uplink to the AV [SSS110], and receive AV telemetry and payload information via downlink from the AV [SSS111].
+</text_body>
+<p id="3.2.2.1">
+<title>AV Control And Monitoring Capability</title>
+<text_body>
+The TCS shall be capable of being interoperable with Predator and Outrider UAVs across the 5 levels of
+UAV interaction. [SSS011]
+The TCS shall have the capability to control and monitor multiple types of AVs. [SSS112]
+TCS shall notify the operator when AV performance parameters are out of limits. [SSS113]
+The TCS shall provide the capability to pass control of an AV to another TCS [SSS114], and receive
+control of an AV from another TCS [SSS115].
+The TCS shall provide the capability to control the AV flight commands as well as to release the AV to an
+autonomous flight control mode. [SSS118]
+AV telemetry data shall be available to support other TCS functions as required. [SSS119]
+The TCS shall provide the capability to control the flight of the selected AV in accordance with the specific
+AV's operational performance capabilities. [SSS120]
+The TCS shall provide the capability to fully control and display the AV's Identification Friend or Foe
+(IFF). [SSS121]
+The TCS shall provide the capability to enter AV preset limits which, as a minimum, will include airspeed
+limits, altitude limits, and fuel limits. [SSS122]
+</text_body>
+<p id="3.2.2.1.1">
+<title>AV Flight Control Task</title>
+<text_body>
+The TCS shall allow the operator to control an AV using the LOS as well as SATCOM data links.
+[SSS124]
+The TCS shall provide the necessary system capabilities required for AV flight control BLOS via uplink
+command to two MAE air vehicles. [SSS125]
+The TCS shall support operation of the AV via all flight modes, to include manual controls. [SSS126102]
+The TCS shall provide the capability to implement an emergency action plan, if supported by the AV, to
+control the AV during equipment failures. [SSS539]
+The TCS shall provide interactive displays necessary to command the flight of an AV. [SSS127]
+</text_body>
+<p id="3.2.2.1.1.1">
+<title>Flight Behavior Characteristics</title>
+<text_body>
+The TCS shall allow the operator to command the flight behavior characteristics inherent to the selected AV. [SSS128]
+The operator shall have the capability to initiate as well as change, to include as a minimum manual override, flight behaviors by sending the proper control commands to the UAV. [SSS129]
+</text_body>
+</p>
+</p> <!-- 3.2.2.1.1 -->
+<p id="3.2.2.1.2">
+<title>AV Navigation Control Task</title>
+<text_body>
+The TCS shall have the capability to command the AV to use the navigation methods inherent to the selected AV. [SSS130]
+The operator shall have the capability to initiate as well as change, to include as a minimum manual override, UAV navigation methods by sending the proper control commands to the UAV. [SSS131]
+</text_body>
+</p>
+<p id="3.2.2.1.3">
+<title>ADT Control Task</title>
+<text_body>
+The TCS shall provide the functionality to control, monitor, and display the operation of the Air Data
+Terminal (ADT). [SSS132] This control will include control of the ADT antenna and of the ADT
+transmitter and receiver.
+</text_body>
+<p id="3.2.2.1.3.1">
+<title>ADT Antenna control</title>
+<text_body>
+The TCS shall provide the functionality to control the ADT antenna. [SSS133] This control will including its pointing direction and mode of transmission (e.g. omni and directional).
+</text_body>
+</p>
+<p id="3.2.2.1.3.2">
+<title>ADT Transmitter And Receiver Control</title>
+<text_body>
+The TCS shall provide the functionality to control the power, transmitter signal strength, and frequencies
+used by ADT for data link communication. [SSS134]
+</text_body>
+</p>
+</p> <!-- 3.2.2.1.3 -->
+<p id="3.2.2.1.4">
+<title>AV Launch/Recovery Task</title>
+<text_body>
+As an objective, the TCS shall support an automatic launch and recovery system. [SSS135]
+As and objective, the TCS shall be interoperable with the Integrity Beacon Landing System (IBLS) [SSS136], and the Common Automated Recovery System (CARS) [SSS137], both used by Outrider.
+As an objective, the TCS shall present sufficient cues to the operator to implement and monitor automatic launch and recovery, and to initiate abort procedures if required. [SSS138]
+</text_body>
+<p id="3.2.2.1.4.1">
+<title>Emergency Recovery</title>
+<text_body>
+The TCS shall allow the operator to initiate the emergency recovery feature of the AV, if the AV has an
+emergency recovery feature. [SSS139]
+</text_body>
+</p>
+</p> <!-- 3.2.2.1.4 -->
+<p id="3.2.2.1.5">
+<title>AV Monitoring Task</title>
+<text_body>
+TCS shall provide the capability to monitor specific telemetry elements real-time, and record all telemetry elements for future review and processing. [SSS140]
+TCS shall provide the capability to monitor AV adherence to the uplinked mission plan, detecting any deviations greater than 10% from projected flight path, and notifying the operator if deviations are detected. [SSS141]
+TCS shall provide the capability to monitor the status of all AV subsystems reporting status. [SSS142]
+</text_body>
+<p id="3.2.2.1.5.1">
+<title>AV Monitoring Displays</title>
+<text_body>
+The TCS shall display the AV status, to include but not be limited to the AV location and flight and avionics system status. [SSS143]
+When the data link is interrupted, the TCS shall present the last known AV status values and the time at which the last values were reported. [SSS144]
+The TCS shall be capable of displaying fuel parameters to the operator to include as a minimum, remaining fuel, flow rate, and bingo fuel. [SSS145] Bingo fuel is the minimum amount of fuel necessary to return to the designated Recovery site with reserve fuel.
+The TCS shall compute the estimated position of the AV during Loss of Link (LOL) based upon the last known AV position and anticipated flight path based on current flight mode (e.g. flight route plan mode, emergency flight route plan mode, maintain current heading mode). [SSS146]
+TCS shall display a LOL timer to the operator initiating a LOL onset. [SSS536]
+</text_body>
+</p>
+</p> <!-- 3.2.2.1.5 -->
+</p> <!-- 3.2.2.1 -->
+<p id="3.2.2.2">
+<title>payload Control And Monitoring Capability</title>
+<text_body>
+The TCS shall be capable of being interoperable with the installed payloads across the 5 levels of UAV interaction. [SSS012]
+The TCS will have the capability to control and monitor the AV payload(s). [SSS147]
+The TCS shall have the capability to receive data from and control payloads on an AV that is being controlled from another TCS. [SSS148]
+The TCS shall provide the necessary system capabilities required for payload control beyond line of sight via uplink command of two air vehicles of the same type using sequential communication techniques. [SSS149] Sequential communication means alternatively communicating with one air vehicle and then the
+other. Current air vehicle design does not permit concurrent communications with two air vehicles at the same time.
+The TCS shall receive, process, and present payload data to the operator so that the status of the payload can be determined. [SSS151]
+</text_body>
+<p id="3.2.2.2.1">
+<title>Payload Control Task</title>
+<text_body>
+The TCS shall permit the operator to control the payload using all methods supported by the payload installed in the selected AV. [SSS152]
+The TCS shall provide a graphical user interface display for the purpose of controlling the payload. [SSS153]
+The TCS shall provide override of payload automated as well as preprogrammed inputs. [SSS154]
+</text_body>
+</p>
+<p id="3.2.2.2.2">
+<title>Payload Monitoring Task</title>
+<text_body>
+TCS shall provide the capability to monitor payload adherence to the uplinked mission plan. [SSS155]
+</text_body>
+<p id="3.2.2.2.2.1">
+<title>Payload Monitoring Displays</title>
+<text_body>
+The TCS shall display the current search footprint and the search history of the payload on the map. [SSS157]
+</text_body>
+</p>
+</p> <!-- 3.2.2.2.2 -->
+</p> <!-- 3.2.2.2 -->
+<p id="3.2.2.3">
+<title>Data terminal Control And Monitoring Capability</title>
+<text_body>
+The TCS shall have the capability to simultaneously control and monitor a line-of-sight as well as a BLOS data terminal. [SSS158]
+The TCS shall provide the system functionality necessary to record data obtained via the data link. [SSS527]
+</text_body>
+<p id="3.2.2.3.1">
+<title>Data Terminal Control Task</title>
+<text_body>
+The TCS shall be capable of interfacing with the specified data terminal and issuing data link terminal commands required to establish, control, and maintain the data link with a selected AV. [SSS159]
+Data terminal control shall include, but is not limited to, antenna pointing control, transmitter control, and receiver control. [SSS160]
+The TCS shall be capable of automatically selecting the proper mode of operation for the selected data terminal. [SSS161]
+As a minimum the TCS LOS data terminal control modes shall include acquisition, autotrack, search, manual point, omni directional, as well as directional modes of operation, if applicable to the selected data link. [SSS162]
+The operator shall be able to manually override any automatic data terminal control mode selection if desired, except during Emission Control (EMCON) and Hazards of Electromagnetic Radiation to Ordnance (HERO) conditions. [SSS163]
+The TCS shall support a LOS data link and SATCOM data link capability. [SSS164]
+For shipboard operations, the TCS shall provide the capability to switch to a second LOS antenna, if a second antenna is available, when desired (e.g. the currently active antenna is masked by shipboard obstructions). [SSS116]
+The TCS shall provide the capability to switch to a SATellite COMmunication (SATCOM) antenna, if the selected AV has SATCOM capability, when desire (e.g. the AV proceeds beyond LOS range as well as when LOS is obstructed). [SSS117]
+The TCS shall provide an interactive display for the purpose of controlling the data link terminal. [SSS165]
+</text_body>
+<p id="3.2.2.3.1.1">
+<title>Antenna And Pedestal Control</title>
+<text_body>
+The TCS shall provide automatic pointing commands for directional antennas [SSS167], and shall allow for the manual pointing of directional antennas when desired by the operator [SSS168].
+The TCS shall be capable of positioning antennas to maintain LOS as well as SATCOM. [SSS170]
+The TCS shall incorporate antenna pedestal 3 -axis stabilization to compensate for platform (e.g. ship, or HMMWV) motion, if applicable. [SSS557]
+</text_body>
+</p>
+<p id="3.2.2.3.1.2">
+<title>Transmitter And Receiver Control</title>
+<text_body>
+The TCS shall be capable of automatically controlling the transmitter and receiver functions of the selected data terminal. [SSS171]
+The operator shall be able to manually override the automatic function selection of the selected data terminal, if desired. [SSS172]
+The TCS shall be capable of automatically controlling the transmitter and receiver modes of the selected data terminal. [SSS173]
+The operator shall be able to manually override the automatic mode selection of the selected data terminal, if desired. [SSS174]
+The TCS shall be capable of automatically controlling the transmitter and receiver frequencies of the selected data terminal. [SSS175]
+The operator shall be able to manually override the automatic frequency selection if desired. [SSS176]
+</text_body>
+</p>
+</p> <!-- 3.2.2.3.1 -->
+<p id="3.2.2.3.2">
+<title>Data Terminal Monitoring Task</title>
+<text_body>
+The TCS shall receive, process, and present status data to the operator so that the status of the data terminal and the supported AV data link can be monitored. [SSS177]
+The TCS shall be capable of monitoring and displaying the signal strength of the received and transmitted signals for the selected data terminal. [SSS178]
+The TCS shall be capable of monitoring and displaying the signal quality of the received and transmitted signals for the selected data terminal. [SSS179]
+The TCS shall be capable of presenting to the operator a visual depiction of the minimum and maximum data link operational ranges. [SSS180]
+</text_body>
+</p>
+</p> <!-- 3.2.2.3 -->
+</p> <!-- 3.2.2 -->
+<p id="3.2.3">
+<title>Payload Product Management Function</title>
+<text_body>The TCS will have the functionality necessary to manage all aspects of payload product handling to include
+receiving, processing, displaying, and performing limited exploitation. The payload product includes the
+payload sensor output and the appropriate AV and payload telemetry data.</text_body>
+<p id="3.2.3.1"> 
+<title>Payload Product Processing Capability</title>
+<text_body>The TCS shall have the functionality to process payload product data from Electro Optical (EO), Infrared
+(IR), and Synthetic Aperture Radar (SAR) payloads. [SSS182] This functionality, as a minimum, shall
+include: formatting, storing, internally routing, and recording the video [SSS190]; creating and storing a
+freeze frame of the video [SSS191]; retrieving and displaying the video [SSS192]; printing a hard copy of
+freeze frame video [SSS193]; and processing digital imagery for export and dissemination [SSS194].
+Payload data includes the digital and analog imagery and associated telemetry sent to the TCS from each of
+these payloads.
+The TCS shall be able to store up to 24 hours of payload data. [SSS184] External storage can be utilized
+for this purpose.
+The TCS shall be in compliance with Common Imagery Ground Surface Station (CIGSS), United States
+Imagery Standards (USIS), Video Working Group Standards Architecture, National Imagery Transmission
+Format (NITF) Version 2.0, and Global Command Control Systems (GCCS) when processing payload
+imagery data. [SSS185]
+The NITF 2.0 imagery files generated by the TCS shall contain the necessary telemetry and support data to
+permit subsequent imagery exploitation by C4I systems. [SSS186]
+The TCS shall have a built-in text entry capability including the ability to annotate textual information on
+imagery. [SSS187]
+The TCS shall be capable of receiving secondary HAE UAV payload imagery. [SSS188]
+Payload telemetry data shall be available to support other TCS functions as required. [SSS189]</text_body>
+</p>
+<p id="3.2.3.2">
+<title>Payload Product Display Capability</title>
+<text_body>The TCS shall display live and recorded imagery data, with as well as without annotation and overlay,
+upon operator request. [SSS195] Annotation includes operator generated comments as well as graphics
+which are superimposed on the imagery. Overlays consist of information obtained from external sources
+that is selected by the operator for presentation with the imagery. The TCS shall provide the capability to simultaneously view imagery as well as data from more than one
+payload, when applicable. [SSS537]
+The TCS operator shall be able to select the content of the overlay information. [SSS196]
+The TCS shall have the capability to select and deselect several types of cross hairs (or other similar
+ICON) to identify a selected point on a target. [SSS197]
+RS170A video and digital imagery shall be routed to TCS functions and displayed upon operator request.
+[SSS198]
+</text_body>
+</p>
+<p id="3.2.3.3">
+<title>Payload Product Exploitation Capability</title>
+<text_body>The TCS shall have the functionality to conduct limited exploitation, to include voice and textual reporting
+for spot and mission objectives, on the payload product data. [SSS200] Limited exploitation, as a
+minimum, will include image enhancement and annotation.
+The image enhancement capability shall include contrast, brightness, edge enhancement, and sharpness.
+[SSS201]
+The TCS shall provide the capability to capture frozen-frames of imagery and store these frozen images for
+further review and processing. [SSS202]
+The TCS shall have the capability to display Near-Real Time (NRT) imagery to include, as a minimum,
+date/time group, target location coordinates when the target is in the center of the field of view, north
+seeking arrow, and AV position and heading. [SSS203]
+The TCS shall provide the capability to compute the range and bearing between two geographic positions
+located on the payload imagery display. [SSS560]</text_body>
+</p>
+</p> <!-- 3.2.3 -->
+<p id="3.2.4">
+<title>Targeting Function</title>
+<text_body>The TCS will have the functionality to determine target coordinates, and estimate target coordinate
+accuracy.
+The TCS shall support a target location function where the operator can request the current ground location
+of the payload field-of-view center. [SSS206]</text_body>
+<p id="3.2.4.1">
+<title>Target Coordinate Development Capability</title>
+<text_body>The TCS shall have the functionality to determine the location of items of interest within the payload field
+of view, and express these locations in coordinates acceptable for military applications. [SSS207]</text_body>
+</p>
+<p id="3.2.4.2">
+<title>Target Accuracy Estimation Capability</title>
+<text_body>The TCS shall have the functionality to develop an estimate of the error in computed target coordinates, and associate the error estimate with the appropriate target. [SSS208]</text_body>
+</p>
+</p>
+<p id="3.2.5">
+<title>C4I System Interface Function</title>
+<text_body>The TCS shall be capable of entering DII-COE compliant (C4I) networks. [SSS209] Network
+interoperability will include, but not be limited to:
+Advanced Tomahawk Weapons Control Station (ATWCS)
+Advanced Field Artillery Tactical Data System (AFATDS)
+All Source Analysis System (ASAS)
+Automated Target Hand-off System (ATHS)
+Closed Circuit Television (CCTV)
+Common Operational Modeling, Planning, and Simulation Strategy (COMPASS)
+Contingency Airborne Reconnaissance System (CARS)
+Enhanced Tactical Radar Correlator (ETRAC)
+Guardrail Common Sensor/Aerial Common Sensor (ACS) Integrated Processing Facility (IPF)
+Intelligence Analysis System (IAS)
+Joint Deployable Intelligence Support System (JDISS)
+Joint Maritime Command Information System (JMCIS)
+Joint Service Imagery Processing System – Air Force (JSIPS-AF)
+Joint Service Imagery Processing System - Navy (JSIPS-N)
+Joint Surveillance Target Attack Radar System (JSTARS) Ground Station Module/Common
+Ground Station (GSM/CGS)
+Modernized Imagery Exploitation System (MIES)
+Service Specific Mission Planners
+- Army Mission Planning System (AMPS)
+- Air Force Mission Support System (AFMSS)
+- Tactical Aircraft Mission Planning System (TAMPS)
+Tactical Exploitation Group (TEG)
+Tactical Exploitation Systeme (TES)
+Theater Battle Management Core System (TBMCS)
+TROJAN Special Purpose Integrated Remote Intelligence Terminal (SPIRIT) II
+The TCS shall have the functionality necessary to manage all aspects of C4I system interfaces to include
+receiving, processing, and transmitting tactical information to include but not limited to character based
+text messages, NITF 2.0 imagery files, and RS-170A video. [SSS210] The TCS shall provide the functionality necessary to interface with various C4I systems in order to satisfy
+the operational requirements for: [SSS211] 1. Tasking TCS to plan and conduct a mission.
+2. Presentation of payload product and target coordinates for export and dissemination.
+3. Use of UAV obtained data (Non-real time tracks, tactical points and amplifying information) to
+provide a C4I system with information that may be used by C4I system operators, for transmission
+on tactical data communication links, and available to support engagement by appropriate weapons
+systems.
+The TCS shall have the capability to interoperate with a data server to receive, extract, and push
+intelligence data. [SSS212]
+The TCS shall have the capability to use cable to deliver live video imagery in multiple locations. [SSS213]
+The TCS shall have the ability to interface with Service specific ground and airborne Ultra High Frequency
+(UHF), Very High Frequency (VHF), UHF/VHF, and High Frequency (HF) radios for digital message
+transmission while using the same radios for record traffic. [SSS214] Record traffic is defined as
+operational/voice communications.
+Where applicable, TCS data burst messages shall comply with Variable Message Formats. [SSS215]
+The TCS shall export and disseminate formatted NITF 2.0 files [SSS558], digital imagery (if applicable)
+[SSS218], RS-170A video (with as well as without overlay) [SSS219], and tactical communication
+messages [SSS220].</text_body>
+<p id="3.2.5.1">
+<title>C4I Interface Control Capability</title>
+<text_body>The TCS will have the capability to manage all operational C4I interfaces across all 5 levels of interaction.</text_body>
+<p id="3.2.5.1.1">
+<title>C4I Digital Interface Control Capability</title>
+<text_body>The TCS shall, as a minimum, have the functionality to provide the following control capabilities:
+1. Send and receive tactical communication messages. [SSS222]
+2. Send and receive annotated and un-annotated digital imagery. [SSS223]
+3. Establish digital communication and when completed terminate communications to the C4I
+systems specified in Section 3.2.5 [SSS224].
+4. Establish and when completed terminate digital communication to peripheral devices. [SSS225]</text_body>
+</p>
+<p id="3.2.5.1.2">
+<title>C4I Analog Interface Control Capability</title>
+<text_body>The TCS shall, as a minimum, have the functionality to provide the following control capabilities:
+1. Send and receive analog imagery in RS-170A format with as well as without overlay. [SSS226]
+2. Establish and when completed terminate analog communication to C4I systems specified in
+Section 3.2.5. [SSS227]
+3. Establish and when completed terminate analog communication to peripheral devices. [SSS228]</text_body>
+</p>
+</p>
+<p id="3.2.5.2">
+<title>C4I Interface Data Processing Capability</title>
+<text_body>The TCS will have the functionality to process received C4I messages and to prepare C4I messages for
+transmission. Processing will include formatting, storing, routing, and display.</text_body>
+<p id="3.2.5.2.1">
+<title>C4I Digital Interface Data Processing Capability</title>
+<text_body>The TCS shall, as a minimum, have the functionality to provide the following digital data processing
+capabilities:
+1. Create Tactical Communications Messages to include United States Message Text Format
+(USMTF), Tactical Fire (TACFIRE), Over The Horizon Gold (OTH-Gold), and Intelligence and
+Electronic Warfare Character Oriented Message Catalog (IEWCOMCAT) For Transmission
+(specific message types will be identified in the all applicable TCS to C4I IDDs) [SSS230]
+2. Review Incoming Tactical Communication Messages [SSS231]
+3. Prepare Annotated as well as Un-annotated Digital Imagery For Transmission [SSS232]
+4. Review Incoming Annotated as well as Un-annotated Digital Imagery [SSS233]
+All digital messages received by the TCS shall be automatically checked for errors and corrected when
+possible. [SSS234]
+All erroneous messages that cannot be corrected by TCS shall be flagged to the operator. [SSS235]
+The TCS shall provide the capability to log all incoming and outgoing formatted tactical messages.
+[SSS236]</text_body>
+</p>
+<p id="3.2.5.2.2">
+<title>C4I Analog Interface Data Processing Capability</title>
+<text_body>The TCS shall, as a minimum, have the functionality to provide the following analog data processing
+capabilities:
+1. Prepare annotated as well as un-annotated analog imagery for transmission [SSS237]
+2. Receive incoming annotated as well as un-annotated analog imagery [SSS238]</text_body>
+</p>
+</p>
+<p id="3.2.5.3">
+<title>C4I Interface Monitoring Capability</title>
+<text_body>The TCS shall have the functionality to monitor the status of all C4I interfaces, and display appropriate
+control information. [SSS239]
+The TCS shall, as a minimum, have the functionality to provide the following data monitoring capabilities:
+1. Display which C4I systems are supported and online during a mission [SSS240]
+2. Monitor the status of all incoming and outgoing tactical communication messages [SSS241]
+3. Review all tactical communication messages received and transmitted [SSS242]
+4. View incoming and outgoing, annotated as well as un-annotated analog imagery [SSS243]
+5. View incoming and outgoing, annotated as well as un-annotated digital imagery messages [SSS244]</text_body>
+</p>
+</p>
+<p id="3.2.6">
+<title>AV Maintenance Function</title>
+<text_body>TCS shall be capable of executing AV maintenance software and displaying appropriate status results.
+[SSS245]</text_body>
+</p>
+<p id="3.2.7">
+<title>Payload Maintenance Function</title>
+<text_body>
+TCS shall be capable of executing payload maintenance software and displaying appropriate status results. [SSS246]
+</text_body>
+</p>
+<p id="3.2.8">
+<title>Data Terminal Maintenance Function</title>
+<text_body>
+TCS shall be capable of executing data terminal maintenance software and displaying appropriate status results. [SSS247]
+</text_body>
+</p>
+<p id="3.2.9">
+<title>Workstation and Peripheral Equipment Maintenance Function</title>
+<text_body>
+TCS shall be capable of executing workstation and peripheral equipment maintenance software and displaying appropriate status results. [SSS248]
+</text_body>
+</p>
+<p id="3.2.10">
+<title>Fault Detection/Location Function</title>
+<text_body>
+Fault Detection/Location (FD/L) to the Line Replaceable Unit (LRU) level shall be provided to indicate the readiness status of TCS, if inherent to the COTS hardware and software utilized. [SSS249]
+As a minimum, TCS shall provide Startup FD/L for the operator workstation. [SSS250]
+The TCS shall allow the operator to control and monitor the AV's FD/L, if required and provided by the Original Equipment Manufacturer (OEM) [SSS251]; Payload's FD/L, if required and provided by the Original Equipment Manufacturer (OEM) [SSS252]; and Data Link FD/L, if required and provided by the Original Equipment Manufacturer (OEM) [SSS253].
+</text_body>
+<p id="3.2.10.1">
+<title>Startup FD/L</title>
+<text_body>
+**DELETED** [SSS25405]
+**DELETED** [SSS25506]
+**DELETED** [SSS25607]
+**DELETED** [SSS25708]
+**DELETED** [SSS258]
+**DELETED** [SSS259]
+</text_body>
+</p>
+<p id="3.2.10.2">
+<title>Periodic FD/L</title>
+<text_body>
+**DELETED** [SSS260]
+**DELETED** [SSS261]
+**DELETED**. [SSS262]
+**DELETED** [SSS263]
+**DELETED**. [SSS264]
+**DELETED** [SSS265]
+**DELETED** [SSS267]
+</text_body>
+</p>
+<p id="3.2.10.3">
+<title>Extensive FD/L</title>
+<text_body>
+**DELETED** [SSS268]
+**DELETED**. [SSS269]
+**DELETED** [SSS27019]
+**DELETED** [SSS27120]
+**DELETED** [SSS27221]
+**DELETED** [SSS27322]
+**DELETED** [SSS274]
+**DELETED** [SSS275]
+</text_body>
+</p>
+</p> <!-- 3.2.10 -->
+<p id="3.2.11">
+<title>Software Upgrade Function</title>
+<text_body>
+The TCS shall allow authorized operators to install software upgrades via CD-ROM as well as other media storage devices. [SSS276] The TCS shall restrict operator access to this capability via password protection. [SSS277]
+The TCS shall provide the capability for Authorized Operators to modify all TCS programmable parameters. [SSS278] As a minimum, the TCS shall restrict Operator access to this capability via password protection. [SSS279]
+The TCS shall be capable of importing National Imagery Mapping Agency (NIMA) Digital Terrain Elevation Data (DTED), Digital Feature Analysis Data (DFAD), Arc Digitized Raster Graphic and scanned hard copy maps, via compact disk. [SSS280]
+The TCS shall be capable of importing map information via operator procedure [SSS555] and shall be capable of incorporating vector format and Compressed ADRG (CADRG) maps. [SSS281]
+</text_body>
+</p>
+<p id="3.2.12">
+<title>Software Debug and Monitoring Function</title>
+<text_body>
+The TCS shall allow an Authorized Operator to execute a software debug capability and view the resulting debug diagnostic information. [SSS282] As a minimum, the TCS will restrict Operator access to this capability via password protection. [SSS283]
+</text_body>
+</p>
+</p> <!-- 3.2 -->
+<p id="3.3">
+<title>System External Interface Requirements</title>
+<text_body>
+The TCS will interface with external systems to conduct mission coordination and operations.
+The TCS shall provide the capability to interface with equipment necessary to provide connectivity with standard DoD tactical (VHF, UHF, and UHF/VHF) radios, Mobile Subscriber Equipment, and military and commercial satellite communications equipment. [SSS285]
+The TCS shall interface with external mission tasking systems (e.g., receive tasking orders, coordinate mission certification). [SSS286]
+The TCS shall provide the system functionality necessary to interface with the data terminal. [SSS287]
+The TCS shall provide the system functionality to allow interfacing with external systems via a local area network. [SSS288]
+The TCS shall provide external interfaces to launch and recovery systems. [SSS289]
+</text_body>
+<p id="3.3.1">
+<title>Interface Identification</title>
+<p id="3.3.1.1">
+<title>TCS to C4I</title>
+<text_body>
+Figure 3.3.1.1-1 illustrates the TCS to C4I interfaces.
+
+The TCS will be interoperable with C4I systems, as listed in Section 3.2.5 of this document. Table 3.3.1.1-1 shows the implementation schedule for C4I interfaces. This prioritization schema has been validated by a Joint Requirements Oversight Council (JROC) Memorandum.
+
+For external communications to C4I systems the TCS shall utilize the Universal Communication Processor as well as the Common Message Processor (CMP) Government Off The Shelf (GOTS) software capabilities of the DII/COE to communicate with C4I systems using Tactical Communication (TACOMM)
+messages. [SSS290] Details of the TACCOM messages and the associated C4I system will be defined in the applicable TCS to C4I IDDs.
+</text_body>
+<p id="figure 3.3.1.1-1"/>
+<p id="table 3.3.1.1-1"/>
+<p id="3.3.1.1.1">
+<title>TCS to ASAS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ASAS. [SSS291] The interface requirements and specifications will be defined in the TCS to ASAS IDD, TCS 201.
+</text_body>
+</p>
+<p id="3.3.1.1.2">
+<title>TCS to JSTARS GSM</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with JSTARS GSM. [SSS292] The interface requirements and specifications will be defined in the TCS to JSTARS IDD, TCS 209.
+</text_body>
+</p>
+<p id="3.3.1.1.3">
+<title>TCS to JMCIS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with JMCIS. [SSS293] The interface requirements and specifications will be defined in the TCS to JMCIS IDD, TCS 214.
+</text_body>
+</p>
+<p id="3.3.1.1.4">
+<title>TCS to JSIPS-N</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate
+with JSIPS-N. [SSS294] The interface requirements and specifications will be defined in the TCS to
+JSIPS-N IDD, TCS 210.
+</text_body>
+</p>
+<p id="3.3.1.1.5">
+<title>TCS to AFATDS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate
+with AFATDS. [SSS295] The interface requirements and specifications will be defined in the TCS to
+AFTADS IDD, TCS 200.
+</text_body>
+</p>
+<p id="3.3.1.1.6">
+<title>TCS to JSIPS-AF</title>
+<text_body>
+The interface requirements and specifications will be defined in the TCS to JSIPS-AF IDD, TCS 211.
+</text_body>
+</p>
+<p id="3.3.1.1.7">
+<title>TCS to CARS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with CARS. [SSS297] The interface requirements and specifications will be defined in the TCS to CARS IDD, TCS 217.
+</text_body>
+</p>
+<p id="3.3.1.1.8">
+<title>TCS to CCTV</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with CCTV. [SSS298] The interface requirements and specifications will be defined in the TCS to CCTV IDD, TCS 205.
+</text_body>
+<p id="1.">
+<title>TCS to Service Mission Planner</title>
+<text_body>
+The TCS will provide the necessary hardware and software functionality to allow the TCS to integrate with Service Mission Planners. The Service Mission Planners will consist of AMPS, AFMSS, and TAMPS.
+</text_body>
+</p>
+<p id="1.">
+<title>TCS to Army Mission Planning System</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AMPS.[SSS563] The interface requirements and specifications will be defined in the TCS to AMPS IDD, TCS 235.
+</text_body>
+<p id="3.3.1.1.9.1">
+<title>TCS to Air Force Mission Support System</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AFMSS.[SSS564] The interface requirements and specifications will be defined in the TCS to AFMSS IDD, TCS 220.
+</text_body>
+</p>
+<p id="3.3.1.1.9.2">
+<title>TCS to Tactical Aircraft Mission Planning System</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with TAMPS.[SSS565] The interface requirements and specifications will be defined in the TCS to TAMPS IDD, TCS 219
+</text_body>
+</p>
+</p> <!-- 1. -->
+<p id="2.">
+<title>TCS to GCS/ACS IPF</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with GCS/ACS IPF. [SSS300] The interface requirements and specifications will be defined in the TCS to GCS/ACS IPF IDD, TCS 215.
+</text_body>
+</p>
+<p id="3.">
+<title>TCS to JDISS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with JDISS. [SSS301] The interface requirements and specifications will be defined in the TCS to JDISS IDD, TCS 212.
+</text_body>
+<p id="3.3.1.1.12">
+<title>TCS to TES</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with TES. [SSS302] The interface requirements and specifications will be defined in the TCS to TES IDD, TCS 236.
+</text_body>
+</p>
+<p id="3.3.1.1.13">
+<title>TCS to IAS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with IAS. [SSS303] The interface requirements and specifications will be defined in the TCS to IAS IDD, TCS 206.
+</text_body>
+</p>
+<p id="3.3.1.1.13">
+<title>TCS to IAS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with IAS. [SSS303] The interface requirements and specifications will be defined in the TCS to IAS IDD, TCS 206.
+</text_body>
+</p>
+<p id="3.3.1.1.14">
+<title>TCS to ATHS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ATHS. [SSS304] The interface requirements and specifications will be defined in the TCS ATHS IDD, TCS 208.
+</text_body>
+</p>
+<p id="3.3.1.1.15">
+<title>TCS to ATWCS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ATWCS. [SSS305] The interface requirements and specifications will be defined in TCS ATWCS IDD, TCS203
+</text_body>
+</p>
+<p id="3.3.1.1.16">
+<title>TCS to TROJAN SPIRIT II</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with Trojan Spirit II. [SSS306] The interface requirements and specifications will be defined in the TCS to TROJAN SPIRIT II IDD, TCS 213.
+</text_body>
+</p>
+<p id="3.3.1.1.17">
+<title>TCS to TBMCS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with TBMCS. [SSS307] The interface requirements and specifications will be defined in TCS to TBMCS IDD, TCS 221.
+</text_body>
+</p>
+<p id="3.3.1.1.18">
+<title>TCS to MIES</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with MIES. [SSS308] The interface requirements and specifications will be defined in the TCS to MIES IDD, TCS 216.
+</text_body>
+</p>
+<p id="3.3.1.1.19">
+<title>TCS to ETRAC</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ETRAC. [SSS309] The interface requirements and specifications will be defined in the TCS ETRAC IDD, TCS 218.
+</text_body>
+</p>
+<p id="3.3.1.1.20">
+<title>TCS to COMPASS</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with COMPASS. [SSS310] The interface requirements and specifications will be defined in TCS to COMPASS IDD, TCS 222.
+</text_body>
+</p>
+<p id="3.3.1.1.21">
+<title>TCS to TEG</title>
+<text_body>
+The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with TEG. [SSS311] The interface requirements and specifications will be defined in TCS to TEG IDD, TCS 207.
+</text_body>
+</p>
+</p> <!-- 3. -->
+<p id="4.">
+<title>TCS to DT Control</title>
+<text_body>
+Figure 3.3.1.2-1 illustrates the TCS to DT control interface.
+
+The TCS shall provide interfaces with the respective UAV program-provided data links for command and
+control and UAV data.. [SSS312]
+The TCS shall have provisions for simultaneously supporting both of the following external interfaces:
+LOS data link, SATCOM data link. [SSS313]
+Details of the TCS to DT interface will be defined in the TCS to Data Terminal IDD , TCS 242.
+</text_body>
+<p id="figure 3.3.1.2-1"/>
+</p>
+<p id="5.">
+<title>TCS to Printer</title>
+<text_body>
+Figure 3.3.1.4-1 illustrates the TCS to Printer interface.
+
+The TCS shall provide an interface between the TCS and an external hard copy printer. [SSS314]
+The TCS shall as a minimum, allow Operator(s) to print freeze-frame video, C4I Messages, Mission Plans, FD/L information, and current map display. [SSS315]
+The TCS shall have the functionality to output digital message data and imagery to a hard copy printer. [SSS316]
+Details of the Tactical Control System (TCS) to printer interface will be defined in the TCS to Printer IDD, TCS 255.
+</text_body>
+<p id="figure 3.3.1.3-1"/>
+</p>
+</p> <!-- 3.3.1.1.8 -->
+</p> <!-- 3.3.1.1 -->
+<p id="3.3.1.4">
+<title>External Data Storage Systems</title>
+<text_body>
+Figure 3.3.1.4-1 illustrates the TCS to External Storage Device interface.
+
+The TCS shall provide an interface between the TCS and external data storage systems. [SSS317]
+The TCS shall have the functionality to transfer digital data as well as digital imagery to and from external data storage systems. [SSS318]
+Details of the Tactical Control System (TCS) to external data storage interface will be defined in the TCS to External Data Storage IDD, TCS256.
+</text_body>
+<p id="figure 3.3.1.4-1"/>
+</p>
+<p id="3.3.1.5">
+<title>TCS to External Power</title>
+<text_body>
+Figure 3.3.1.5-1 illustrates the TCS to External Power interface.
+
+The TCS shall have an interface between the TCS and DoD standard power supply equipment. [SSS319]
+The TCS shall have the functionality to connect to the power supply equipment provided in the TCS operating environment. [SSS320]
+Details of the Tactical Control System (TCS) to external power interface will be defined in the TCS to External Power IDD, TCS 257.
+</text_body>
+<p id="figure 3.3.1.5-1"/>
+</p>
+<p id="3.3.1.6">
+<title>TCS to Geopositional Data</title>
+<text_body>
+Figure 3.3.1.6-1 illustrates the TCS to Geopositional Data interface.
+
+The TCS shall have an interface to a source of current navigation information. [SSS321] As a minimum this information will include the location of all data terminals, launch and recovery sites, and the controlling TCS.
+Details of the Tactical Control System (TCS) to external power interface will be defined in the TCS to Geopositional Data IDD, TCS 243.
+</text_body>
+<p id="figure 3.3.1.6-1"/>
+</p>
+</p> <!-- 3.3.1 -->
+</p> <!-- 3.3 -->
+<p id="3.4">
+<title>System Internal Interface Requirements</title>
+<text_body>
+Figure 3.4-1 illustrates the TCS internal interfaces.
+
+Except for the internal interfaces enumerated under this section, all TCS internal interfaces are left to the
+design and to the requirement specifications for system components.
+The TCS will provide, as a minimum, the following internal interfaces:
+<itemize>
+<item>AV Standard Interface.</item>
+<item>Data Server</item>
+<item>SAR Processor.</item>
+<item>Intercom.</item>
+<item>Local Printer.</item>
+<item>Video Cassette Recorder</item>
+<item>Storage devices.</item>
+<item>Uninterruptible Power Supply</item>
+</itemize>
+</text_body>
+<p id="figure 3.4-1"/>
+<p id="3.4.1">
+<title>AV Standard Interface</title>
+<text_body>
+The TCS shall implement an AV Standard Interface that will provide the proper data format to ensure communications with the selected AV. [SSS322] This interface shall allow for addition of future AVs and will provide the generic architecture to ensure interoperability. [SSS323]
+The uplink and downlink information passed between the TCS and the AV shall be in accordance with the associated AV documentation. [SSS324]
+The TCS shall support a concurrent uplink and downlink capability. [SSS325]
+The AV Standard Interface requirements and specifications will be defined in the AV Standard IDD, TCS 229 .
+The AV Standard Interface is designated as a mission and safety critical interface for the TCS.
+</text_body>
+</p>
+<p id="3.4.2">
+<title>Real Time Processor</title>
+<text_body>
+The TCS shall provide an internal interface for establishing communications with the Real Time Processor (RTP) within TCS. [SSS326]
+This interface shall allow the information from the data server to be made available to other components of the TCS. [SSS327]
+The RTP interface shall support distributed processing capability. [SSS328]
+The RTP interface requirements and specifications will be defined in the Data Server IDD, TCS 238.
+</text_body>
+<p id="3.4.2.1">
+<title>Distributed Processing</title>
+<text_body>
+Remotely hosted applications shall communicate in a client server relationship via the defined data server interface. [SSS329]
+</text_body>
+</p>
+</p> <!-- 3.4.2 -->
+<p id="3.4.3">
+<title>SAR Processor</title>
+<text_body>
+The TCS shall provide an internal interface for the SAR Processor in order to disseminate SAR information (to include imagery and telemetry) to other components of the TCS. [SSS330]
+The SAR Processor interface requirements and specifications will be defined in the TCS to SAR Processor IDD, TCS 240.
+</text_body>
+</p>
+<p id="3.4.4">
+<title>Intercom</title>
+<text_body>
+The TCS shall incorporate an intercom system that provides verbal communicate in the situation where there are multiple operators. [SSS331]
+The intercom system shall be compatible with service specific voice communication systems. [SSS332]
+The intercom interface requirements and specifications will be defined in the TCS to Intercom IDD, TCS 253.
+</text_body>
+</p>
+<p id="3.4.5">
+<title>VCR</title>
+<text_body>
+The TCS will provide an interface between the TCS and a video cassette recorder.
+The TCS shall allow the Operator(s) to fully control the VCR via the TCS Display input device(s). [SSS334]
+The TCS shall be able to route VCR recorded payload video to the C4I Interfaces. [SSS335]
+An RS-170A video interface shall be provided for the system to output and input analog imagery and overlays to and from a Video Cassette Recorder (VCR) for recording and playback. [SSS336]
+Details of the VCR interface will be defined in the TCS to VCR IDD, TCS 246.
+</text_body>
+</p>
+<p id="3.4.6">
+<title>Printer</title>
+<text_body>
+The TCS shall have ports for outputting data and imagery to an internal hard copy printer. [SSS337]
+The TCS shall, as a minimum, allow the Operator(s) to print freeze-frame video, C4I Messages, Mission Plans, FD/L information, and current map display to an internal printer. [SSS338]
+Details of the printer interface will be defined in the TCS to Printer IDD, TCS 255.
+</text_body>
+</p>
+<p id="3.4.7">
+<title>Data Storage Devices</title>
+<text_body>
+The TCS shall be able to access data storage devices. [SSS339]
+The TCS shall have the functionality to transfer digital data as well as digital imagery to and from data storage devices. [SSS340]
+</text_body>
+<p id="3.4.7.1">
+<title>CD Drive</title>
+<text_body>
+The TCS shall provide a CD drive for the retrieval of TCS data. [SSS341]
+</text_body>
+</p>
+<p id="3.4.7.2">
+<title>Tape Drive</title>
+<text_body>
+The TCS shall provide a tape drive for storage and retrieval of TCS data. [SSS342]
+</text_body>
+</p>
+<p id="3.4.7.3">
+<title>Redundant Array Of Inexpensive Disks (RAID)</title>
+<text_body>
+The TCS shall provide a RAID for storage and retrieval of TCS data, if required. [SSS343]
+</text_body>
+</p>
+</p> <!-- 3.4.7 -->
+<p id="3.4.8">
+<title>Uninterruptible Power</title>
+<text_body>
+The TCS shall have an interface to an uninterruptible power supply. [SSS344]
+</text_body>
+</p>
+<p id="6.">
+<title>System Internal Data Requirements</title>
+<text_body>
+All TCS internal data decisions will be left to the design and the requirement specifications for system components.
+</text_body>
+</p>
+</p> <!-- 3.4 -->
+<p id="3.6">
+<title>Adaptation Requirements</title>
+<text_body>
+This section not applicable, therefore tailored out.
+</text_body>
+</p>
+<p id="3.7">
+<title>Safety Requirements</title>
+<text_body>
+The TCS design shall consider all safety requirements affecting design and performance except nuclear safety. [SSS345]
+The TCS safety requirements are intended to eliminate as well as control potential hazards to equipment and personnel involved in the TCS. The TCS shall comply with para 5.3 of MIL-STD 882C, “System Safety Program Requirements”, dated 19 January 1993 w/ Notice 1 dated 19 January 1996. [SSS346]
+</text_body>
+<p id="3.7.1">
+<title>Air Vehicle Safety</title>
+<text_body>
+The TCS shall provide sufficient cues to allow the operator to safely take-off, land and navigate under Instrument Flight Rules. [SSS347]
+The TCS shall provide adequate capability to allow the operator to operate each UAV within its certified operational flight envelope. [SSS348]
+Appropriate cautions and warnings shall be provided to the operator if the air vehicle deviates into unsafe flight regime. [SSS349]
+For mission planning, the TCS shall provide terrain avoidance warning and minimum reception altitude calculations for line of sight flights. [SSS350]
+During mission execution, the TCS shall provide the operator a cautions and warnings when the UAV system has identified a malfunction. [SSS351]
+The TCS shall provide the required information to allow the operator to maintain safe separation from other aircraft and a safe altitude in civilian airspace per Federal Aviation Administration (FAA) rules. [SSS352]
+The TCS shall be designed such that no single hardware failure results in an unsafe command to be transmitted to the air vehicle. [SSS353]
+The TCS shall be designed such that no single software error results in an unsafe command to be transmitted to the air vehicle. [SSS556]
+The TCS shall be capable of restoring power in sufficient time to avoid loss of air vehicle control during power outages. [SSS354]
+The TCS shall monitor the uplink and downlink to each UAV under its control. [SSS355]
+Upon detection of loss of link, the TCS shall attempt to reestablish communications with the air vehicle. [SSS356]
+</text_body>
+</p>
+<p id="3.7.2">
+<title>Human Safety</title>
+<text_body>
+The TCS design shall provide protection against injury to TCS operators and maintenance personnel.
+[SSS357] The system design shall use MIL-STD-2036, Section 5.1.3.11 as a guide, with regard to personnel hazards, and MIL-STD-1472D, Section 5.13, as a guide for safety from a human engineering viewpoint. [SSS358]
+</text_body>
+</p>
+<p id="3.7.3">
+<title>System Safety And Health Hazard Assets</title>
+<text_body>
+System safety and health hazards, if any, shall be identified and evaluated during Phase I of the TCS development. [SSS359]
+Risk levels and a program to manage the probability and severity of hazards shall also be developed. [SSS360]
+</text_body>
+</p>
+</p> <!-- 3.7 -->
+<p id="3.8">
+<title>Security And Privacy Requirements</title>
+<text_body>
+The TCS is an Automated Information System (AIS). Therefore, as per DoD Regulation 5000.2-R, dated March 15, 1996, the TCS shall meet security requirements in accordance with DoD Directive 5200.28(D), “Security Requirements for Automated Information Systems” dated March 21, 1988. [SSS361]
+The TCS shall be accredited by the Designated Approving Authority prior to processing classified as well as sensitive unclassified data. [SSS362]
+</text_body>
+<p id="3.8.1">
+<title>Computer Security</title>
+<text_body>
+Using risk assessment procedures defined in DoD 5200.28(D), a risk index and the minimum security requirements for TCS shall be determined. [SSS363] The inputs to this procedure are the clearance or authorization of the TCS users and the sensitivities of the data that the TCS processes, stores or transfers.
+These requirements pertain to the TCS computer hardware and software.
+The TCS data sensitivities shall be determined by the data sensitivities of the systems with which it interfaces, to including the air vehicles, payloads, and C4I systems. [SSS364]
+</text_body>
+</p>
+<p id="3.8.2">
+<title>Communications Security</title>
+<text_body>
+Links that provide communications between the TCS and other systems shall be secured in a manner appropriate for the sensitivities of the material passed through such links, in accordance with DoD Directive C-5200.5, “Communication Security (COMSEC)” dated 21 April 1990. [SSS365]
+</text_body>
+</p>
+<p id="3.8.3">
+<title>Physical Security</title>
+<text_body>
+The TCS shall be designed to protect its communication and data links against enemy Electronic Warfare (EW) threats, physical anti-radiation weaponry and physical destruction. [SSS366]
+All hardware, software, documentation, and sensitive information processed by TCS shall be physically protected, minimally at the level determined by the risk index computed in Section 3.8.1, to prevent intentional as well as unintentional disclosure, destruction, and modification. [SSS367]
+The TCS shall be approved for operation at the same level as the systems with which it interfaces. [SSS368]
+</text_body>
+</p>
+<p id="3.8.4">
+<title>Personnel Security</title>
+<text_body>
+All TCS users, operators, maintainers and other personnel having access to TCS shall be cleared to the highest sensitivity of the data that the TCS processes, stores and transfers. [SSS369]
+Additional local site procedures shall be developed to prevent the intentional or unintentional disclosure of sensitive information to unauthorized individuals. [SSS370]
+A training program consisting of an initial security training and awareness briefing covering AIS security in general but also tailored to the TCS shall be developed. [SSS371]
+</text_body>
+</p>
+<p id="3.8.5">
+<title>Privacy Requirements</title>
+<text_body>
+This section not applicable, therefore tailored out.
+</text_body>
+</p>
+</p> <!-- 3.8 -->
+<p id="3.9">
+<title>System Environment Requirements</title>
+<text_body>
+The TCS shall be capable of operation within environments specified in the System/Subsystem Design Document for the land-based shelter and shipboard environments. [SSS372]
+The TCS hardware shall be mounted as well as ruggedized to withstand inter and intra theater movement. [SSS373]
+</text_body>
+</p>
+<p id="3.10">
+<title>Resource Requirements</title>
+<p id="3.10.1">
+<title>Hardware Requirements</title>
+<text_body>
+The TCS hardware will provide the functionality and capability to receive, process, and disseminate video and telemetry data from the AV and payload; perform mission planning; monitor and control the payload; monitor and control the AV; and monitor and control the data links.
+The hardware of the TCS shall be capable of being scaled as well as being modular to meet the varying needs of the Services. [SSS374]
+The TCS hardware shall allow for long range communications from one TCS to another [SSS375], data storage expansion [SSS376], access to other computers to share in processing capability [SSS377], and multiple external peripherals [SSS378].
+The TCS hardware shall support the data rate characteristics of the AV, data link and payload to ensure interoperability. [SSS379]
+For each OUTRIDER system, the TCS shall provide full independent computer redundancy. [SSS380]
+The TCS shall conform with the National Institute for Standard Technology (NIST) Federal Information Processing Standard (FIPS) Publication 151-2 (POSIX.1). [SSS381]
+</text_body>
+<p id="3.10.1.1">
+<title>Performance</title>
+<text_body>
+The TCS shall have sufficient throughput to support the processing requirements of the selected data link. [SSS382]
+</text_body>
+</p>
+<p id="3.10.1.2">
+<title>Mass Storage</title>
+<text_body>
+To meet growth requirements, the TCS shall be capable of adding additional storage without major hardware reconfiguration. [SSS383]
+The TCS computer system shall contain a CD-ROM drive that is compatible with National Imagery and Mapping Agency (NIMA), CD-ROM Digital Terrain Elevation Data (DTED), Digital Feature Analysis Data (DFAD), and embedded training media. [SSS384]
+</text_body>
+</p>
+<p id="3.10.1.3">
+<title>Power</title>
+<text_body>
+The TCS shall use standard military worldwide 110/220 volt 50/60 hertz generators and commercial power sources. [SSS385]
+The TCS shall use standard electrical power sources available within the DoD family of ground mobile, airborne, and shipboard electrical power sources. [SSS386]
+The TCS shall be capable of restoring power in sufficient time to avoid loss of critical mission data and loss of air vehicle control during power outages. [SSS387]
+The TCS shall have an uninterrupted power supply for critical phases (landing and takeoff as a minimum) of mission execution. [SSS388]
+</text_body>
+</p>
+</p> <!-- 3.10.1 -->
+<p id="3.10.2">
+<title>Hardware Resource Utilization Requirements</title>
+<text_body>
+The TCS throughput shall not exceed 50% of the throughput capability delivered over any 10 second period [SSS389], and as an objective throughput shall not exceed 25% of throughput capability delivered over any 10 second period. [SSS390].
+The TCS shall be capable of providing a 50% spare memory storage capacity over delivered storage used [SSS391]. As an objective a 75% spare memory storage capacity over storage used shall be provided. [SSS392]
+</text_body>
+</p>
+<p id="3.10.3">
+<title>Computer Software Requirements</title>
+<text_body>
+The TCS software will provide the functionality and capability to receive, process, and disseminate video
+and telemetry data from the AV and payload; perform mission planning; monitor and control the payload;
+monitor and control the AV; and monitor and control the data links.
+The TCS shall have software based on Defense Information Infrastructure/Common Operating Environment per Assistant Secretary of Defense for Command, Control, Communications, and Intelligence (ASD(C3I)) Joint Technical Architecture (JTA). [SSS393]
+The TCS shall comply with the Assistant Secretary of Defense (C3I) Joint Technical Architecture (JTA).
+This includes, but is not limited to, the language, the computer, database, architecture, and interoperability. [SSS394]
+The TCS shall provide an open software architecture to be capable of supporting additional CSCIs, CSCs, and CSUs for future AVs, future payloads, and payload capabilities (e.g. auto-search and automatic target tracking), and future Tactical UAVs. [SSS395]
+The TCS core software shall be generically written to provide level one through level five interaction for both Outrider and Predator UAVs and establish the architecture for future tactical UAVs. [SSS396]
+The TCS software shall provide the UAV operator with the necessary tools for computer related communications, mission tasking, mission planning, mission execution, data receipt, data processing, and data dissemination. [SSS397]
+The TCS software shall be capable of being hosted on a variety of computer operating systems that are organic to the various Services. [SSS398]
+TCS software shall provide a windows based graphic operator interface. [SSS399]
+The TCS software shall be non-proprietary and have unlimited data rights. [SSS400]
+The TCS’s operating system and executable software shall be re-programmable without hardware disassembly. [SSS401]
+Training software shall be alterable without affecting the configuration of the operational software.
+[SSS402] Training software is the software that provides the computer based training functionality for the system operator.
+The TCS software shall restrict the operator(s) from exercising levels of interaction not achievable by the system. [SSS403]
+</text_body>
+<p id="3.10.3.1">
+<title>Display</title>
+<text_body>
+The TCS software shall provide a high resolution, computer generated, graphical user interface that enables the UAV operator that is trained on one system to control different types of UAVs as well as UAV payloads with minimal additional training. [SSS404]
+Each control console shall have, at a minimum, the capability to display the following four display windows: (1) display to provide aircraft position, TCS position, flight path, and a waypoint graphics in the foreground which are positioned in relation to a map displayed in the background, (2) display to provide
+aircraft flight data or payload data in the foreground, and downlinked video in the background. (3)A display to provide graphic presentations of downlinked telemetry data, and (4) display to present the interface menus for workstation software. [SSS405]
+</text_body>
+</p>
+</p> <!-- 3.10.3 -->
+<p id="3.10.4">
+<title>Computer Communication Requirements</title>
+<text_body>
+The DII/COE UCP/CMP shall provide a consistent and common set of interfaces for United States Message Text Format (USMTF), Army Tactical Command Control System (ATCSS), and Field Artillery Tactical Data Systems (FATDS) message sets. [SSS406]
+The TACCOM segment shall provide external interfaces for the communications media as indicated in Table 3.10.4-1: [SSS407]
+
+The TACCOM segment shall provide API’s for the transmission of imagery in National Imagery Transmission Formats 1.1a and 2.0 as per MILSTD-2500 and to be compatible with the Common Imagery
+Ground/Surface Station (CGIS) Guidelines. [SSS408]
+</text_body>
+<p id="Table 3.10.4-1"/>
+</p>
+</p> <!-- 3.10 -->
+<p id="3.11">
+<title>System Quality Factors</title>
+<p id="3.11.1">
+<title>Functionality</title>
+<text_body>
+The TCS data latency shall not be greater than that present in the Predator ground control station or Outrider ground control station, whichever is smaller. [SSS409]
+</text_body>
+</p>
+<p id="3.11.2">
+<title>Reliability</title>
+<text_body>
+The TCS reliability will be considered in every phase of the design and development process and shall achieve a system reliability (Mean Time Between Failures MTBF) equal to or greater than that which is specified in the Predator and Outrider ORDs. [SSS410]
+</text_body>
+</p>
+<p id="3.11.3">
+<title>Maintainability</title>
+<text_body>
+The TCS maintainability will be considered in every phase of the design and development process and shall achieve a system maintainability (Mean Time To Repair MTTR) equal to or greater than that which is specified in the Predator and Outrider ORDs. [SSS411]
+The Design features shall be included to: [SSS412]
+<itemize>
+<item>minimize the number and frequency of required preventive maintenance actions based on performance requirements and lowest life cycle costs;</item>
+<item>minimize the contribution to degradation of TCS equipment reliability as a consequence of performing either preventive as well as corrective maintenance;</item>
+<item>enable the performance of all maintenance actions with safety and comparative ease by providing adequate access to all equipment components and minimizing the requirements for special tools and test equipment;</item>
+<item>minimize the requirement for specially trained maintenance personnel;</item>
+<item>improve system availability by the effective selection and incorporation of Built In Test Equipment (BITE);</item>
+<item>allow removal and replacement of replaceable units without soldering and unsoldering.</item>
+</itemize>
+</text_body>
+</p>
+<p id="3.11.4">
+<title>Availability</title>
+<text_body>
+The TCS equipment shall achieve an availability (Ao), as defined below, equal to or greater than that which is specified in the Predator and Outrider ORDs. [SSS413]
+Ao = (OT + ST)/(OT + ST + TPM + TCM + TALDT)
+where:
+<itemize>
+<item>OT denotes Operate Time</item>
+<item>ST denotes Standby Time</item>
+<item>TPM denotes Total Preventative Maintenance</item>
+<item>TCM denotes Total Corrective Maintenance</item>
+<item>TALDT denotes Total Administrative and Logistic Downtime</item>
+</itemize>
+</text_body>
+</p>
+<p id="3.11.5">
+<title>Flexibility</title>
+<text_body>
+The total, fully useable, addressable, physically present program instruction memory and data storage memory for each processor shall have at least 50% unused memory during the Normal Operations Mode over any 10 second period. [SSS414]
+The processing speed of each processor shall be such that at least 50% of the throughput of each processor remains unused over all 10 second periods and at least 20% of the throughput of each processor remains unused over one second periods regardless of the system function performed. [SSS415]
+The I/O channel reserve capability for each processor shall have at least a 50% reserve, addressable and useable, I/O channel capacity over any 10 second period. [SSS416]
+TCS software flexibility and expandability shall be provided through use of the DII COE and through use of standardized software development practices. [SSS417]
+</text_body>
+</p>
+<p id="3.11.6">
+<title>Portability</title>
+<text_body>
+Hardware and software shall be selected for use in the TCS with the goal of providing ease of future changes to the TCS elements. [SSS418] The object of portability for the TCS is to select or develop hardware which will readily host emerging software packages and software which will be as independent of host hardware as possible.
+The selection of processors, interface cards for communication interfaces, disk drives, video, networking equipment, and all other hardware for use in the TCS shall be made according to standards for production of an open architecture. [SSS419]
+The selection of operating system and programming language for use in the TCS shall be made according to standards for development of an open architecture. [SSS420]
+</text_body>
+</p>
+<p id="3.11.7">
+<title>Reusability</title>
+<text_body>
+This section not applicable, therefore tailored out.
+</text_body>
+</p>
+<p id="3.11.8">
+<title>Testability</title>
+<text_body>
+Testability shall be considered in the design and development of the TCS. [SSS421]
+The system shall be functionally and physically partitioned to allow for efficient fault isolation. [SSS422]
+Control over internal items and devices shall be provided for detecting and isolating internal faults. [SSS423]
+Test points and data paths shall be defined to support efficient fault isolation. [SSS424]
+</text_body>
+</p>
+<p id="3.11.9">
+<title>Usability</title>
+<text_body>
+This section not applicable, therefore tailored out.
+</text_body>
+</p>
+</p> <!-- 3.11 -->
+<p id="3.12">
+<title>Design And Construction Constraints</title>
+<text_body>
+The TCS shall provide the common software architecture for TCS interaction with Predator, Outrider, and future Tactical UAVs. [SSS425]
+In the selection of hardware design solutions to satisfy the requirements herein, Non-Developmental Items (NDI) (off-the-shelf equipment previously approved for service use) shall be chosen to the maximum practicable extent. [SSS426] If NDI that provides the desired functions can not be identified, then Commercial-Off-The-Shelf (COTS) hardware may be used.
+During Phase 1, design and construction will be accomplished in accordance with commercial best practices unless otherwise required to meet a specific service operational environmental factor. Design and construction requirements for Phase 2 will be revised to reflect appropriate government approved sub-tier specifications controlling all aspects of electrical and electronic or mechanical designs for new or modified TCS equipment.
+</text_body>
+<p id="3.12.1">
+<title>Documentation</title>
+<text_body>
+System documentation shall be developed as part of the TCS program and will follow MIL-STD-498 for format. [SSS427]
+The documentation developed shall contain sufficient level of detail to identify the functional, operational and design requirements of the TCS. [SSS428]
+The documentation shall contain sufficient technical detail to define the hardware and software design implemented to satisfy the system requirements. [SSS429]
+The TCS documentation shall include: [SSS430]
+<itemize>
+<item>The TCS System/Subsystem Specification (SSS)</item>
+<item>The TCS System/Subsystem Design Document (SSDD)</item>
+<item>The TCS Software Requirements Specification (SRS) (1 for each CSCI)</item>
+<item>The Software Design Document (SDD) (1 for each CSCI)</item>
+<item>The TCS Hardware Design Document (HDD)</item>
+<item>Interface Design Document (IDD) for all interfaces</item>
+<item>TCS Version Description Document(s) (VDD)</item>
+</itemize>
+</text_body>
+</p>
+<p id="3.12.2">
+<title>Materials</title>
+<text_body>
+TCS material factors shall be governed by the NDI, GFE and COTS specifications developed by the equipment manufacturers, where applicable. [SSS431]
+</text_body>
+</p>
+<p id="3.12.3">
+<title>Electromagnetic Radiation</title>
+<text_body>
+During Phase 1, control techniques to minimize electromagnetic interference, emanation, and susceptibility shall be used in the design of TCS equipment. [SSS432] This control will be inherent in the design of the TCS and the electrical and electronic equipment components and assemblies thereof.
+The susceptibility to coupling and the propagation of Electromagnetic Interference (EMI) will be minimized by component location, cable routing, and judicious use of shielding.
+There shall be neither unacceptable response nor malfunction of any TCS and associated equipment due to EMI produced by any as well as all of the TCS and equipment associated with the TCS. [SSS434]
+The TCS shall be compatible with the external electromagnetic environment that is typical of the service specific environment in the TCS will be operated. [SSS435] The specific electromagnetic environment values will be determined during Phase I of the TCS development.
+The TCS design shall ensure that personnel, fuel, and ordinance are not exposed to electromagnetic radiation as a result of operating the TCS. [SSS436] The specific radiation hazard (RADHAZ) and HERO values will be determined during Phase I of the TCS development.
+As TCS transitions into Phase 2, electromagnetic radiation safety and operation specifications will be invoked in the LRIP specification.
+</text_body>
+</p>
+<p id="3.12.4">
+<title>Software</title>
+<text_body>
+Newly designed software shall be developed in accordance with a tailored MIL-STD-498. [SSS437]
+Software written for other systems shall be used in TCS where it is determined that the existing software is suitable for use within the TCS software. [SSS438]
+A modular architecture shall be used by the TCS software in order to support future interoperability with multiple types of UAVs and payloads while maintaining consistent displays and user interfaces. [SSS439]
+Software components satisfying common planning and control functions will allow for vehicle specific components to be integrated in the future.
+</text_body>
+</p>
+<p id="3.12.5">
+<title>Hardware</title>
+<text_body>
+TCS hardware flexibility and expansion shall be provided through use of GFE, NDI and COTS hardware designed to be upgraded and expanded. [SSS440]
+</text_body>
+</p>
+<p id="3.12.6">
+<title>Responsiveness</title>
+<text_body>
+After emplacement at the operational site, the TCS shall be capable of planning and launching a mission within 1 hour of tasking. [SSS441] Required activities include 1) mission planning of a minimum 1 waypoint mission, 2) preparing 2 AVs for flight, 3) data terminal set-up, 4) safety equipment emplaced, 5) and a single AV launched.
+</text_body>
+</p>
+<p id="3.12.7">
+<title>Endurance</title>
+<text_body>
+The TCS shall be capable of operating continuously in functional Operation Mode for a minimum of 72 hours. [SSS442]
+</text_body>
+</p>
+</p> <!-- 3.12 -->
+<p id="3.13">
+<title>Personnel-Related requirements</title>
+<p id="3.13.1">
+<title>Human Factors Engineering (HFE)</title>
+<text_body>
+The TCS shall have ergonomically designed operator controls and displays for the 5th percentile female to 95th percentile male operator. [SSS443]
+The controls shall allow the air vehicle and payload operators to perform mission control, mission monitoring, and mission updates and modifications while wearing cold weather clothing and in a Mission Oriented Protective Posture. [SSS444]
+The TCS shall provide the operator a caution and warning diagnostic when the TCS system has identified a malfunction. [SSS445]
+The TCS shall have monitor(s) that allow reading of displays under direct sunlight and low light level environments. [SSS446]
+The TCS HCI shall be a Graphical User Interface (GUI) based on X-windows and Motif. [SSS447]
+When performing a given task during mission execution, the operator shall be given appropriate warning messages from other concurrently-executing subsystem tasks. [SSS448]
+TCS Warning messages shall be color coded and flashed based on mission criticality. The color codes and flash frequencies will follow MIL-STD 1472 guidelines. [SSS449]
+The TCS operator shall be required to enter an acknowledgment prior to disabling the display of critical warning flags for any AV, Payload, ADT, GDT, and TCS faults. [SSS450]
+A combination of visual and auditory outputs will be provided to alert the TCS operator to situations which may require operator response.
+Visual alerts to the TCS operator shall be in the form of a displayed message box that has a display priority greater than other existing windows to ensure that it is viewable immediately by the operator.
+[SSS452] The position of the displayed message window shall be easily adjustable by the operator to ensure that important mission data is not obscured. [SSS453]
+In addition to displayed alert messages to the TCS operator, auditory alerts to include tones shall also be provided. [SSS454] The volume of these auditory tones shall be adjustable by the operator via keyboard and trackball input to at least 20dB above the speech interference level at the operator’s ear. [SSS455]
+All TCS warning messages and HCI actions shall be archived for later review. [SSS456]
+All TCS operator inputs shall be error checked such that any erroneous operator entry will not cause current processing to terminate. [SSS457] The HCI shall prompt the operator for a valid input. [SSS458]
+Display jitter and flicker shall not be perceptible by the operator. [SSS459]
+The operational tasks to be performed concurrently by the operator during normal operation will be determined by appropriate task analysis and function allocation.
+The TCS shall facilitate Human-Computer Interfaces (HCIs) that support operation of all system modes, functions, and capabilities. [SSS461]
+The Human Computer Interface (HCI) shall be designed and implemented in accordance with the TCS HCI Specification, TCS 108.[SSS462]
+The HCI shall provide redundancy in all operations, so that the loss of any one HCI input device does not prohibit operation of any TCS function. [SSS463]
+The TCS shall provide the functionality to display all HCI elements on any available monitor on the TCS workstation. [SSS464]
+The TCS shall be capable of displaying a window within a window format to include, as a minimum, displaying a video window overlaid on a map screen as well as a map screen overlaid on a video screen. [SSS465]
+The TCS shall provide full complementary control operations from the keyset as well as the X/Y control device (e.g., trackball, mouse, joystick). [SSS466]
+The TCS shall provide access to the DII Style Manager so that pointing device characteristics can be modified. [SSS467]
+The shall provide the functionality to have a maximum delay time of 1 second from operator command to system acknowledgement and response.[SSS 559]
+The TCS shall provide a capability for porting an off-the-shelf, complex control joystick with multiple toggle and multi-position switches as part of the TCS hardware suite. [SSS468]
+The TCS shall use graphical representations to convey information, such as system status, C4I links, and AV-GDT links. [SSS469]
+The TCS shall provide for multi-level information display tailoring by the operator. [SSS470]
+The TCS shall provide automated TCS system information, control options, and logical and simple operator guidance and support for immediate and adaptive responding to crisis situations. [SSS471]
+The TCS shall provide maximum automated system software support to system status monitoring and alerting of the TCS operator when a preset system parameter goes under as well as over a set threshold. [SSS472]
+The TCS shall provide the necessary processing, display, and control capabilities to ensure dynamic situational awareness input to the TCS operator. [SSS473]
+The TCS shall minimize alphanumeric data display in favor of graphic, pictorial information display [SSS474]
+The TCS HCI shall provide unambiguous AV and payload control and status feedback indicators to ensure safe, efficient operations of two AVs and their payloads by a single TCS station. [SSS475]
+The TCS shall provide for a specific icon shape on a constant contrast background, as well as other visual information coding mechanisms, to cue the TCS operator regarding which UAVs are under his or her primary control. [SSS476]
+The TCS HCI shall provide the capability to select and amplify an object and point on a map as well as payload screen. [SSS477]
+The TCS HCI shall provide coarse and fine payload control capabilities directly on the payload screen. [SSS478]
+The TCS HCI shall display the SAR imaging swath on the map display. [SSS479] The TCS HCI shall provide the on-screen capability to select and efficiently move as well as reorient a previously defined SAR imaging swath. [SSS480]
+The TCS HCI shall provide the capability to lock onto and hold a coordinate point on the payload imagery window. [SSS481]
+The TCS HCI shall provide the capability to display operator definable “Lock Out” zones around waypoints, Launch and Recovery Point (LRP), as well as any selected point on the AV flight path. [SSS482]
+The TCS HCI shall provide for a rapid means to cancel aural warnings. [SSS484]
+The TCS HCI shall provide for separation, grouping, and visual coding of multiple categories of alerts, to include Warnings, Cautions, and Advisories. [SSS485]
+The TCS HCI shall provide for visual Warnings, Cautions, and Advisories to be displayed at or near the center of the field of view, i.e., within a 30o cone, of all monitors in a TCS system. [SSS486]
+For AV safety as well as mission-critical Warnings, the TCS HCI shall provide a default selection as well as an override option, along with a selection of adaptive responses, and the minimum information necessary to assist the operator in responding quickly and adaptively to the emergency. [SSS487]
+The TCS HCI shall provide for on-screen information to include, as a minimum, overlays, headers, cursors, alphanumeric annotation, waypoints, crosshairs, designed to be visible against the complete spectrum of map and payload video backgrounds. [SSS488]
+The TCS HCI shall provide continuously-available, on-screen control functions for time and missioncritical operations, to include as a minimum print, freeze, declassification, mark VCR, declutter, cease RF transmission. [SSS489]
+The TCS HCI shall provide for the capability to automatically designate target locations from the payload screen onto the map screen. [SSS490]
+</text_body>
+</p>
+</p> <!-- 3.13 -->
+<p id="3.14">
+<title>Training Related Requirements</title>
+<text_body>
+Formal training programs shall not be required for TCS Phase 1, Program definition and Risk Reduction.
+Trained and proficient personnel from the Original Equipment Manufacturers, Government Engineering Teams, supporting Contractors, and Military Personnel will support the operation and maintenance of the demonstration system equipment throughout Phase 1.
+TCS training and training support shall include the processes, procedures, techniques, training devices and equipment to train civilian, active duty and reserve military personnel to operate and support the TCS system. [SSS491] This will include: individual and crew training; new equipment training; initial, formal, and on-the-job training. TCS training will strike a balance between institutional, new equipment and unit training.
+The TCS system shall provide, for the operator and maintainer, an embedded or add-on interactive training courseware with self-paced instruction, duplicating UAV flight performance characteristics, capabilities, and limitations. [SSS492] The OUTRIDER TCS system shall be compatible with the U.S. Army Intelligence and Electronic Warfare Tactical Proficiency Trainer as an objective. [SSS493]
+The interactive courseware training capability for TCS shall be developed during Phase I and introduced to the user during scheduled demonstrations and tests. [SSS494]
+The training capability for performance of TCS functions shall include primary mission (flight route/payload) planning, mission control and monitoring, imagery processing, tactical communications, AV control communications and TCS system on line diagnostics. [SSS495] This capability will be qualified and improved during Phase I based upon use and feedback from qualified operators and users demonstrating TCS system equipment throughout Phase I. Instructional support materials and training courseware for classroom discussion and lecture will be developed to support institutional, new equipment training and unit training.
+The TCS shall provide the functional capability to train in the operation of the TCS system, performance of TCS UAV functions, and on line system troubleshooting. [SSS496]
+TCS system training shall include system architecture, component familiarization, and system startup,
+initialization, system recovery and shutdown. [SSS497]
+The TCS system shall not support formal Training operations concurrent with the execution of an actual
+mission. [SSS499] The capability for the conduct of actual communications processing concurrently with
+Training operations shall be provided if and only if messages are identified as training messages. [SSS500]
+Training shall be adequate to maintain operator and maintainer skills and proficiencies. [SSS501]
+TCS shall record operator and maintainer actions for self assessment and performance enhancement.
+[SSS502]
+Operator and maintainer performance shall be measurable using parameters retrievable from the TCS to
+determine proficiency levels. [SSS503]
+</text_body>
+</p>
+<p id="3.15">
+<title>Logistics-Related Requirements</title>
+<text_body>
+During Phase 1, TCS logistic support requirements will be based on known and predicted failure rates of components, and the criticality of those elements to the system development and flight test processes.
+Logistic requirements for Phase 2 will be determined and incorporated into LRIP requirements and specifications.
+Support for the TCS shall be in accordance with the Integrated Logistical Support Plan (ILSP) and the maintenance concepts and policies of the individual Services. [SSS504]
+All TCS Operator Manuals and Technical Manuals shall be verified and validated prior to initial operational test. [SSS529]
+TCS transport and storage containers shall be reusable and enable the operators to set-up equipment within the established timelines in their ORDs. [SSS505]
+The TCS shall adhere to DoD regulations and policy governing military standards for logistics, Petroleum, Oil and Lubricants (POL), Test, Measurement, and Diagnostic Equipment (TMDE), tools, and other support items. [SSS506]
+Standard tools, TMDE, repair parts, and lubricants shall be used to maintain the TCS. Exceptions shall be considered on a case by case basis. [SSS507]
+Each Service shall support the TCS as part of the UAV system which is organic to them. [SSS508]
+The TCS shall be maintained in accordance with the UAV ORD for that Service and the level of repair analysis for the hardware chosen. [SSS509]
+A TCS support and fielding package shall be developed and available for operational testing. [SSS510]
+The TCS shall be maintained in accordance with Services’ approved UAV maintenance concepts and procedures. [SSS511]
+To the maximum extent possible, general purpose test equipment (GPTE) and common tools resident in each service shall be used to perform all corrective and preventative maintenance at all authorized levels of maintenance. [SSS512]
+Tools and test equipment required to maintain the TCS but not resident in each service inventory shall be identified as special tools and special purpose test equipment (SPTE), respectively, and kept to a minimum. [SSS513]
+The environmental support required by the TCS shall be at least the same as that required for the respective UAV System. [SSS514]
+Basing for the system will follow the plan for UAV units and service command echelon requirements as delineated in the ORD. [SSS515]
+</text_body>
+<p id="3.15.1">
+<title>Transportability</title>
+<text_body>
+The TCS shall meet the deployment criteria for the organic unit to which it is assigned. [SSS516]
+The TCS shall be transported into the theater as an organic component of the operational UAV system
+being deployed. [SSS517]
+TCS transportation in theater for Army and Marine Corps systems shall be by ground, air, as well as rail
+transportable. [SSS518]
+For the Air Force, TCS transportation to the theater shall be by air. [SSS519] Within the theater, the
+USAF GCS shall be capable of being moved around an established air field. [SSS520]
+</text_body>
+<p id="3.15.1.1">
+<title>Ground</title>
+<text_body>
+The TCS shall be ground transportable. [SSS521]
+</text_body>
+</p>
+<p id="3.15.1.2">
+<title>Air</title>
+<text_body>
+The TCS shall be air transportable by helicopter (CH-47/CH-53D) and C-130 drive-on/drive-off capable. [SSS522]
+</text_body>
+</p>
+<p id="3.15.1.3">
+<title>Sea</title>
+<text_body>
+The TCS shall be sea transportable. [SSS523]
+</text_body>
+</p>
+<p id="3.15.1.4">
+<title>Rail</title>
+<text_body>
+The TCS shall be rail transportable. [SSS524]
+</text_body>
+</p>
+<p id="3.15.1.5">
+<title>Preparation Time</title>
+<text_body>
+The TCS shall be configurable for sea, ground, as well as air transport in 2 hours or less. [SSS525]
+The TCS system shall be capable of being de-configured from sea, ground, as well as air transport and ground-mobile in 2 hours or less. [SSS526]
+</text_body>
+</p>
+</p> <!-- 3.15.1 -->
+</p> <!-- 3.15 -->
+<p id="3.16">
+<title>Other Requirements</title>
+<text_body>
+The TCS shall have an objective capability to be integrated and operated from tactical and command and control aircraft. [SSS531]
+The TCS shall have an objective capability to be integrated and operated from submarines. [SSS532]
+The TCS shall have a capability to be integrated and operated from land based platforms. [SSS533]
+The TCS shall have an objective capability to be integrated and operated from ships. [SSS534]
+</text_body>
+</p>
+<p id="3.17">
+<title>Packaging Requirements</title>
+<text_body>
+This section not applicable, therefore tailored out.
+</text_body>
+</p>
+<p id="3.18">
+<title>Precedence And Criticality Of Requirements</title>
+<text_body>
+All requirements in this specification are of equal weight and criticality unless otherwise identified in the traceability Table in Appendix A.
+When the requirements of the Operational Requirement Document (ORD), this System/Subsystem Specification (SSS), other related requirement documents, and referenced documents are in conflict, the following precedence will apply:
+<itemize>
+<item>TCS ORD – The ORD shall have precedence over any other TCS documentation.</item>
+<item>TCS SSS – This SSS shall have precedence over other requirements documents except item (1.) above.</item>
+<item>Other TCS requirement documents – Other requirement documents shall have precedence over any referenced documents.</item>
+<item>Referenced documents – Documents referenced herein and in other TCS requirement documents shall have precedence over all applicable subsidiary documents referenced therein.</item>
+</itemize>
+In the event of conflicting requirements within a TCS requirement document, the requirements shall be traced to the next higher precedence requirement document for clarification. If further resolution is required, the developer will notify the procuring agency.
+</text_body>
+</p>
+</p> <!-- 3 -->
+
+<p id="11">
+<title>QUALITY ASSURANCE PROVISIONS</title>
+<p id="12.">
+<title>Responsibility for Inspections.</title>
+<text_body>
+The Quality Assurance (QA) Program is an integral part of the development process for the TCS , whereby all phases of the development of a system must be inspected and tested, as these phases occur. The objectives and processes of the QA Program applicable to this development effort are contained in the TCS Integration Program Quality Assurance Plan, NSWCDD/TR-96/XXX.
+</text_body>
+</p>
+<p id="13.">
+<title>Special Tests and Examinations.</title>
+<text_body>
+Verification of requirements will be accomplished by the use of appropriate combinations of inspections, analyses, demonstrations and tests. The method to be used for verification of each requirement is identified in Appendix B. The following defines verification methods as used in this specification:
+<itemize>
+<item>Demonstration: The operation of the system, or a part of the system, that relies on observable functional operation not requiring the use of instrumentation, special test equipment, or subsequent analysis.</item>
+<item>Test: The operation of the system, or a part of the system, using instrumentation or other special test equipment to collect data for later analysis.</item>
+<item>Analysis: The processing of accumulated data obtained from other qualification methods.</item>
+<item>Examples are reduction, interpolation, or extrapolation of test results.</item>
+<item>Inspection: The visual examination of system components, documentation, etc.</item>
+<item>Special qualification methods. Any special qualification methods for the system, such as special tools, techniques, procedures, facilities, acceptance limits, use of standard samples, pre-production or periodic production samples, pilot models, or pilot lots.</item>
+</itemize>
+</text_body>
+</p> <!-- 11 -->
+<p id="19.">
+<title>Government Verification.</title>
+<text_body>
+All QA functions performed will be monitored by the QA Team. Verification will consist of surveillance of the operation to determine that practices, methods, and procedures are being properly applied; product inspection to measure quality of products to be offered for acceptance; and product inspection of delivered products to ensure compliance with all the requirements of this specification.
+</text_body>
+</p>
+<p id="20.">
+<title>Integrated Test Program.</title>
+<text_body>
+The system will be tested via an integrated program conducted according to the TCS Master Test Plan,
+NSWCDD/TR-96/XXX. The integrated program consists of three (3) distinct categories, as defined in the
+Master Test Plan: data link tests, integration tests, and flight tests.
+</text_body>
+</p>
+<p id="21.">
+<title>Requirements Cross Reference.</title>
+<text_body>
+Requirements within this document represent a tailored use of MIL-STD-498. Verification and testing, per Section 4.2, of the system for compliance with the requirements specified herein will be accomplished per the cross-reference tables in Appendix B.
+</text_body>
+</p>
+<p id="APPENDIX A">
+<title>Requirements Traceability Matrix</title>
+<p id="TCS ORD TO TCS SSS REQUIREMENT CROSS-REFERENCE MATRIX"/>
+</p>
+<p id="APPENDIX B">
+<title>MAE Applicable Capability Criteria and Characteristics</title>
+<p id="table APPENDIX B"/>
+</p>
+<p id="APPENDIX C">
+<title>CR-TUAV Applicable Capability Criteria and Characteristics</title>
+<p id="table APPENDIX C"/>
+</p>
+</p>
+</req_document>

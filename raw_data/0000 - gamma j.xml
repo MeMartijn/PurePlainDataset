@@ -1,0 +1,2628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document xsi:schemaLocation="req_document.xsd req_document.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="req_document.xsd">
+
+<title>
+    <title></title>
+    <title>Software Requirements Specification (SRS)</title>
+    <title>Gamma-J Connecting Retailers through the World</title>
+    <title>Gamma-J</title>
+    <title>Gamma-J Web Store</title>
+</title>
+
+<version>0.0</version>
+
+
+
+
+<p id="1">
+    <title>
+    Introduction
+    </title>
+    <p id="1.1">
+        <title>
+        Purpose
+        </title>
+        <text_body>
+            This is the Software Requirements Specification for GAMMA-J’s Web Store. This Web Store is designed to allow new online store owners a quick and easy means to setup and perform sales and other core business over the internet. This document will outline all of the functions, capabilities and requirements for Version 1 of GAMMA-J’s Web Store. Version 1 is planned for implementation on a “plug and play” USB Key. Future versions will be based on other network appliances.
+        </text_body>
+    </p>
+    <p id="1.2">
+        <title>
+        Document Conventions
+        </title>
+        <text_body>
+        None
+        </text_body>
+    </p>
+    <p id="1.3">
+        <title>
+        Intended Audience, Reading Suggestions
+        </title>
+        <text_body>
+            This document is intended to flush out the requirements by the customer GAMMA-J. The customer can review this document to ensure their needs along with the needs of their user’s are being met in their new Web Store program. The development team will also use this document for guidance on overall design and implementation of the Web Store system. The test and verification team can reference this to ensure the requirements are being meet for the customer. Finally, the tech writer will use this to assist with user documentation. This document is designed to be review from beginning to end; however, readers who are new to technical documentation may want to refer to Appendix E: Data Dictionary first.
+        </text_body>
+    </p>
+    <p id="1.4">
+        <title>
+            Project Scope
+        </title>
+        <text_body>
+            According to GAMMA-J’s Functional Needs Statement this Web Store will:
+            <itemize>
+                <item>Manage customer accounts</item>
+                <item>Manage an online store inventory</item>
+                <item>Confirm Orders</item>
+                <item>Have an unambiguous interface to assist in browsing the categories and products</item>
+                <item>Use Secure Socket Layer (SSL) for security</item>
+                <item>Have an availability of 99.999&#37;</item>
+                <item>Allow an optional mirror site for reliability and backups</item>
+                <item>Feature interface for future software enhancement via “Plug-ins”</item>
+                <item></item>
+                <item></item>
+                <item></item>
+                <item></item>
+                <item></item>
+            </itemize>
+            The initial inventory will be 100 items. Expandable with unique codes, the owners can purchase to expand the inventory. The minimum total inventory will be 20,000 items. Since this will be a “Plug and Play device”, no software installation will be necessary. This software will contain all of the basic needs to manage an online store. Advanced needs can be added in the future via “plug-ins.” More detail on the functionality of the Web Store can be found in part 3. System Features and in the function Needs statement.
+        </text_body>
+    </p>
+    <p id="1.5">
+        <title>
+        References
+        </title>
+        <text_body>
+        This document draws insight from the Web Store System Overview, Functional Needs Statement, and Stakeholder Goals List.
+        </text_body>
+    </p>
+</p>
+
+<p id="2">
+    <title>
+    Overall Description
+    </title>
+    <p id="2.1">
+        <title>
+        Product Perspective
+        </title>
+        <text_body>
+            Web Store is a new system designed for users new to the online E-commerce. This will be a plug and play device with its own CPU and operating system. The Web Store will be a quick and easy means to setup and operate an online Web Store. The Figure 2.1 is a context diagram showing external system interfaces.
+        </text_body>
+    </p>
+    <p id="2.2">
+        <title>
+        Product Features
+        </title>
+        <text_body>
+            <description>
+            <item>Account Management (AM) (High Priority): AM allows users to create, edit, and view accounts information. It also allows the user to login/out of the system.</item>
+            <item>Search Engine (SE) (Medium Priority): SE is the tool that assists the user in finding a specific item in the database. It can receive search criteria, find search criteria, and return the results of the search.</item>
+            <item>Product Management (PM) (High Priority): PM allows sales personnel to manage the product line shown on the web site.</item>
+            <item>Shopping Cart (SC) (Medium Priority): SC is temporary storage for customers shopping on the web. Items from the inventory can be reserved in a virtual cart until the customer decides to purchase them.</item>
+            <item>Purchasing and Payment (PP) (High Priority): PP is used to approve and transfer payment from buyers when purchasing items in the cart.</item>
+            </description>
+        </text_body>
+    </p>
+    <p id="2.3">
+        <title>
+        User Classes
+        </title>
+        <text_body>
+            <description>
+            <item>System Administrator: Is generally the owner that takes care of maintenance for the Web Store system. The administrator will be in charge of assigning privileges of accounts. Suggested more than one individual can have administrator privilege to ensure advisability. Full documentation will be provided to the Administrator to assist with this process.</item>
+            <item>Sales Personnel: Is generally the owner of the Web Store tasked with updating inventory and product line descriptions. Once added, sales personnel can add, delete and change descriptions, pictures, prices, and when ready flag items for customers to buy.</item>
+            <item>Customer: A customer is an individual wishing to purchase inventory from GAMMA-J’s Web Store. The Web store will have a variety of clientele depending upon the inventory loaded on the Key. When creating a new account on Web Store it will default as a customer account. Later if the account needs to be upgraded the administrator can accomplish this via the administrator interface.</item>
+            </description>
+        </text_body>
+    </p>
+    <p id="2.4">
+        <title>
+        Operating Environment
+        </title>
+        <req id="OE-1">
+            <text_body>
+            Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.
+            </text_body>
+        </req>
+        <req id="OE-2">
+            <text_body>
+            Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server. The operating system is designed by the Yoggie Corporation. Although maintenance documentation will be supplied and the operating system will be tested, the developers of this Web Store are not responsible for the functionality of the operating system.
+            </text_body>
+        </req>
+        <req id="OE-3">
+            <text_body>
+             The system shall use SQL based database to store inventory information.
+            </text_body>
+        </req>
+        <req id="OE-4">
+            <text_body>
+                USB interface and divers are provided by Yoggie Corporation.
+            </text_body>
+        </req>
+    </p>
+    <p id="2.5">
+        <title>
+            Design and Implementation Constraints
+        </title>
+        <req id="CO-1">
+            <text_body>
+                Must use a SQL based database. SQL standard is the most widely used database format. Restricting to SQL allows easy of use and compatibility for Web Store.
+            </text_body>
+        </req>
+        <req id="CO-2">
+            <text_body>
+                Compatibility is only tested and verified for Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5. Other versions may not be 100&#37; compatible. Also other browsers such as Mozilla or Firefox may not be 100&#37; compatible.
+            </text_body>
+        </req>
+        
+    </p>
+    <p id="2.6">
+        <title>
+        User Documentation
+        </title>
+        <req id="UD-1">
+            <text_body>
+            Shall install online help for users via the web interface
+            </text_body>
+        </req>
+        <req id="UD-2">
+            <text_body>
+            Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.
+            </text_body>
+        </req>
+    </p>
+    <p id="2.7">
+        <title>
+        Assumptions and Dependencies
+        </title>
+        <req id="AD-1">
+            <text_body>
+             Assume the delivery of development, test and evaluate samples of the USB system from Yoggie.
+            </text_body>
+        </req>
+        <req id="AD-2">
+            <text_body>
+            Assume Yoggie will freeze the baseline of the USB system after delivery.
+            </text_body>
+        </req>
+    </p>
+</p>
+
+<p id="3">
+    <title>
+    System Features
+    </title>
+    <p id="3.1">
+        <title>
+        Customer Accounts
+        </title>
+        <p id="3.1.1">
+            <title>
+            Description And Priority
+            </title>
+            <text_body>
+                Customers will be able to create accounts to store their profiles, contact information, purchase history, and confirm orders. This is a high priority system feature. Security methods will ensure that customer accounts remain confidential and resistant to tampering.
+            </text_body>
+        </p>
+        <p id="3.1.2">
+            <title>
+            Stimulus/Response Sequences
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Web Browser initiates request to Web Server via HTTPS</item>
+                    <item>Web Server parses request</item>
+                    <item>Web Server submits request to Service</item>
+                    <item>Service picks up request</item>
+                    <item>Service runs task</item>
+                    <item>Service returns results</item>
+                    <item>Web Server checks for completion</item>
+                    <item>Web Server returns results to Web Browser</item>
+                    <item>Web Browser displays results</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="3.1.3">
+            <title>
+            Functional Requirements
+            </title>
+            <text_body>
+            Customers will be able to create accounts to store their customer profiles, configure contact information, view their purchase history, and confirm orders. Customers will be able to register, log in, and log out of their accounts. Furthermore, Customer profiles will also include payment information, such as the ability to store credit card information, and address information.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="3.2">
+        <title>
+         Inventory Management
+        </title>
+        <p id="3.2.1">
+            <title>
+            Description And Priority
+            </title>
+            <text_body>
+            Inventory management will allow for the placement of products into multi-tiered categories. This is a medium priority system feature.
+            </text_body>
+        </p>
+        <p id="3.2.2">
+            <title>
+            Stimulus/Response Sequences
+            </title>
+            <text_body>
+            Same as <crossref>3.1.2</crossref>
+            </text_body>
+        </p>
+        <p id="3.2.3">
+            <title>
+            Functional Requirements
+            </title>
+            <text_body>
+            Products will be stored in multi-tiered categories; a category can contain sub categories or products. The inventory management will allow for administrators to update the categories, the products placed in categories, and the specific product details.
+            </text_body>
+        </p>
+        
+    </p>
+    
+    <p id="3.3">
+        <title>
+        Shopping Cart
+        </title>
+        <p id="3.3.1">
+            <title>
+            Description And Priority
+            </title>
+            <text_body>
+            Customers will be able to add and store products for purchase within the shopping cart. This feature is a medium priority system feature.
+            </text_body>
+        </p>
+        <p id="3.3.2">
+            <title>
+            Stimulus/Response Sequences
+            </title>
+            <text_body>
+            Same as <crossref>3.1.2</crossref>
+            </text_body>
+        </p>
+        <p id="3.3.3">
+            <title>
+            Functional Requirements
+            </title>
+            <text_body>
+            Customers will also be able to add products into the shopping cart. The shopping cart will clearly display the number of items in the cart, along with the total cost. The customer will also be able to add to or remove products from the shopping cart prior to checkout and order confirmation.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="3.4">
+        <title>
+            Order Confirmation
+        </title>
+        <p id="3.4.1">
+            <title>
+                Description And Priority
+            </title>
+            <text_body>
+            Order confirmation will allow the customer to review their order after checkout prior to confirmation. This is a medium priority system feature.
+            </text_body>
+        </p>
+        <p id="3.4.2">
+            <title>
+                Stimulus/Response Sequences
+            </title>
+            <text_body>
+                Same as <crossref>3.1.2</crossref>
+            </text_body>
+        </p>
+        <p id="3.4.3">
+            <title>
+                Functional Requirements
+            </title>
+            <text_body>
+                Customers will be able to confirm the order after checkout. If the order is incorrect, the customer will be able to revise and update their order. The customer will then receive a confirmation email with the specific order details.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="3.5">
+        <title>
+            Interface
+        </title>
+        <p id="3.5.1">
+            <title>
+                Description And Priority
+            </title>
+            <text_body>
+                The interface will be presented to the customer in a web browser. The interface must remain consistent among various web browsers and be intuitive to the customer. This is a medium priority system feature.
+            </text_body>
+        </p>
+        <p id="3.5.2">
+            <title>
+                Stimulus/Response Sequences
+            </title>
+            <text_body>
+                Same as <crossref>3.1.2</crossref>
+            </text_body>
+        </p>
+        <p id="3.5.3">
+            <title>
+                Functional Requirements
+            </title>
+            <text_body>
+                Customers will be presented with an unambiguous interface to assist in browsing the categories and products. Customers will be able to search for products matching their search criteria. The interface will be compatible with all major web browsers such as Internet Explorer, Mozilla Navigator, Mozilla Firefox, Opera, and Safari.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="3.6">
+        <title>
+            Interface
+        </title>
+        <p id="3.6.1">
+            <title>
+                Description And Priority
+            </title>
+            <text_body>
+                The system will feature an API to allow customers to build custom plug-ins to be able to meet their needs. This is a high priority system feature as it ensures the flexibility of the system to be tailored to specific needs.
+            </text_body>
+        </p>
+        <p id="3.6.2">
+            <title>
+                Stimulus/Response Sequences
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Web Browser initiates request to Web Server via HTTPS</item>
+                    <item>Web Server parses request</item>
+                    <item>Web Server submits request to API Service</item>
+                    <item>API Service picks up request</item>
+                    <item>API Service submits request to Plug-in</item>
+                    <item>Plug-in picks up request</item>
+                    <item>Plug-in runs tasks</item>
+                    <item>Plug-in returns results</item>
+                    <item>API Service validates results</item>
+                    <item>API Service returns results</item>
+                    <item>Web Server checks for completion</item>
+                    <item>Web Server returns results to Web Browser</item>
+                    <item>Web Browser displays results</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="3.6.3">
+            <title>
+                Functional Requirements
+            </title>
+            <text_body>
+                The system will implement an Application Interface to allow for various plug-ins to interact with the system. The plug-in API will be well documented and specifications will be provided to plug-in developers.
+            </text_body>
+        </p>
+    </p>
+    
+</p>
+
+<p id="4">
+    <title>
+    External Interface Requirements
+    </title>
+    <p id="4.1">
+        <title>
+        User Interfaces
+        </title>
+        <text_body>
+        FIGURES
+        </text_body>
+    </p>
+    <p id="4.2">
+        <title>
+        Hardware Interfaces
+        </title>
+        <text_body>
+            <description>
+            <item>HI-1: USB key from Yoggie</item>
+            </description>
+        </text_body>
+    </p>
+    <p id="4.3">
+        <title>
+        Software Interfaces
+        </title>
+        <p id="">
+            <title>
+                SI-1: WebOrder Browser Interface
+            </title>
+            <text_body>
+                <description>
+                    <item>SI-1.1: The order database of WebOrder will communicate with the account system through a programmatic interface for the billing operations.</item>
+                    <item>SI-1.2: Through programmatic interface, WebOrder will transmit information of items ordered by customers to the Inventory management system.</item>
+                    <item>SI-1.3: Plug-ins interface</item>
+                </description>
+            </text_body>
+        </p>
+            
+    </p>
+    <p id="4.4">
+        <title>
+        Communications Interfaces
+        </title>
+        <text_body>
+            <description>
+                <item>CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.</item>
+                <item>CI-2: The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.
+                </item>
+            </description>
+        </text_body>
+    </p>
+</p>
+
+<p id="5">
+    <title>
+    Quality Attribute Requirements
+    </title>
+    <p id="5.1">
+        <title>
+            
+        </title>
+        <req id="1">
+            <text_body>
+                Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.
+            </text_body>
+        </req>
+        <req id="2">
+            <text_body>
+            The system shall be able to handle 1000 customers logged in concurrently at the same time.
+            </text_body>
+        </req>
+        <req id="3">
+            <text_body>
+             The system shall be able to retrieve 200 products per second.
+            </text_body>
+        </req>
+        <req id="4">
+            <text_body>
+            The system shall be able to add product to shopping cart in less than 2ms.
+            </text_body>
+        </req>
+        <req id="5">
+            <text_body>
+            The system shall be able to search for a specified product in less than 1 second.
+            </text_body>
+        </req>
+        
+        <req id="6">
+            <text_body>
+             The system shall be able to email customer and vendor in less than 1 second.
+            </text_body>
+        </req>
+        <req id="7">
+            <text_body>
+             The system shall be able to validate credit card in less than 2 seconds.
+            </text_body>
+        </req>
+        <req id="8">
+            <text_body>
+             The system shall be able to acquire shipping charges in less than 2 seconds.
+            </text_body>
+        </req>
+        <req id="9">
+            <text_body>
+             The system shall be able to restore 1000 records per second.
+            </text_body>
+        </req>
+    </p>
+        
+        <p id="5.2">
+            <title>
+            Safety Requirements
+            </title>
+            <req id="1">
+                <text_body>
+                The system will do periodic backups through a live internet connection.
+                </text_body>
+            </req>
+           
+        </p>
+            
+            
+            <p id="5.3">
+                <title>
+                Security Requirements
+                </title>
+                <req id="1">
+                    <text_body>
+                        The system shall validate credit cards against fraud.
+                    </text_body>
+                </req>
+                <req id="2">
+                    <text_body>
+                    The system shall encrypt all sensitive information via https.
+                    </text_body>
+                </req>
+                <req id="3">
+                    <text_body>
+                    The system shall encrypt all customer data in database.
+                    </text_body>
+                </req>
+                <req id="4">
+                    <text_body>
+                    The system shall auto detect IP DOS attacks and block IP automatically.
+                    </text_body>
+                </req>
+                <req id="5">
+                    <text_body>
+                    The system shall detect consecutive failed login attempts.
+                    </text_body>
+                </req>
+                
+                <req id="6">
+                    <text_body>
+                    The system shall be protected by open source firewall called Firestarter. http://www.fs-security.com/
+                    </text_body>
+                </req>
+                
+                </p>
+                <p id="5.4">
+                    <title>
+                    Availability Requirements
+                    </title>
+                    <req id="1">
+                        <text_body>
+                        The system shall have an availability of 99.99&#37;.
+                        </text_body>
+                    </req>
+                    </p>
+                    <p id="5.5">
+                        <title>
+                        Efficiency Requirements
+                        </title>
+                        <req id="1">
+                            <text_body>
+                                The system shall perform searches via Dijkstra's shortest path algorithm.
+                            </text_body>
+                        </req>
+                        <req id="2">
+                            <text_body>
+                                For returning customers, the system shall validate 'existing' credit card in system
+                                after each log in.
+                            </text_body>
+                        </req>
+                        <req id="3">
+                            <text_body>
+                            The system shall automatically compress image files that are too large in size.
+                            </text_body>
+                        </req>
+                        <req id="4">
+                            <text_body>
+                            The system will employ on demand asynchronous loading for faster execution of pages.
+                            </text_body>
+                        </req>
+                        <req id="5">
+                            <text_body>
+                            The system shall validate email address existence.
+                            </text_body>
+                        </req>
+                       
+                        </p>
+                        <p id="5.6">
+                            <title>
+                            Usability Requirements
+                            </title>
+                            <req id="1">
+                                <text_body>
+                                The system shall be easy to use
+                                </text_body>
+                            </req>
+                            <req id="2">
+                                <text_body>
+                                The system shall be easy to learn
+                                </text_body>
+                            </req>
+                            <req id="3">
+                                <text_body>
+                                 The system shall utilize help bubbles to assist managers, customers, and administrators
+                                </text_body>
+                            </req>
+                            <req id="4">
+                                <text_body>
+                                 The system shall employ easy to locate buttons
+                                </text_body>
+                            </req>
+                            <req id="5">
+                                <text_body>
+                                 The system shall prompt customer with friend easy to read error messages.
+                                </text_body>
+                            </req>
+                            
+                            <req id="6">
+                                <text_body>
+                                The system shall utilize consistent symbols and colors for clear notifications.
+                                </text_body>
+                            </req>
+                            <p id="5.7">
+                                <title>
+                                Maintainability Requirements
+                                </title>
+                                <req id="1">
+                                    <text_body>
+                                        The system shall utilize interchangeable plugins.
+                                    </text_body>
+                                </req>
+                                <req id="2">
+                                    <text_body>
+                                     The system shall be easily updatable for fixes and patches.
+                                    </text_body>
+                                </req>
+                                <req id="3">
+                                    <text_body>
+                                    The system shall create logs of all changes, updates, or fixes that are done to the site.
+                                    </text_body>
+                                </req>
+                                <req id="4">
+                                    <text_body>
+                                    The system shall be easy to upgrade.
+                                    </text_body>
+                                </req>
+                                </p>
+                                
+                                <p id="5.8">
+                                    <title>
+                                    Portability Requirements
+                                    </title>
+                                    <req id="1">
+                                        <text_body>
+                                        The system shall be extremely portable via the usb drive.
+                                        </text_body>
+                                    </req>
+                                    <req id="2">
+                                        <text_body>
+                                        The system shall be easy to migrate or backed up via another usb drive.
+                                        </text_body>
+                                    </req>
+                                    </p>
+                                    
+                                    <p id="5.9">
+                                        <title>
+                                        Testability Requirements
+                                        </title>
+                                        <req id="1">
+                                            <text_body>
+                                            The system should be able to run under debug mode.
+                                            </text_body>
+                                        </req>
+                                        <req id="2">
+                                            <text_body>
+                                             The system should be able to run test credit card transactions.
+                                            </text_body>
+                                        </req>
+                                        <req id="3">
+                                            <text_body>
+                                            The system should be able to run test shipping orders.
+                                            </text_body>
+                                        </req>
+                                        <req id="4">
+                                            <text_body>
+                                            The system should be able to create test environment of weborder system.
+                                            </text_body>
+                                        </req>
+                                        </p>
+
+	</p>
+
+</p>
+
+<p id="6">
+    <title>
+    Other Requirements
+    </title>
+    <req id="1">
+        <text_body>
+            The system hardware shall be fixed and patched via an internet connection.
+        </text_body>
+    </req>
+    <req id="2">
+        <text_body>
+            Yoggie shall coordinate on future enhancement and features with our
+            organization.
+        </text_body>
+    </req>
+    <req id="3">
+        <text_body>
+        The system shall adhere to the following hardware requirements:
+        <itemize>
+            <item>4GB Flash ram chip</item>
+            <item>128MB SDRAM</item>
+            <item>Intel XScale PXA270 520-MHz chipset</item>
+            <item>OS: Apache web server</item>
+            <item>Database: MySQL</item>
+        </itemize>
+        </text_body>
+    </req>
+</p>
+
+<p id="">
+<title>Glossary</title>
+<glossary>
+    
+    <glossary_item>
+        <term>
+            Plug and play:
+        </term>
+        <meaning>
+            Plug and play is a computer feature that allows the addition of a new device, normally a peripheral, without requiring reconfiguration or manual installation of device drivers.
+        </meaning>
+    </glossary_item>
+
+<glossary_item>
+    <term>
+        SDRAM:
+    </term>
+    <meaning>
+        Short for Synchronous DRAM, a type of DRAM that can run at much higher clock speeds than conventional memory. SDRAM actually synchronizes itself with the CPU's bus and is capable of running at 133 MHz, about three times faster than conventional FPM RAM, and about twice as fast EDO DRAM and BEDO DRAM. SDRAM is replacing EDO DRAM in many newer computers.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Actor:
+    </term>
+    <meaning>
+        A person playing a specific role, a software system, or a hardware device that interacts with a system to achieve a useful goal.
+    </meaning>
+</glossary_item>
+
+
+<glossary_item>
+    <term>
+        Alternative course:
+    </term>
+    <meaning>
+        A path through a use case that leads to success, but involves a variation from the normal course in the specifics of the task or of the actor’s interaction with the system.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Assumption:
+    </term>
+    <meaning>
+        A statement that is believed to be true in the absence of proof or definitive knowledge.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Business requirement:
+    </term>
+    <meaning>
+        A high- level business objective of the organization that builds a product or of a customer who procures it.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Business rule:
+    </term>
+    <meaning>
+        A policy, guideline, standard, or regulation that defines or constrains some aspect of the business.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Cluster Server:
+    </term>
+    <meaning>
+        Servers work together as one machine to provide increase availability of applications.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Constraint:
+    </term>
+    <meaning>
+        A restriction that is imposed on the choices available to the developer for the design and construction of a product.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Context diagram:
+    </term>
+    <meaning>
+        An analysis model that depicts a system at a high level of abstraction.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Customer:
+    </term>
+    <meaning>
+        A project stakeholder, who requests, pays for, selects, specifies, uses, or receives the output generated by a product.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Data Dictionary:
+    </term>
+    <meaning>
+        A collection of definitions for the data elements, structures, and attributes those are important to the problem domain.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Data flow diagram:
+    </term>
+    <meaning>
+        An analysis model that depicts the processes, data collections, terminators, and flows among them that characterize the behavior of a business process or of a software system.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Documentation Writers:
+    </term>
+    <meaning>
+        Writers are able to take technical complexities and turn them into simple, understandable text. They will expertly produce the documentation products needed such as user manuals, Installation guides.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Developers:
+    </term>
+    <meaning>
+        One who programs computers or designs the system to match the requirements of a system analyst.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Feature:
+    </term>
+    <meaning>
+        A set of logically related functional requirements that provides a capability to the user and enables the satisfaction of a business objective.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Flowchart:
+    </term>
+    <meaning>
+        A model that shows the processing steps and decision points in the logic of a process or of a program, similar to that of an activity diagram.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Functional requirements:
+    </term>
+    <meaning>
+        A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>IEEE:
+    </term>
+    <meaning>
+        The Institute of Electrical and Electronics Engineers.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Nonfunctional requirements:
+    </term>
+    <meaning>A description of a property or characteristic that the system should exhibit.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Out of stock:
+    </term>
+    <meaning>Entire order will be delayed until all of the ordered items are in stock.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Post condition:
+    </term>
+    <meaning>A condition that describes the state of the system after a use case is successfully completed.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>
+        Pre condition:
+    </term>
+    <meaning>A condition that must be satisfied or a state the system must be in before a use case may begin.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Process:
+    </term>
+    <meaning>A sequence of activities performed for a given purpose. A process description is a documented definition of those activities.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Project Manager:
+    </term>
+    <meaning>A project manager is a professional in the field of project management. They have the responsibility of planning and execution of any project.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Quality attribute:
+    </term>
+    <meaning>A kind of nonfunctional requirement that describe a quality or property of a system.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>RAID:     </term>
+    <meaning>In computing, Redundant Array of Independent Drives is an umbrella term for computer data storage schemes that divide and / or replicate data among multiple hard drives.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Requirement:
+    </term>
+    <meaning>A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Scenario:
+    </term>
+    <meaning>A description of a specific interaction between a user and a system to accomplish some goal. An instance of usage of the system.    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Secure Socket Layer:
+    </term>
+    <meaning>A protocol developed for the browsers for transmitting private documents via the internet.
+    </meaning>
+</glossary_item>
+
+<glossary_item>
+    <term>Software requirement specification (SRS):
+    </term>
+    <meaning>A collection of functional and non functional requirements for software product.
+    </meaning>
+</glossary_item>
+
+</glossary>
+
+</p>
+
+<p id="">
+    <title>
+        Appendix B: Use Cases
+    </title>
+    
+<p id="">
+    <title>
+    Customer Use Cases
+    </title>
+    <p id="">
+        <title>
+        Register Customer
+        </title>
+        <p id="">
+            <title>
+            Goal
+            </title>
+            <text_body>
+            Register a new customer account with the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+            Actors:
+            </title>
+            <text_body>
+                <itemize>
+                <item>Customer</item>
+                <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+            Preconditions:
+            </title>
+            <text_body>
+                Customer must be able to access the web order system via a web browser with HTTPS.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+            Triggers:
+            </title>
+            <text_body>
+                Customer clicks button or link to "Register"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+            Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>Customer first clicks on the button or link to initiate registration process.</item>
+                <item>System prompts the customer to fill out his/her first name, last name, billing address, shipping address, email address, and their password.</item>
+                <item>Customer enters fields.</item>
+                <item>System validates the customer's information.</item>
+                <item>System creates a new account for the Customer.</item>
+                <item>System creates a session cookie.</item>
+                <item>System displays an account home page to Customer.</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+            Alternative Scenario:
+            </title>
+            <text_body>
+                <enum>
+                    <item>A1. System recognizes Customer's cookie.</item>
+                    <item>A2. Go to Step 7 (Basic Scenario).</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+            Postconditions:
+            </title>
+            <text_body>
+                The Customer registers and creates a new customer account with the system.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="">
+        <title>
+            Login Customer
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Login to a customer account with the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Customer</item>
+                    <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>
+                Customer account must already be registered.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>
+                Customer clicks button or link to "Login"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>Customer clicks on the button or link to initiate the login process. 2. System prompts the customer for his/her email and password.</item>
+                <item>System verifies the information.</item>
+                <item>System creates session cookie.</item>
+                <item>System displays account home page to the Customer</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>
+                <enum>
+                    <item>A1. System recognizes the Customer's cookie</item>
+                    <item>A2. Go to Step 5 (Basic Scenario).</item>
+                    <item>B1. Customer enters incorrect login information.</item>
+                    <item>B2. System prompts the Customer to resend login details to the email account. B3. Customer confirms.</item>
+                    <item>B4. System sends an email to the registered email address.</item>
+                    <item>B5. Go to Step 1 (Basic Scenario).</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>The Customer is logged into the system.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="">
+        <title>
+            Edit Customer Details
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Edit the customer account details.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Customer</item>
+                    <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>Customer must be logged-in on the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>Customer clicks on the button or link to "Edit Account"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>Customer clicks the button or link to initiate the process to edit the account. 2. System displays the account home page to the Customer.
+                </item>
+                <item>Customer clicks the button or link in order to edit the account details.</item>
+                <item>System verifies the changes.</item>
+                <item>System stores new account information.</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>
+                None
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>
+                The Customer has changed the account details.
+            </text_body>
+        </p>
+    </p>
+    
+    
+    <p id="">
+        <title>
+            Logout Customer
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Logout the customer account on the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Customer</item>
+                    <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>Customer must be logged-in on the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>Customer clicks on the button or link to "Logout"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>Customer clicks the button or link in order to initiate logout process.</item>
+                <item>System terminates the session cookie.</item>
+                <item>System displays the home page.</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>None
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>The Customer is logged out of the system.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="">
+        <title>
+            Add Item To Cart
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Customer adds item(s) in the cart
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                <item>Customer</item>
+                <item>Weborder System</item>
+            </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>The customer must be logged-in on the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>Customer clicks the button or link to "Add To Cart".
+
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                    <item>Customer clicks the button or link in order to add to the cart with specified quantity. </item>
+                    <item>2. System adds the item(s) to the cart.</item>
+                    <item>System prompts the Customer to edit the quantity or remove the item from cart.</item>
+                    <item>Customer confirms the items in the cart.</item>
+                    <item>System stores cookie with cart details.</item>
+                    <item>Customer returns to product listings.</item>
+                </enum>
+                
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>A1. Customer terminates the web browser window after adding item(s) to cart.</item>
+                <item>A2. Customer returns to weborder interface.</item>
+                <item>A3. System recognizes cookie and goes to step 6 (Basic Scenario) with existing items in cart.</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>The Customer has added item(s) to the shopping cart.
+            </text_body>
+        </p>
+    </p>
+    
+    <p id="">
+        <title>
+            Checkout An Order
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Customer places and confirms an order for the checkout process.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Customer</item>
+                    <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>
+                <enum>
+                <item>Customer must be logged-in on the system.</item>
+                <item>Customer must have item(s) in the shopping cart.</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>Customer clicks button or link to "Ckeckout"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                   <item>Customer clicks the button or link to initiate the checkout process.</item>
+                   <item> System calculates order of items in the shopping cart.</item>
+                   <item>System appends cookie with flag for checkout process.</item>
+                   <item>System presents the customer with the account details and payment methods.</item>
+                   <item>5. Customer confirms account details and payment methods.</item>
+                   <item>Customer confirms order.</item>
+                   <item>System stores order confirmation and order details.</item>
+                   <item>System sends email confirmation to the Customer.</item>
+                   <item>System appends cookie with flag for completed checkout process.</item>
+                </enum>
+                
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>A1. Customer terminates order web browser during order the checkout process.</item>
+                <item>A2. Customer returns to weborder interface.</item>
+                <item>A3. System recognizes cookie and goes to step 4 (Basic Scenario).</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>The Customer has placed and confirmed an order.
+            </text_body>
+        </p>
+    </p>
+
+</p>
+
+<p id="">
+    <title>
+   Administrator Use Cases
+    </title>
+    <p id="">
+        <title>
+        Login Administrator
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Login to an Administrator account with the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>Administrator account must already be registered.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>Administrator clicks button or link to "Login"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                    <item>Administrator clicks button or link to initiate login process.</item>
+                    <item>System prompts the Administrator for email and password.</item>
+                    <item>System verifies information.</item>
+                    <item>System creates session cookie.</item>
+                    <item>System displays account home page to Administrator</item>
+    
+                </enum>
+                
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>A1. System recognizes Administrator 's cookie</item>
+                <item>A2. Go to Step 5 (Basic Scenario).</item>
+                <item>B1. Administrator enters incorrect login information.</item>
+                <item>B2. System prompts Administrator to resend login details to email account.</item>
+                <item>B3. Administrator confirms.</item>
+                <item>B4. System sends email to registered email address.</item>
+                <item>B5. Go to Step 1 (Basic Scenario).</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>The Administrator is logged into the system.
+            </text_body>
+        </p>
+    </p>
+
+
+<p id="">
+    <title>
+        Logout Administrator
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Logout the Administrator account on the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be logged-in on the system.
+
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks button or link to "Logout"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks button or link to initiate logout process.</item>
+            <item>System terminates the session cookie.</item>
+            <item>System displays home page.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>The Administrator is logged out of the system.
+        </text_body>
+    </p>
+</p>
+
+
+<p id="">
+    <title>
+        Add User
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Register a new customer, sales person, or administrator account with the system
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks button or link to "Add Users"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks the button or link to initiate Add user process.</item>
+            <item>System prompts the Administrator to fill out first name, last name, username, email address, password, and privileges of the user.</item>
+            <item>System validates new user information.</item>
+            <item>System creates a new account for the new user with desired privileges.</item>
+            <item>System displays account home page to Administrator.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>A new customer account is created within the system.
+        </text_body>
+    </p>
+</p>
+
+<p id="">
+    <title>
+       Remove User
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Remove a user from the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be able to access the weborder system via a web browser with HTTPS.
+
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks button or link to “Remove User"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks button or link to initiate the remove user process.</item>
+            <item>System prompts the Administrator to select a user by searching or viewing a list of users.</item>
+            <item>System displays user information.</item>
+            <item>System confirms deletion of selected user.</item>
+            <item>System displays account home page to Administrator.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>An account has been deleted within the system.
+        </text_body>
+    </p>
+</p>
+
+<p id="">
+    <title>
+        Change User Properties
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Alter properties such as passwords and privileges of the user.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body><itemize>
+            <item>Administrator</item>
+            <item>Weborder System</item>
+        </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks button or link to “Change User Properties"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks the button or link to initiate change user properties process.</item>
+            <item>System prompts the Administrator to select a user by searching or viewing a list of users.</item>
+            <item>System displays the user information.</item>
+            <item>System alters the user properties.</item>
+            <item>System displays the account home page to Administrator.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>An account has been altered within the system.
+        </text_body>
+    </p>
+</p>
+
+<p id="">
+    <title>
+        Install Plug-ins
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Install a new plug-in to the application.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>
+            Administrator must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>
+            Administrator clicks the button or link to "Install Plug-ins "
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks the button or link to initiate Plug-in installation process.</item>
+            <item>System prompts the Administrator to upload the Plug-in module.</item>
+            <item>System installs plug-in and validates changes.</item>
+            <item>System displays plug-in options to the Administrator.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>A new plug-in is installed in the application.
+        </text_body>
+    </p>
+</p>
+
+<p id="">
+    <title>
+        Remove Plug-ins
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Remove a plug-in from the application.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks the button or link to "Install Plug-ins"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks the button or link to initiate Plug-in deletion process.</item>
+            <item>System prompts the Administrator to select the desired Plug-in module.</item>
+            <item>System removes the plug-in and validates changes.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>A plug-in is removed from the application.
+        </text_body>
+    </p>
+</p>
+
+<p id="">
+    <title>
+        Manage Plug-in Options
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Make changes to an installed plug-in.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be able to access the weborder system via a web browser with HTTPS.
+
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks button or link to "Manage Plug-ins "
+
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks the button or link to initiate Plug-in Options process.</item>
+            <item>System prompts the Administrator to select the desired Plug-in module.</item>
+            <item>System displays all plug-in options to the Administrator.</item>
+            <item>System confirms changes with the Administrator.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>A plug-in’s options have successfully been changed.
+        </text_body>
+    </p>
+</p>
+
+
+<p id="">
+    <title>
+        Install patch process
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Install patches or software updates to the web store.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Administrator</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Administrator must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Administrator clicks the button or link to "Install Patch"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Administrator clicks the button or link to initiate Patching process.</item>
+            <item>System prompts the Administrator to upload the patch.</item>
+            <item>System automatically installs patches and reinitializes software.</item>
+            <item>System confirms that patch has been successfully installed.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>The web store was successfully updated.
+        </text_body>
+    </p>
+</p>
+
+
+
+</p>
+
+
+<p id="">
+    <title>
+    Sales Person Use Cases
+    </title>
+    
+    <p id="">
+        <title>Login Sales Person
+        </title>
+        <p id="">
+            <title>
+                Goal
+            </title>
+            <text_body>Login to an account with the system.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Actors:
+            </title>
+            <text_body>
+                <itemize>
+                    <item>Sales Person</item>
+                    <item>Weborder System</item>
+                </itemize>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Preconditions:
+            </title>
+            <text_body>Sales Person account must already be registered.
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Triggers:
+            </title>
+            <text_body>Sales Person clicks button or link to "Login"
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Basic Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>Sales Person clicks the button or link to initiate login process.</item>
+                <item>System prompts the Sales Person for email and password.</item>
+                <item>System verifies the information.</item>
+                <item>System creates session cookie.</item>
+                <item>System displays the account home page to Sales Person</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Alternative Scenario:
+            </title>
+            <text_body>
+                <enum>
+                <item>A1. System recognizes Sales Person's cookie</item>
+                <item>A2. Go to Step 5 (Basic Scenario).</item>
+                <item>B1. Sales Person enters incorrect login information.</item>
+                <item>B2. System prompts the Sales Person to resend login details to email account.</item>
+                <item>B3. Sales Person confirms.</item>
+                <item>B4. System sends email to registered email address.</item>
+                <item>B5. Go to Step 1 (Basic Scenario).</item>
+                </enum>
+            </text_body>
+        </p>
+        <p id="">
+            <title>
+                Postconditions:
+            </title>
+            <text_body>The Sales Person is logged into the system.
+            </text_body>
+        </p>
+    </p>
+
+
+<p id="">
+    <title>Logout Sales Person
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Logout the Sales Person account on the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Sales Person</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Sales Person must be logged-in on the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Sales Person clicks the button or link to "Logout"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Sales Person clicks the button or link to initiate logout process.</item>
+            <item>System terminates the session cookie.</item>
+            <item>System displays home page.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>The Sales Person is logged out of the system.
+        </text_body>
+    </p>
+</p>
+
+
+<p id="">
+    <title>Add Product
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Add a product to the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Sales Person</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Sales Person must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Sales Person clicks the button or link to "Add Product"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Sales Person clicks the button or link to initiate Add Product process.</item>
+            <item>System prompts the Sales Person to fill out product name, product id, product description, product price, upload a product image, number of items in inventory, and availability of product.</item>
+            <item>System validates the new product information.</item>
+            <item>System creates a new product page for the new product.</item>
+            <item>System displays the newly created product page.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>A new product is created within the system.
+        </text_body>
+    </p>
+</p>
+
+
+<p id="">
+    <title>Remove Product
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Remove a product from the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Sales Person</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Sales Person must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Sales Person clicks the button or link to "Remove Product"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Sales Person clicks the button or link to initiate Remove Product process.</item>
+            <item>System prompts the Sales Person to select a product by searching or viewing a list of products.</item>
+            <item>System validates the product information.</item>
+            <item>System removes the product page and product information from the system.</item>
+            <item>System displays the newly created product page.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>A product is deleted from the system.
+        </text_body>
+    </p>
+</p>
+
+
+<p id="">
+    <title>Update Product Attributes
+    </title>
+    <p id="">
+        <title>
+            Goal
+        </title>
+        <text_body>Update Product attributes within the system.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Actors:
+        </title>
+        <text_body>
+            <itemize>
+                <item>Sales Person</item>
+                <item>Weborder System</item>
+            </itemize>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Preconditions:
+        </title>
+        <text_body>Sales Person must be able to access the weborder system via a web browser with HTTPS.
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Triggers:
+        </title>
+        <text_body>Sales Person clicks the button or link to "Update Product Attributes"
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Basic Scenario:
+        </title>
+        <text_body>
+            <enum>
+            <item>Sales Person clicks the button or link to initiate Update Product Attributes process.</item>
+            <item>System prompts the Sales Person to select a product by searching or viewing a list of products.</item>
+            <item>System displays all of the product attributes and allows Sales Person to update the product name, product id, product description, product price, update the product image, product availability, and/or the number of items in the inventory.</item>
+            <item>System validates the product information.</item>
+            <item>System updates the product page and product information within the system.</item>
+            <item>System displays the newly updated product page.</item>
+            </enum>
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Alternative Scenario:
+        </title>
+        <text_body>None
+        </text_body>
+    </p>
+    <p id="">
+        <title>
+            Postconditions:
+        </title>
+        <text_body>The product attributes have been changed.
+        </text_body>
+    </p>
+</p>
+    
+</p>
+
+</p>
+
+<p id="">
+    <title>
+    Appendix C: Analysis Models
+    </title>
+    <text_body>None
+    </text_body>
+</p>
+
+
+<p id="">
+    <title>
+        Appendix D: Issues List
+    </title>
+    <text_body>
+        <enum>
+            <item>Currently, telephonic orders are a significant source of business at Gamma-J which is both expensive and labor extensive. The organization has to figure out a way to have a smooth transition of orders coming in through telephones to the new online ordering system without loosing business to the competitor.
+            </item>
+            <item>Gamma-J depends mainly on Fed-Ex for its tracking number and transportation needs to ship the orders. A separate module to generate the tracking numbers and having a transportation system will be considered in the future.
+            </item>
+            <item>System does not support customer order analysis.</item>
+        </enum>
+        
+    </text_body>
+</p>
+
+<p id="">
+    <title>
+    Appendix E: Data Dictionary
+    </title>
+    <text_body>
+        <description>
+            <item>User ID =  User ID of the employee /customer of Tool Co Company; minimum 4 to maximum 10 characters (alphabetic or alphanumeric)</item>
+            <item>Password =  Password of the employee /customer of Tool Co Company; minimum 4 to maximum 10 characters (alphabetic or alphanumeric)
+</item>
+            <item>Item name =  Name of the selected item; maximum 50 character alphabetic string 
+</item>
+            <item>Item ID =  ID that uniquely identified the selected item; a 7-digit system generated alphanumeric character
+</item>
+            <item>Price =  Cost of a single unit of the selected item; in dollars and cents.
+</item>
+            <item>Text description =  special description of the selected item; maximum 100 alphabetic characters </item>
+            <item>
+                Shipping price =  Cost for shipping the item to its destination; in dollars and cents </item>
+            <item>Quantity =  the number of units of each selected item that the customer is ordering; default = 1; maximum = quantity presently in inventory 
+</item>
+            <item>
+                Total =  Cost of a single unit of the selected item  Number of units of that item selected; in dollars and cents 
+</item>
+            <item>
+                Name =  Name of the customer; maximum 100 alphabetic characters 
+</item>
+            <item>
+                Address =  Location of the customer </item>
+            <item>City =  Name of the city for the above address; maximum 20 characters alphabetic string
+</item>
+            <item>State =  Name of the state for the above city; maximum 20 characters alphabetic string
+</item>
+            <item>Zip code =  The postal code of the above address; 5 digit numeric string </item>
+            <item>E-mail ID =  E-mail address of the customer who is using the Web order system; 50 characters alphanumeric 
+</item>
+            <item>
+                Credit Card No. =  Credit card number of the customer; 16 digit numeric string </item>
+            <item>Shipping address =  Address where the item has to be shipped </item>
+            <item>Credit card expiry date =  The date on the credit card when it will get expired; format MM/YY </item>
+            <item>Order No =  Unique confirmation number of the order to the customer; 9 characters alphanumeric </item>
+            <item>Tracking No. =  Number to track the order; 20 characters alphanumeric</item>
+            <item>Shipping date =  Date when the specified order is shipped; format MM/DD/YYYY</item>
+            <item>Location =  Place where the item is kept in the warehouse in the form of (aisle, column, shelf)</item>
+        </description>
+    </text_body>
+</p>
+
+</req_document>
+
+<!--
+ 
+ 
+ <p id="">
+ <title>
+ 
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ 
+ 
+ 
+ <p id="">
+ <title>
+ 
+ </title>
+ <req id="1">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="2">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="3">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="4">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="5">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ 
+ <req id="6">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="7">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="8">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ <req id="9">
+ <text_body>
+ 
+ </text_body>
+ </req>
+ </p>
+ 
+ 
+ <itemize>
+ <item></item>
+ <item></item>
+ <item></item>
+ <item></item>
+ </itemize>
+ 
+ <glossary>
+ 
+ <glossary_item>
+ <term>
+ </term>
+ <meaning>
+ </meaning>
+ </glossary_item>
+ 
+ </glossary>
+ 
+ 
+ 
+ <p id="">
+ <title>
+ </title>
+ <p id="">
+ <title>
+ Goal
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ <p id="">
+ <title>
+ Actors:
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ <p id="">
+ <title>
+ Preconditions:
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ <p id="">
+ <title>
+ Triggers:
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ <p id="">
+ <title>
+ Basic Scenario:
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ <p id="">
+ <title>
+ Alternative Scenario:
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ <p id="">
+ <title>
+ Postconditions:
+ </title>
+ <text_body>
+ </text_body>
+ </p>
+ </p>
+
+ 
+ !-->

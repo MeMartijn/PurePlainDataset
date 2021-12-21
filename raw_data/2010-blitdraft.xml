@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document xmlns="req_document.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="req_document.xsd req_document.xsd">
+
+<title>Blit Draft</title>
+<version>1.0</version>
+
+<p id="1">
+<title>Introduction</title>
+<text_body>The management of [company name]. has identified a potential need for re-writing its core
+Laboratory Information System (LIS) to improve the performance. In general, this project
+will provide a stable environment, automate decisions, streamline workflows, and employ
+industry standard coding and documentation practices. This effort will ensure System
+Integrity/Reliability by developing a system that is reliable and low maintenance including
+security and confidentiality requirements as dictated by HIPAA and FDA regulatory
+standards.</text_body>
+<p id="1.1">
+<title>Purpose</title>
+<text_body> This Functional Requirements Specification (FRS) is intended to capture the changes in
+functionality that will occur during [system name] Re-Writing effort, which is part of the xxx
+Enhancements project. All functionalities for the new [system name] system would be
+documented in this FRS. Any undocumented requirements will be considered out of scope
+and will not be implemented during this phase of Re-Writing. </text_body>
+</p>
+<p id="1.2">
+<title>Scope</title>
+<text_body>The existing functionalities in the core [system name] will remain same. This project is
+limited in scope to the enhancements and defects that are critical in the severity level that is
+the issues that cause great burden to the system users and the enhancements in system
+architecture, which will facilitate efficient growth of [system name] and the [company name]
+business, will fall under the purview of this project scope.
+The functional issues and requirements that will be discussed and gathered respectively as
+well as validated in the Requirements Gathering and Validating Sessions started on
+MM/DD/YYYYwould be documented in this FRS moving forward. The project team has
+decided that system development will occur on module by module basis.</text_body>
+</p>
+</p>
+<p id="2">
+<title>Specific Requirements</title>
+<p id="2.1">
+<title>Functionality</title>
+<p id="2.1.1">
+<title>Module: Admin</title>
+<p id="2.1.1.1">
+<title>Use Case: xxx Page, UC ID: UC_RR_xxx_xxx_000</title>
+<p id="2.1.1.1.1">
+<text_body>System shall display the hyperlinks and descriptions for the user to perform the desired
+functions as specified in the related UIS.</text_body>
+</p>
+<p id="2.1.1.1.2">
+<text_body>The User shall be able to view the hyperlinks and descriptions listed.</text_body>
+</p>
+<p id="2.1.1.1.3">
+<text_body>The User shall be able to choose a function by clicking the hyperlink.</text_body>
+</p>
+<p id="2.1.1.1.4">
+<text_body>The system shall display the desired operational page for the user after clicking the
+hyperlink.</text_body>
+</p>
+</p>
+<p id="2.1.1.2">
+<title>Use Case: xxx Page, UC ID: UC_RR_xxx_xxx_000</title>
+<p id="2.1.1.2.1">
+<title>Action: Create/Add User</title>
+<p id="2.1.1.2.1.1">
+<text_body>A user with admin privileges shall be able to Add/Create a new user and associate the
+user with specified role(s) in the system.</text_body>
+</p>
+<p id="2.1.1.2.1.2">
+<text_body>The system shall display an error message if the new user is found in the [system name]
+system.</text_body>
+</p>
+<p id="2.1.1.2.1.3">
+<text_body>The system shall display an error message if the new user is not active in the Active
+Directory.</text_body>
+</p>
+<p id="2.1.1.2.1.4">
+<text_body>The system shall display the xxx tab as the default tab.</text_body>
+</p>
+<p id="2.1.1.2.1.5">
+<text_body>The user shall be able to create/add a new user manually or from a template.</text_body>
+</p>
+<p id="2.1.1.2.1.6">
+<text_body>The user record shall inherit all specified role(s) settings in the template when the user
+record is created from the user template</text_body>
+</p>
+<p id="2.1.1.2.1.7">
+<text_body>The user shall be able to add additional roles manually while creating/adding a new user
+from a user template.</text_body>
+</p>
+<p id="2.1.1.2.1.8">
+<text_body>The system shall save the user info to the database with specified roles associated with
+divisions for the newly created/added user.</text_body>
+</p>
+<p id="2.1.1.2.1.9">
+<text_body>The system shall perform a search on the [system name] user display name and user
+name columns in the user tables to find the user and verify the user’s existence.</text_body>
+</p>
+<p id="2.1.1.2.1.10">
+<text_body>The system shall perform a search in the Active Directory to verify the status of the user
+— Active/Inactive within the company—when the user attempts to create/add a new user
+in the [system name] system.</text_body>
+</p>
+<p id="2.1.1.2.1.11">
+<text_body>The system shall generate a standard confirmation message after saving data and
+warning/caution messages after the cancel or close button is clicked.</text_body>
+</p>
+<p id="2.1.1.2.1.12">
+<text_body>The user must have the flexibility to click any tab to commence the adding process,
+although the xxx Tab shall display as the default tab.</text_body>
+</p>
+<p id="2.1.1.2.1.13">
+<text_body>All required fields as specified in the UIS must be marked with a red asterisk alerting the
+user to fill the required fields in.</text_body>
+</p>
+<p id="2.1.1.2.1.14">
+<text_body>The user shall be able to save data after creating/adding a new user or cancel data to
+abort the process.</text_body>
+</p>
+<p id="2.1.1.2.1.15">
+<text_body>The system shall clear up data if the user chooses to click the Cancel button in the midst
+of creating/adding a new user.</text_body>
+</p>
+<p id="2.1.1.2.1.16">
+<text_body>The system shall direct the user to the xxx Page if the user chooses to click the close
+button without entering any data.</text_body>
+</p>
+<p id="2.1.1.2.1.17">
+<text_body>The user must associate at least one role, division, designator code, and lab location at
+the time of creating/adding a new user.</text_body>
+</p>
+<p id="2.1.1.2.1.18">
+<text_body>The user must fill in the required fields—User Name and Display Name—in the User
+Information section at the time of creating/adding a new user.</text_body>
+</p>
+<p id="2.1.1.2.1.19">
+<text_body>The system shall generate a standard error/warning message after the user attempts to
+save data without associating one of each of the following criteria—xxx—and/or without
+filling in the required fields in the User Information section.</text_body>
+</p>
+</p>
+</p>
+</p>
+</p>
+<p id="2.2">
+<title>Usability</title>
+<p id="2.2.1">
+<title>User Interface Guidelines</title>
+<p id="2.2.1.1">
+<text_body>The Project Team must demonstrate mockups of UI changes to project stakeholders early
+in the development process.</text_body>
+</p>
+<p id="2.2.1.2">
+<text_body>The Project Team must permit reasonable adjustment to the user interfaces of new
+functionality by project stakeholders when project schedule permits those adjustments.</text_body>
+</p>
+</p>
+</p>
+<p id="2.3">
+<title>Reliability</title>
+<p id="2.3.1">
+<title>System Downtime</title>
+<p id="2.3.1.1">
+<text_body>The Project Team shall schedule updates to the production environment only on Tuesdays
+between 7pm and 7am. (Example)</text_body>
+</p>
+</p>
+</p>
+<p id="2.4">
+<title>Performance</title>
+<p id="2.4.1">
+<title>Quality Assurance</title>
+<p id="2.4.1.1">
+<text_body>The Project Team must perform applicable and appropriate testing against new functionality
+prior to releasing that functionality/build to the production environment.</text_body>
+</p>
+<p id="2.4.1.2">
+<text_body>The project Team must allow a reasonable time to conduct User Acceptance Testing (UAT)
+against the built functionalities prior to deploying the product to the production environment.</text_body>
+</p>
+</p>
+</p>
+<p id="2.5">
+<title>Supportability</title>
+<p id="2.5.1">
+<title>Coding Standards</title>
+<p id="2.5.1.1">
+<text_body>The Development Team shall define coding standards for the application and follow those
+standards consistently.</text_body>
+</p>
+<p id="2.5.1.2">
+<text_body>The Development Team shall be required to adjust existing source code to follow accepted
+coding standards only if that source code must be modified.</text_body>
+</p>
+</p>
+<p id="2.5.2">
+<title>Maintainability Standards</title>
+<p id="2.5.2.1">
+<text_body>The system shall log errors, warnings, and informational messages to an external log file on
+the application server.</text_body>
+</p>
+<p id="2.5.2.2">
+<text_body>The Development Team shall be required to adjust existing source code to use the external
+log file only if that source code must be modified to implement another requirement.</text_body>
+</p>
+<p id="2.5.2.3">
+<text_body>The system shall log an error message to the external data file when the user is directed to
+the [SYSTEM NAME] error page.</text_body>
+</p>
+<p id="2.5.2.4">
+<text_body>The system shall send a notification email to a Client Services email distribution list if the
+user is directed to the xxx error page.</text_body>
+</p>
+</p>
+</p>
+<p id="2.6">
+<title>Design Constraints</title>
+<p id="2.6.1">
+<title>Development Platform</title>
+<p id="2.6.1.1">
+<text_body>The Development Team shall develop functionalities using the xx language and on the
+supported .NET 3.5 Platform.</text_body>
+</p>
+<p id="2.6.1.2">
+<text_body>The Development Team shall utilize established open source frameworks instead of
+proprietary custom components wherever appropriate.</text_body>
+</p>
+<p id="2.6.1.3">
+<text_body>The system shall continue to depend upon and use a single SQL Server 2008 database.</text_body>
+</p>
+</p>
+<p id="2.6.2">
+<title>Production Releases</title>
+<p id="2.6.2.1">
+<text_body>The Technical Owner/Lead shall provide signoff before any [SYSTEM NAME] build can be
+deployed to the production environment.</text_body>
+</p>
+</p>
+<p id="2.6.3">
+<title>Development Process</title>
+<p id="2.6.3.1">
+<text_body>The Development Team shall perform weekly integrations of the [SYSTEM NAME] system
+and deploy these system updates to the Staging environment.</text_body>
+</p>
+<p id="2.6.3.2">
+<text_body>The Development Team shall label every scheduled [SYSTEM NAME] build in the source
+control system.</text_body>
+</p>
+<p id="2.6.3.3">
+<text_body>The Development Team shall perform scheduled [SYSTEM NAME] builds using code
+checked out of source control using the label as defined and specified.</text_body>
+</p>
+<p id="2.6.3.4">
+<text_body>The Development Team shall develop and then send out release notes via e-mail to all
+Project Team after each [SYSTEM NAME] build deployed to the Staging environment.</text_body>
+</p>
+<p id="2.6.3.5">
+<text_body>The Technical Lead shall perform code reviews of every system change before those
+changes may be committed to source control.</text_body>
+</p>
+<p id="2.6.3.6">
+<text_body>The QA/QC Team must perform regression testing against all scheduled builds.</text_body>
+</p>
+</p>
+</p>
+<p id="2.7">
+<title>Online User Documentation and Help System Requirements</title>
+<p id="2.7.1">
+<title>Robohelp Tool:</title>
+<text_body>RoboHelp version 8 will be used to create the online [system name]
+Help hypertext links. The [system name] system will display a hypertext link labeled
+“Help” at the top right corner on each of the user screens to provide assistance to the
+user. Each of the Help topic pop-up windows will contain that same content that is
+available within the [system name] user’s manuals.</text_body>
+<p id="2.7.1.1">
+<text_body>The system shall provide the capability to open a pop-up window displaying information
+about the specific page along with links to supporting help topics upon selecting each Help
+link.</text_body>
+</p>
+<p id="2.7.1.2">
+<text_body>The system shall display “[system name] Overview” page located under the Getting Started
+section of Help as default help topic page that will load upon selecting Help hypertext link.</text_body>
+</p>
+<p id="2.7.1.3">
+<text_body>The system must allow users to easily navigate through each of the help topics by selecting
+a corresponding hypertext link provided in the left frame of the pop-up Help window.</text_body>
+</p>
+<p id="2.7.1.4">
+<text_body>The system shall display the [company name] logo in the top, right side of the screen on
+each of the help pages.</text_body>
+</p>
+<p id="2.7.1.5">
+<text_body>The system must exhibit each of the help pages using the same color scheme and
+background as specified.</text_body>
+</p>
+<p id="2.7.1.6">
+<text_body>The system shall provide searching ability to the users to quickly find specific topic material
+through the online help tool.</text_body>
+</p>
+<p id="2.7.1.7">
+<text_body>The system shall provide an index to the users for a more in-depth search of topic contents
+through the online help tool.</text_body>
+</p>
+<p id="2.7.1.8">
+<text_body>The system shall provide a Glossary for industry-related terms associated with [company
+name] and the [system name] system to the users through the online help tool.</text_body>
+</p>
+</p>
+</p>
+<p id="2.8">
+<title>Interfaces</title>
+</p>
+<p id="2.9">
+<title>Applicable Standards</title>
+<p id="2.9.1">
+<p id="2.9.1.1">
+<text_body>The system shall retain existing HIPAA compliance capabilities.</text_body>
+</p>
+<p id="2.9.1.2">
+<text_body>The system shall follow HIPAA compliance capabilities in new functionality introduced to the
+system.</text_body>
+</p>
+</p>
+</p>
+</p>
+<p id="3">
+<p id="Glossary 30209">
+</p>
+</p>
+</req_document>

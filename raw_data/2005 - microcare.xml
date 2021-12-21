@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document xsi:schemaLocation="req_document.xsd req_document.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="req_document.xsd">
+
+<title>Software Requirements Specification 
+For Voucher Management System </title>
+<version>1.0</version>
+<p id= "1">
+<title>Introduction</title>
+<p id="1.1">
+<title>General overview of the VMUS (Voucher Maintenance Unit System) </title>
+<text_body>
+<itemize>
+<item>
+System Development: 
+The system will be developed on Oracle 9i platform Front end will be VB 
+(visual basic) Reports will be crystal reports 9 
+</item>
+<item>
+System design: 
+The system will be user friendly with maximum master table structure with 
+all transaction screens to have drop down selection menus to minimize data entry errors. 
+The main data entry screen on claims entry to have drop drown menu from patient’s profile 
+selection to medicine cost to have drop down. Minimize the use of key board for any number 
+entry to have a faster transaction data entry. The system will be easily trainable for the user 
+with minimum computer skill with simple user step by step manual. 
+</item>
+<item>
+Storage efficiency: 
+The structural design of the database will have sequential links with surrogate 
+keys. The database storage will be highly efficient to manage and avoid empty unused spaced 
+blocked, properly defragmenter on a periodic basis. This efficiency will have a maximum 
+provision to expand this program beyond the pilot period, 
+if the program requirements remain same. 
+</item>
+<item>
+Security: 
+High intrusion controls will be in place in the system and the database. 
+Access level controls, various organizational level user setting 
+by including granular model setting. 
+</item>
+<item>
+External Hardware interface: 
+<itemize>
+<item>
+Bar-code – 
+ the system will interface with the bar-code reader to interface all transaction 
+details. E.g. voucher number verifications, claim form entry and 
+selection of voucher usage by the clients.
+</item>
+<item>
+Bio-metrics – the system will interface with the thumb-print reader for verifying claims form 
+used by the clients. 
+</item>
+</itemize>
+</item>
+</itemize>
+</text_body>
+
+<p id="Diagram"><title>Functional Flow Diagram: </title>
+
+</p>
+
+</p>
+<p id="1.2">
+<title> Purpose </title>
+<text_body>The purpose of this document is to explain the flow and the requirement 
+of Voucher Management System (VMU) required by Marie Stopes International Uganda
+(MSIU) during the various meetings held between MSIU and Microcare from 28th of Nov 
+2005 to 30th of Nov 2005. This document is purely based on the Functional Flow Diagram 
+designed by Microcare. The document will explain every small 
+entity of the system including various code generations, Bar-coding and Graphical User 
+Interface etc. This document will help the system development team to understand the 
+overall and detailed functions of every small entity in VMU and to design the system that 
+will meet every requirement of the VMU program.  This document will help the testing team 
+to prepare the Test Cases and will help them to test every module in the system and overall 
+testing of the system, so that the testing team will have confidence on the quality of this 
+system. </text_body>
+</p>
+<p id="1.3">
+<title> Project Scope </title>
+<p id="1.3.1">
+<title> about MSIU and OBA Program </title>
+<p id="The concept of Output-based Aid (OBA) ">
+<text_body>Past experiences with development aid showed, that financing inputs, 
+e.g. facilities and equipment, does not result in the necessary improvement of health 
+outcomes. Thus as a change of paradigm, the OBA concept finances agreed outputs 
+with predefined quality rather than pre-defined inputs by selling vouchers for STD 
+services at subsidised prices to patients. These vouchers will be refunded to service 
+providers in the private sector (medical doctors, qualified nurses and midwives), 
+government hospitals, NGOs, and faith-based organisations.  
+The major advantages of the OBA approach are, that it allows 
+<itemize>
+<item>To target resources to address selected health problems,</item> 
+<item>To target the provision of services to specific parts of the population and </item>
+<item>To stimulate private market initiative and competition. </item>  
+</itemize>
+</text_body>
+<text_body>The approach was successfully applied in the sixties/seventies in South 
+Korea and Taiwan. In recent years also a programme was run in Nicaragua but the OBA 
+has not been 
+implemented in larger scale programs.</text_body>
+</p>
+<p id="Objective of the OBA Programme in Uganda is to provide ">
+<text_body>
+<itemize>
+<item>Quality health care services for STD treatment, </item>
+<item>For the sexually active population of the Mbarara district, </item>
+<item>Through a voucher system, </item>
+<item>By qualified, approved providers, </item>
+<item>For a pilot phase of 1 year. </item>
+</itemize>
+</text_body>
+<text_body>The principles of the voucher, the contents of the health care services, 
+their required quality, the standards to be met by the providers and their infrastructure, 
+as well as the measures for monitoring the 
+quality have been defined in the PDS. </text_body>  
+</p>
+<p id="Basic structures and processes of the STD voucher programme ">
+<text_body>The main structures and processes in the STD voucher programme are: 
+<itemize>
+<item>The programme is prepared, implemented and managed by the Voucher 
+Management Unit (VMU). </item>
+<item>The VMU establishes a network of approved providers (during the pilot phase private,
+ NGO, FBO providers) 
+throughout Mbarara District. </item>
+<item>The VMU runs a marketing and behavioural change campaign (BCC) to market and inform about the
+ voucher services and how to use them. </item>
+<item>The VMU establishes and runs a distribution system with the purpose
+ to distribute the STD vouchers to the sexually active population for which the 
+above-mentioned providers are in reach.</item>
+</itemize>
+</text_body>
+<text_body>Distribution follows certain rules: 
+<itemize>
+<item>The vouchers are packed in two with one voucher for the purchaser of the voucher, 
+in the following addressed as “client” 
+and one for the partner of the client. </item>
+<item>The voucher may only be bought for personal treatment or for the treatment 
+of the partner. Only one voucher is sold at time. The option of selling more than one 
+voucher 
+to a person at a time introduces too many sources for fraud. </item>
+<item>Distributors keep a distribution list documenting distributor, voucher number, 
+date, place of sale, and 
+name and place of living of the customer. </item>
+</itemize>
+</text_body>
+<text_body>The client may honour the voucher at any approved provider of his choice.  
+STD treatment according to the National Treatment Algorithms for STD in Uganda (NTA), 
+adapted for this voucher scheme (TA-OBA, treatment algorithms for STD treatment in the 
+OBA scheme), 
+is given to clients for free for the syndromes of 
+<itemize>
+<item>Urethral discharge </item>
+<item>Abnormal vaginal discharge </item>
+<item>Genital ulcer </item>
+<item>Inguinal bubo </item>
+<item>Ophthalmia neonatorum </item>
+<item>Acute scrotal swelling </item>
+<item> Pelvic inflammatory disease </item>
+</itemize>
+</text_body>
+<text_body>In line with the NTA the voucher includes
+<itemize>
+<item>First consultation with basic lab testing and treatment </item>   
+<item>First follow-up visit for all clients. If symptoms persist drug regimen will be switched</item>
+<item> If necessary second follow-up visit. If symptoms persist referral to a hospital. </item>
+<item>Provider documents each voucher case in a standardised patient 
+treatment documentation form. </item>
+</itemize>
+</text_body>
+<text_body>At the end of each month they hand in – respectively the claims processing 
+agency (CPA) collects –  
+<itemize>
+<item>The voucher for each patient  
+Copyright</item>
+<item>The standardised patient treatment documentation form for each 
+patient and</item>
+<item>A summary claims form containing a summary of all treated voucher cases to 
+the VMU for reimbursement.</item>
+<item>The data from the forms is entered into a computer database. Data checks and
+ plausibilisations are done.</item>
+<item>Clean claims will be reimbursed via bank transfer.   </item>
+<item>Conspicuous claims will be investigated and cleared by the VMU. </item>
+<item>The VMU operates a monitoring system including follow-up with patients 
+to monitor proper operation of the voucher scheme. </item>
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="1.3.2">
+<title> About Voucher Management system</title>
+<text_body>The voucher management system VMS is designed to atomize 
+the process of Voucher Management Unit (VMU) to minimize the manual process 
+to maximize the quality of the project to understand the 
+progress and timely out come of the project to take necessary steps by the MSIU 
+Admin team to plan for the future and to increase the quality of the STD voucher 
+service. The system will also control the existence of fraud in claims and will help
+ the service provider to reach their payments in time without delay. 
+The other features and details of system will be explained in below sections in the 
+document.   The voucher management system is subdivided into following modules to 
+make the system easy for understanding, developing, testing and to implement.    
+<itemize>
+<item>Voucher Creation / Preparation </item>
+<item>Marketing / Sales </item>
+<item>Claim Entry / Processing </item>
+<item>Voucher Sales Return </item>
+<item>Client Feed back </item>
+<item>Reports (Standard and Customized) </item>
+<item>Security and User Privileges </item>
+</itemize>
+</text_body>
+<text_body>Each of the above modules are again subdivided into subsystems, those details are explained in 
+below sections in the document </text_body>
+</p>
+</p>
+<p id="1.4">
+<title>References</title>
+<text_body>The preparation of SRS is purely based on the following documents 
+<itemize>
+<item> Final report on Programme Design Study, Dated 10-Sepetember-2005 Prepared by MSIU</item>
+<item>Functional Flow of VMUS Prepared by Microcare on 30th November 2005. </item>
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="2">
+<title>Overall Description</title>
+<p id="2.1">
+<title>System Perspective </title>
+<text_body>This section of the document is going to explain the functionalities of 
+the system, its subsystems and how it’s integrated and working together. 
+During the system study, it was understood that the first pilot period, twenty 
+thousand vouchers will be sold, but the VMU-system has the provision to upgrade to meet 
+the additional market and projects needs. </text_body>
+<p id="2.1.1">
+<title> Outline of entire system </title>
+<text_body>
+<itemize>
+<item>The VMU will create the vouchers and sell it to clients through distributors</item>
+<item>The distributor will submit the sales details back to the VMU. </item>
+<item>Each voucher should have two portions with three tear off voucher slips each 
+for Client and Partner.</item>
+<item>The client and/or the partner will choose the service provider and will get treatment</item>
+<item>First visit is called as Consultation and if the patient is not cured then they can go 
+for first follow 
+up and second follow up,  </item>
+<item>If the patient is not cured then the doctor will refer the patient to some other 
+Hospitals the hospital may be 
+another VSP or any other.  </item>
+<item>Each visit details (including Diagnosis, Lab Test and Drugs) of the patient is 
+called a claim, </item>
+<item>The VSP will submit the claim to VMIU field office to enter those into the database, </item>
+<item>The filed office will validate the claim form manually and through system,  </item>
+<item>If any of mandatory information is missed or any false information is existing 
+then the field office will reject the claim back to VSP and 
+the system will keep those claim in a quarantine area</item>
+<item>The quarantined forms will be sent back to the VSP for verification, if the VSP 
+returns the claim with satisfactory details, the claims will be entered on to the system, 
+in the following month’s batch. </item>
+<item>Based on the payment terms agreed by VSP, the field office will generate 
+BiMonth or Monthly financial and medical report and send it to MSIU Admin team to arrange 
+the payments for the VSP. </item>
+<item>To understand the satisfaction of client the MSIU Admin team will get client feedback 
+from some of the clients and send those documents 
+to field office to enter those into database. </item>
+</itemize>
+</text_body>
+<text_body>As mentioned above the entire system is sub-divided into six modules 
+and again the each module 
+is subdivided into different subsystems. </text_body>
+</p>
+<p id="2.1.2">
+<title>2.1.2 Voucher Management System Modules </title>
+<p id="1.">
+<title> Voucher Creation / Preparation</title>
+<text_body>Voucher creation – the voucher numbers are system generated 
+and created with unique identification numbers with security protocols in-built. 
+The created unique numbers are then printed out in the form of bar-codes, which will 
+complement (or stuck on the voucher) the voucher. Then at every level on the voucher 
+cycle this number is captured, on distribution, retail sales, point of treatment, enclosed 
+along with claim forms, at the claims processing and finally for the payment. 
+Such tracking records will be utilized for reports as well. Each voucher should have the 
+following properties, which will have sub-elements to get the batch numbers, voucher 
+numbers, and the project codes. Project code – Group batch code – Batch number – 
+Voucher number – Security code.  
+<itemize>
+<item>Project Code (2 Digit) Example: P001 </item>
+<item>Group Batch (3 Digit) each group batch has a batch of 100 Batches Example: GP0001 </item>
+<item>Batch number (2 Digit) approximately each batch will have 10 vouchers </item>
+<item>Voucher number (10 digit)</item>
+<item>Security Code </item>
+<item>All codes will be printed out in the form of Bar </item>
+<item>Additionally the provision for validity date check for the period of vouchers to be
+used in the program is provided. This validity date can be amended or altered at the 
+system level ONLY by the authorized user</item>
+<item>Voucher will also have MRP (maximum retail price) </item>
+<item>Voucher should have three tear off portioned slips with a sub-section tear-off for 
+the partner. </item>
+<item>If the tear off voucher slips would be sticker then it will not be lost on attaching to 
+the claim 
+forms by the VSP.</item>
+<item>Each voucher slip should contain the bar code of the Voucher with two 
+identifications one for the client and 
+the other for the partner. </item>
+<item>The first tear for the first consultation </item>
+<item>Second one for the first follow-up </item>
+<item>And the third tear off for the final (second follow-up). </item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>This system has high security feature as far as the user access to the 
+system, including all the modules, 
+sub-modules and even at the screen level. 
+<itemize>
+<item>The voucher will be created ONLY by the authorized person.</item> 
+<item>The will be a provision to create a minimum quantity of vouchers at one time 
+(such minimum numbers will 
+be decided by the management team). </item> 
+<item>Once created vouchers will not be edited or deleted but there will be a provision 
+to with-hold any voucher number if the admin 
+team decides to do for any reason. </item> 
+<item>There will be a provision to amend the validity date of the voucher. </item> 
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="2.">
+<title> Marketing / Sales </title>
+<text_body>The marketing and sales is the next step and the next module in the system. 
+This module will take care of following sub modules. </text_body>
+<p id="i">
+<title>Distributor Master Information </title>
+<text_body>The system will capture the master details of every distributor so that 
+the users can get the details of any distributor and sales details at any time. Each 
+distributor will have unique code and detailed descriptions such as name, address, 
+locations and type of business etc. such valid information will help us track 
+information related to sales and distributions. 
+Following fields will be captured at this master. 
+<itemize>
+<item>Distributor Code (3 Digit) Example: DS0001* </item>
+<item>Name of the distributor* </item>
+<item>Type of business (e.g. hospital/pharmacy/NGO)* </item>
+<item>Proprietor Name* </item>
+<item>Designation </item>
+<item>Address (Street/Road, Sub District, County, Sub County and Village or Town)* </item>
+<item>Contact No </item>
+<item>Email Id </item>
+<item>Status (active/deactivate) </item>
+</itemize>
+</text_body>
+<text_body>All fields with * are mandatory!</text_body>
+<p id="Design Constraints">
+<text_body>The address field will capture the geographical location of the distributor, 
+such as District, Sub-District, County, Sub-County or Village / Town, road or street. All 
+the level of details will have a master table in order to update as per the program 
+requirements.  
+The system will check the duplicated ID for the distributors. The system can allow 
+the duplicate names of the Distributor. On capture of any duplicate name the system 
+will give a warning message to have the duplicate name or to change the name. 
+For better reporting purposes it is better to have a differentiating indicator on the name.  
+System will have a provision to print the distributor master details.  
+The distributor screen will have a provision to view the Sales History of a 
+particular distributor with following summary details.  
+Distributor Name as Report Header and following as the report footer 
+<itemize>
+<item>Batch No </item>
+<item>Date of purchase </item>
+<item>Qty Purchase </item>
+<item>Qty Sold </item>
+<item>Qty Returned </item>
+<item>Balance Qty (any other details required by the MSIU office) </item>
+</itemize>
+</text_body>
+<text_body>There will be a provision to select a particular distributor to view the details 
+(e.g. sales) by double clicking on the grid.  
+Print option of above report is based on User Login Permission only.  
+There will be an option for doing the following at every screen.
+<itemize>
+<item>
+New
+(adding new records) 
+</item>
+<item>
+Edit
+(updating available records) 
+</item>
+<item>
+Delete
+(deleting will be allowed only if no child records are created) 
+</item>
+<item>
+Active/Deactivate
+ (if the distributor has to be deactivated or terminated) 
+</item>
+</itemize>
+</text_body>
+<text_body>There will also be a provision for the other users to view the details of a
+ distributor with purchase and sales details.</text_body>
+</p>
+</p>
+<p id="ii">
+<text_body>The system will capture the details of MSIU Salesman; this would help 
+the MSIU management team to understand the performance of each Team or salesman. 
+During every distribution transaction the user should select the name of the sales man 
+listed from Team Master. 
+The Salesman master should capture following information’s. 
+<itemize>
+<item>Salesman Code* </item>
+<item>Name of the Salesman* </item>
+<item>DOB &amp; Age* </item>
+<item>Gender* </item>
+<item>Communication Address* </item>
+<item>Contact No </item>
+<item>E-Mail Id </item>
+<item>Sales-team (which will have a separate master)*. </item>
+</itemize>
+</text_body>
+<text_body>The sales team master is for the future development of this program, 
+if this program is extended to a country-wide network, 
+this master will help understand and tack sales information. </text_body>
+<p id="Design Constraints">
+<text_body>The system will check the duplicated ID for the salesman and team. 
+The system can allow the duplicate names of the salesman. On capture of any duplicate 
+name the system will give a warning message to have the duplicate name or to change 
+the name. For better reporting purposes 
+it is better to have a differentiating indicator on the name</text_body>
+</p>
+</p>
+<p id="iii">
+<title>Distribution Transactions (Sales from MSIU to Distributor) </title>
+<text_body>The system will capture the details of voucher sales between MISU 
+sales team and Distributors. During the distribution the system will capture the 
+following details, to make Distribution process easily. With the below details the 
+user can get the details of Distributor-wise and Salesman-wise 
+and Batch No wise sales details as reports. 
+<itemize>
+<item>Name of the distributor* </item>
+<item>Name of the Sales Man* </item>
+<item>Date of distribution* </item>
+<item>No of vouchers sold* </item>
+<item>According to the number of vouchers required by the distributor, 
+the system should allocate the relevant vouchers with their 
+numbers and batch numbers based on the stock. </item>
+<item>Invoice amount = No of vouchers x Wholesale price </item>
+<item>Mode of payment is Cash </item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>The mandatory information required during a distribution transaction is 
+mentioned below.
+<itemize>
+<item>Name of the distributor (Selecting from Distributor Master) </item>
+<item>Name of the Sales Man (Selecting from Sales man master) </item>
+<item>Date of Distribution (Date selection option) </item>
+<item>Required Qty (No of vouchers sold (Allow only Numeric Entry)) </item>
+<item>Invoice Amount = Whole Sale Rate (should taken from settings master based on sale date)  
+* Qty Sold. (Automatic Calculation) </item>
+</itemize>
+</text_body>
+<text_body>The system will generate an auto-generated number as Distribution 
+Invoice No.  
+Suppose the distributor or salesman name is not available in the system, then the 
+system has a provision to navigate quickly to its master screen and enter the new 
+Distributor and Salesman details, 
+without closing the present screen.  
+While entering the No of vouchers required, the system should automatically 
+pick the Batch No’s with voucher No’s from the available voucher stock and list the 
+details of each voucher with below information’s as a grid format. 
+<itemize>
+<item>Batch No </item>
+<item>Voucher No </item>
+<item>Validity Date </item>
+</itemize>
+</text_body>
+<text_body>The date of distribution will be current (system) date. But the date of sale 
+can be the past dates. 
+There will be a future date sale validation check available. </text_body>
+</p>
+</p>
+</p>
+</p>
+<p id="3.">
+<title>Claim Entry/Processing</title>
+<text_body>The program will take maximum care in this form and table, as it 
+become a vital transaction to be captured. In this module you will see that every 
+capture of data will be 
+validated and checked on saving into the database. For e.g. the capture of voucher 
+number, clinical information, diagnosis details, drug and investigation details and 
+the costs are going to provide the program a vital report information. The system 
+development team will focus its attention in making this module/table function 
+efficiently.  For the easy understanding and designing of the system, this module is 
+subdivided into following sub-modules. The division of sub-module is purely based 
+on the sub-level categories of the data information. 
+<itemize>
+<item>The service (treatment) will happen at the VSP (Service Provider) clinic or hospital </item>
+<item>The attending doctor will fill the claims form. </item>
+<item>On completion of the service the patient will provide the voucher according 
+to the visit type and patient type (client or partner), 
+the voucher will be stuck to the claim form. </item>
+<item>The thumb print will also be placed on completion of the service</item>
+<item>The VSP will send the collected claim forms monthly and send it to MSIU field office. </item>
+<item>MSIU office will then process the claim.</item>
+</itemize>
+</text_body>
+<p id="i">
+<title>Voucher Service Provider (VSP) Master Information </title>
+<text_body>The VSP master will have the following information: 
+<itemize>
+<item>VSP Code </item>
+<item>Providers Name </item>
+<item>Physical Address (Street / Road, District, Sub-District, County, SubCounty, Village/Town) </item>
+<item>Communication Address (Street / Road, District, Sub-District, County, Sub-County, Village/Town) </item>
+<item>Health Sub-District </item>
+<item>Locality </item>
+<item>Level Of Facility </item>
+<item>Type of facility </item>
+<item>Registration Body </item>
+<item>Contact Person </item>
+<item>Designation </item>
+<item>Contact No </item>
+<item>E-Mail id </item>
+<item>Status (Active / In-Active) </item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>Other than Contact No and E-Mail Id all other information are mandatory 
+during the creation of a new Service Provider.  
+The VSP code is a digit code with suffix SP, would be automatically generated by the 
+system.  
+The system should generate message with two option “Continue – Yes/No” while the 
+user trying to create a new VSP with an existing name, If the user press Yes the 
+system will allow the user to enter the same, if not the system wont allow the new 
+entry to save.  
+The system will list District, Sub-District, County, Sub-County, Village / Town 
+from the master during VSP creation, if any of them are not available in the system, 
+then the system will have the provision to navigate quickly to its master screen and 
+do enter master details and back to VSP screen.   
+The values of Health Sub – District, Locality, Level Of Facility, Type of facility, 
+Registration Body would be list from their own master and should select the details 
+based on the VSP. If any of the information is not available in existing master of 
+above, then the system will have the provision to navigate quickly to its form to 
+enter the master details and back to VSP Screen. The system will populate Active VSP 
+only on other screen during data entry process, 
+but the system will also populate all VSP for report purpose.  
+Activation and In-activation of VSP is purely based on the MSIU Management decision. 
+But if the system is found more than two fraud entries during the claim process of 
+particular VSP, then the system would automatically change the status of that particular 
+VSP as In-activate. Activation of that particular VSP is again purely based on MSIU 
+Management decision.  
+The VSP Master Information screen should have a provision to enter the payment terms 
+agreed between MSIU and VSP. The system will capture following master details to fill 
+the payment terms. 
+<itemize>
+<item>Payment Mode (Cash / Bank) </item>
+<item>Bank Account No </item>
+<item>Bank Name </item>
+<item>Payment Type (Selection from list of options Bi-Monthly/Monthly) </item>
+</itemize>
+</text_body>
+<text_body>The below details may periodically change depends on the MSIU management decision. 
+<itemize>
+<item>Valid From (Date selection option) </item>
+<item>Valid up to (Date selection option) </item>
+<item>First Visit Consultation Fee (Only Numeric Entry, default 0) </item>
+<item>First follow up visit Consultation Fee (Only Numeric Entry, default 0) </item>
+<item>First second up visit Consultation Fee (Only Numeric Entry, default 0) </item>
+<item>First visit Lab Fee (Only Numeric Entry, default 0) </item>
+</itemize>
+</text_body>
+<text_body>The above mentioned payment terms will help the MSIU to make the 
+payment detail easy and also help the VSP to get their payment in timeThe system will 
+control the payment process and terms.  The allowed users only can able to Add, Modify 
+or delete the VSP master information including payment terms.  
+The VSP screen will have the provision to view the Claim Status of selected VSP. The 
+system will facilitate to show the user following details if necessary.  
+VSP Name (as the report header and below as the details part of report) 
+<itemize>
+<item>Claim No </item>
+<item>Date </item>
+<item>Date of System Entry </item>
+<item>Amount </item>
+<item>Status</item>
+<item>Remarks </item>
+</itemize>
+</text_body>
+<text_body>Cumulative Total Amount will show in Report footer for the previous payment done. </text_body>
+</p>
+</p>
+<p id="ii">
+<title>VSP Staff Master Information </title>
+<text_body>The system will have the facility to capture the details of VSP staff 
+details and the necessary master information 
+while entering the claim into the system.
+<itemize>
+<item>VSP Name </item>
+<item>Staff Code </item>
+<item>Staff Name </item>
+<item>Staff Type </item>
+<item>Qualification </item>
+</itemize>
+</text_body>
+<p  id="Design Contraints">
+<text_body>The system will generate message while creating a new staff with 
+existing name, but the system will allow 
+the user to save that new staff if its required. 
+All above information’s other than Qualification are mandatory during 
+the creation of new staff under any VSP.  
+The system will automatically create Staff Code with Suffix as VSP Code 
++ SC + 3 digit. For example HP0001SC0001  
+Staff type (should be select from list of staff type listing from Staff Type Master)  
+If any of the staff type is not available in the system, then the system should 
+have the provision to navigate quickly to staff type master 
+to enter the new staff type and then back to Staff Master screen. </text_body>
+</p>
+</p>
+<p id="iii">
+<title>Claim (Treatment Form) Submission </title>
+<text_body>Depends on the payment terms (Bi-monthly / Monthly) mentioned in 
+the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field 
+office. While submitting the Claim (Treatment Form) to MSIU, the system will have 
+the provision to capture the following details. These information is vital and 
+shall be used for compared with the processed claims. 
+<itemize>
+<item>VSP Name </item>
+<item>Date of submission </item>
+<item>No of Mentioned Forms </item>
+<item>No of Available Forms </item>
+<item>The above as the master part and below details are the Transaction part </item>
+<item>Treatment Form No </item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>
+<itemize>
+<item>During submission entry all above information’s are mandatory</item>
+<item>Date of submission should be current date </item>
+<item>The system lists the VSP Name from VSP Master. </item>
+<item>Mentioned Forms and Available Forms only accept numeric values. </item>
+<item>Available forms may be less than or greater than or equal to Mentioned Forms. </item>
+<item>In the transaction part no of forms should match with No of Available Forms </item>
+</itemize>
+</text_body>
+<text_body>The system should print a receipt document based on the information 
+entered during claim submission. 
+The document should have the following information. 
+<itemize>
+<item>VSP Name </item>
+<item>Date of Submission (with date and time) </item>
+<item>No of claims mentioned </item>
+<item>No of claims Available </item>
+</itemize>
+</text_body>
+<text_body>The above details would print in the report header and below details 
+will print 
+in the detailed part of the report 
+<itemize>
+<item>Treatment Form No</item>
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="iv">
+<text_body>The claim entry is purely based on the Treatment (claims) Form submitted 
+by the VSP. Before the claim entry the user should check the form manually to understand 
+whether any mandatory information is missed in the Claim or not. If yes, then the user 
+should mark that Claim (Treatment Form) status as Rejected and send back to VSP.  
+During the claim entry the system should capture the following information. 
+<itemize>
+<item>Treatment Form No </item>
+<item>Claim No </item>
+<item>Submitted Date </item>
+<item>VSP Name </item>
+<item>Voucher No </item>
+<item>Visit Count </item>
+<item>Patient Type</item>
+<item>Patient Name </item>
+<item>Age </item>
+<item>Gender </item>
+<item>Address (Street / Road, District, Sub-District, County, Sub-County, Village / Town) </item>
+<item>Contact No </item>
+<item>Doctor Name </item>
+<item>Doctors Note </item>
+<item>HIV Details if any </item>
+<item>Patient Status</item>
+<item>Claim Amount </item>
+<item>Claim Status </item>
+</itemize>
+</text_body>
+<text_body>The above details are the master informationd and below listed information
+are the transaction details of a Claim.</text_body>
+<p id="For Fist time Consultation">
+<text_body>
+<itemize>
+<item>Syndrome</item>
+<item>Clinical Examination </item>
+<item>Diagnosis </item>
+<item>Lab Test </item>
+<item>Drugs Name – Frequency –No of days - Qty </item>
+<item>Other measure</item>
+</itemize>
+</text_body>
+</p>
+<p id="For First Follow UP">
+<text_body>
+<itemize>
+<item>Diagnosis </item>
+<item>Drugs Name – Frequency –No of days - Qty </item>
+</itemize>
+</text_body>
+</p>
+<p id="For Second Follow UP">
+<text_body>
+<itemize>
+<item>Diagnosis </item>
+<item>Drugs Name – Frequency –No of days - Qty </item>
+</itemize>
+</text_body>
+<text_body>The system will have the provision to enter any number of Syndrome, 
+Clinical Examinations, Diagnosis, Lab Test, Drugs and Other Measures in 
+any treatment level based on MSIU treatment master. </text_body>
+</p>
+<p id="Design Constraints">
+<text_body>All above master level information are mandatory other than 
+Contact No during the entry of claim into the system. The following part will 
+explain how the systems 
+will validate every information during claim entry. 
+<itemize>
+<item>Treatment Form No (List Form No from Claim receipt details which all are not 
+yet entered in claim) </item>
+<item>Claim No (The system will automatically generate the Claim number with Hospital 
+Code as Suffix + 8 digit) </item>
+<item>Submitted Date (This should populate automatically while choosing the Form No) </item>
+<item>VSP Name (This should populate automatically while choosing the Form No) </item>
+<item>Voucher No (This should be captured from Bar Code reader based on the Voucher Slip 
+Stick on the Claim Form) </item>
+<item>Visit Count (This should be captured from Bar Code reader based on the 
+Voucher Slip Stick on the Claim Form) </item>
+<item>Patient Type (This should be captured from Bar Code reader based on the Voucher Slip 
+Stick on the Claim Form)</item>
+<item>Patient Name </item>
+<item>Age</item>
+<item>Gender (Select from the list of options Male / Female) </item>
+<item>Address (Street / Road, District, Sub-District, County, Sub-County, Village / 
+Town) other than Street / Road all other details would list from the its master records, 
+if any details are not exist in Master record, then the system should have the provision 
+to navigate quickly to its master screen to enter the new details 
+and back to the Claim Entry Screen </item>
+<item>
+Contact No
+ Not Mandatory 
+</item>
+<item>Doctor Name (select from list of doctors populating from VSP Staff Master) </item>
+<item>
+Doctors Note – 
+Space for the doctor to enter the note about the patient if anything is 
+required
+</item>
+<item>
+HIV Details if any –
+The format for HIV capturing details are attached with SRS. 
+</item>
+<item>
+Patient Status -
+(Select from list of status options populating from Patient Status Master) 
+suppose the status is Referral then the system will have the provision to capture 
+Referred To and Reason for Referral, the reason for Referral 
+should be populated from Referral master. 
+</item>
+<item>
+Claim Status –
+Status of the claim is depends information available in the 
+Claim, if any false data or any mandatory information is available in 
+Claim, then the claims status will change, if the value of status is not 
+“Accepted” then the claim will be stored in quarantine area and can able 
+to precede it further from its status. The system should have a provision 
+to capture the reason suppose if the claim status is “Rejection or Quarantine” 
+
+</item>
+<item>
+Claim Amount – 
+The calculation of claim amount is explained below. 
+</item>
+</itemize>
+</text_body>
+<text_body>If it is a First visit Claim
+<itemize>
+<item>Claim Amount will capture First Visit Consultation Fee 
+(from VSP Payment terms) + Lab test Amount (from VSP Payment terms) 
++ (Qty of drugs * Retails Price (from Drugs Master).</item>
+</itemize>
+</text_body>
+<text_body>If Claim is for first follow up 
+<itemize> 
+<item>Claim Amount will capture First Follow up Fee (from VSP Payment terms) + 
+(Qty of drugs * Retails Price (from Drugs Master)</item>
+</itemize>
+</text_body>
+<text_body>If Claim is for second follow up 
+<itemize>
+<item>Claim Amount will capture Second Follow up Fee (from VSP Payment terms) + 
+(Qty of drugs * Retails Price (from Drugs Master)</item>
+</itemize>
+</text_body>
+<text_body>The system captures the thump impression available in each claim 
+form, and needs to compare it with the same voucher numbers previous visits 
+if available. If the thump impression are mismatching for the same patient 
+(Client / Partner) on same voucher the system would automatically make a count on it.  
+ If the claim from same VSP having more than two times of Thump Impression 
+mismatching, then the system should automatically produce a warning message 
+and the same time the system should In-Activate the VSP. 
+The authorized user can alter / amend the Claim if required. 
+</text_body>
+</p>
+<p id="Details about Masters information  required for Claim Processing ">
+<text_body>
+<itemize>
+<item>
+Generic Master with following information 
+<itemize>
+<item>Code</item>
+<item>Name</item>
+</itemize>
+</item>
+<item>
+Drugs Master (there will (can) be a standard drug price for all VSP provision) 
+<itemize>
+<item>Generic Name </item>
+<item>Drug Code </item>
+<item>Drug Name </item>
+<item>Retail Price </item>
+</itemize>
+</item>
+<item>
+Syndrome Master 
+<itemize>
+<item>Syndrome Code </item>
+<item>Syndrome Description </item>
+</itemize>
+</item>
+<item>
+Clinical Examination Master 
+<itemize>
+<item>Exam Code </item>
+<item>Exam Description </item>
+</itemize>
+</item>
+<item>
+Diagnosis Master 
+<itemize>
+<item>Diagnosis Code </item>
+<item>Diagnosis Description </item>
+</itemize>
+</item>
+<item>
+Lab Test Master 
+<itemize>
+<item>Test Code </item>
+<item>Test Name </item>
+</itemize>
+</item>
+<item>
+Other Measure Master 
+<itemize>
+<item>Measure Code </item>
+<item>Measure Description </item>
+</itemize>
+</item>
+<item>
+Patient Status Master 
+<itemize>
+<item>Status Code </item>
+<item>Status Description </item>
+</itemize>
+</item>
+<item>
+Claim Status Master 
+<itemize>
+<item>Status Code </item>
+<item>Status Description </item>
+</itemize>
+</item>
+<item>
+Referral Reason Master 
+<itemize>
+<item>Reason Code </item>
+<item>Reason Description </item>
+</itemize>
+</item>
+<item>
+Claim Quarantine / Rejection Reason Master 
+<itemize>
+<item>Reason Code </item>
+<item>Reason Description </item>
+</itemize>
+</item>
+<item>MSIU Treatment Matrix </item>
+<item>
+Syndrome 
+<itemize>
+<item>First Visit Clinical Examinations </item>
+<item>First Visit Diagnosis </item>
+<item>Lab Test </item>
+<item>First Visit Drugs </item>
+<item>First Visit other measures </item>
+</itemize>
+</item>
+<item>
+Syndrome 
+<itemize>
+<item>First follow up Diagnosis </item>
+<item>First follow up Drugs </item>
+</itemize>
+</item>
+<item>
+Syndrome 
+<itemize>
+<item>Second follow up Diagnosis </item>
+<item>Second follow up Drugs </item>
+</itemize>
+</item>
+</itemize>
+</text_body>
+</p>
+<p id="Assumptions">
+<text_body>
+<itemize>
+<item>The VSP should follow MSI Patter for treatment </item>
+<item>The user should enter the information exactly into the 
+system from the manual claim form </item>
+<item>The VSP staff should get the thump impression from 
+the patient and should stick the voucher slip on the claim form </item>
+<item>System only accept claims only if the mandatory information is complete </item>
+<item>System should calculate Claim Amount only based on treatment matrix </item>
+</itemize>
+</text_body>
+</p>
+</p>
+</p>
+<p id="4.">
+<title>Voucher Sales Return </title>
+<text_body>
+Voucher Sales return is feature used when a distributor is planning to 
+return the vouchers back to the MSIU sales team. The system will 
+capture the following information during the sales return transaction. 
+<itemize>
+<item>Distributor Name </item>
+<item>Sales Man Name </item>
+<item>Sales Return Date </item>
+<item>Sales Return Amount (No of voucher returned x whole sale rate)</item>
+<item>Number of vouchers Returned</item>
+</itemize>
+</text_body>
+<text_body>The above details are the master part and following are captured as 
+transaction part 
+<itemize>
+<item>Batch No </item>
+<item>Voucher No </item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>All above information are mandatory during the sales return
+<itemize>
+<item>
+Distributor Name - 
+will list from Distributor Master 
+</item>
+<item>
+Sales Man Name - 
+ will list from Sales Man Master 
+</item>
+<item>
+Sales Return Date – 
+System date is default and it should be less than or equal to system date 
+</item>
+</itemize>
+</text_body>
+<text_body>While entering return vouchers details the system will check weather 
+the returned voucher was sold to this particular Distributor or not. 
+If not the system won’t accept those vouchers as return. </text_body>
+</p>
+</p>
+<p id="5.">
+<text_body>MSIU team collects the client feed back from the clients who 
+got treatment through the voucher system. 
+The Client Feed back form should capture the following details 
+<itemize>
+<item>Voucher No </item>
+<item>Client Details </item>
+<item>Details of syndromes treated </item>
+<item>Lab Test </item>
+<item>Drugs Details</item>
+<item>Success of Treatment</item>
+<item>Referral To Treatment</item>
+<item>Satisfaction of Treatment (Not at all / Moderate / Good / Completely) </item>
+<item>
+Satisfaction of counseling -
+ Enter by the user
+</item>
+<item>
+Satisfaction of ensuring privacy – 
+ Enter by the user 
+</item>
+<item>Partner Treated </item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>Based on the Voucher No the system will populate the following details
+<itemize>
+<item>Client Details (Address as per Claim Form will populate automatically) </item>
+<item>Details of syndromes treated (Automatically populate from 
+the system based on Voucher No) </item>
+<item>Lab Test Details (Automatically populate from the system based on Voucher No)</item>
+<item>Drugs Details (Automatically populate from the system based on Voucher No) </item>
+<item>Success of Treatment  (Automatically populate from the system 
+based on Voucher No) </item>
+<item>Referral To Treatment  (Automatically populate from the system based 
+on Voucher No) </item>
+<item>Partner Treated (Treatment  (Automatically populate from the system 
+based on Voucher No) </item>
+</itemize>
+</text_body>
+</p>
+<p id="Assumptions">
+<text_body>
+<itemize>
+<item>The user should enter correct Voucher No </item>
+<item>The user will not alter any information about treatment, 
+which is populating from the system </item>
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="6.">
+<title>Reports (Standard and Customized) </title>
+<text_body>
+<itemize>
+<item>As per the MSIU Project Document named “Programme Design 
+Study” the following reports are required</item>
+<item>Monthly after claim collection on clean claims to be paid without reservation </item>
+<item>Monthly after claim collection on claims, where payment 
+shall be withheld until clarification </item>
+<item>Report on claims per provider </item>
+<item>Report, summarising all providers </item>
+<item>Quarterly summary reports per provider and summarising all providers </item>
+<item>Frequencies of syndromes treated, additional information on patient 
+population (sex, age) </item>
+<item>Frequencies of primary clients and notified partners </item>
+<item>Number of correctly documented cases, cases with incorrect documentation, 
+cases treated according to algorithms, cases with 
+justified treatment alterations and treatment errors </item>
+<item>Summary report comparing the different providers regarding syndromes treated, documentation 
+quality and treatment behaviour </item>
+<item>Quarterly and half yearly reports giving the time trends of the abovementioned indicators for each 
+provider and all providers combined </item>
+</itemize>
+</text_body>
+<text_body>The system has the provision to provide various analytical, medical, 
+financial and statistical 
+reports. Such reports can be designed later.</text_body>
+</p>
+<p id="7.">
+<title>Security and User Privileges </title>
+<text_body>The security setting of the entire system is based on User Group. 
+The roles available in the system are allocated to user group. 
+The user group creation would capture the following Information
+<itemize>
+<item>Group Code</item>
+<item>Group Name</item>
+</itemize>
+</text_body>
+<text_body>The above is the masters part information and below are 
+the transaction part information. 
+<itemize>
+<item>Screen Name </item>
+<item>
+New –
+Allowed / Not Allowed
+</item>
+<item>
+Edit –
+Allowed / Not Allowed 
+</item>
+<item>
+Delete – 
+Allowed / Not Allowed 
+</item>
+<item>
+View – 
+Allowed / Not Allowed 
+</item>
+<item>
+Print – 
+Allowed / Not Allowed 
+</item>
+</itemize>
+</text_body>
+<p id="Design Constraints">
+<text_body>Allow above information are mandatory while creating a new User Group. 
+<itemize>
+<item>The system admin only can able to create User Groups 
+</item>
+<item>The system should have the provision to create any 
+number of individual user under any user group. 
+<itemize>
+<item>Each Individual User should have the following information 
+</item>
+<item>Group Name (Selecting from User Group) 
+</item>
+<item>User Name</item>
+<item>Password</item>
+<item>Verify Password</item>
+</itemize>
+</item>
+</itemize>
+</text_body>
+<text_body>All the above are mandatory entry
+<itemize>
+<item>The system should save the user information only if the 
+Password and Verify password values are equal </item>
+<item>The system should not allow the user to create a User 
+Group and Individual User with existing names</item>
+</itemize>
+</text_body>
+</p>
+</p>
+</p>
+</p>
+
+</req_document>

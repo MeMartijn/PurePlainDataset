@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document xmlns="req_document.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="req_document.xsd">
+<title>Video Search Engine</title>
+<version>1.0</version>
+<p id="1">
+<title>Introduction</title>
+<p id="1.1">
+<title>Purpose</title>
+<text_body> This document will give a detailed description of the Video Searching software. The
+software will be used to search multiple web sites for streaming videos and torrents
+and return these results to the user.
+This document will cover the features of the software and include specifics on what
+the system will do and any constraints and external factors that might affect the
+system. </text_body>
+</p>
+<p id="1.2">
+<title>Intended Audience and Reading Suggestions</title>
+<text_body>This document is intended for the developers of the system and project managers
+as guide to building the software. It will also be used by the potential users of the
+product to get their opinions on the software, this will help to revise and improve the
+product.
+The Overall Description will give an overview of the product functionality and
+features. Also mentioned are the constraints that will affect the system and the
+interface. This section will be used by the rest of the document and will give a better
+understanding of the system.
+The third section, the System Features, gives a full description of the actions
+preformed by the system and gives details on the functions that are executed. All
+the major services that will be provided by the product are documented here.
+The fourth section, the External Interface Requirements, will give details on the
+interaction between the user and the software through external interfaces. This
+section will give a description on hardware and software interfaces that the Video
+Searching software requires to perform an action.
+Other requirements of the software will be described in the fifth section, Other
+Nonfunctional Requirements. This will give the requirements for the software when
+dealing with external entities and restrictions.</text_body>
+</p>
+<p id="1.3">
+<title>Project Scope</title>
+<text_body>This Video Searching software will be a system that uses an active internet
+connection to search multiple websites for streaming videos or torrents. The system
+will be used to aid the user when trying to locate a specific video or genre of video.
+It will help them reduce searching time through various different websites by
+searching all these websites with just one query. It provides tools to help when
+navigating through search results which will save time and effort.
+The software aims to help the user by providing a simple interface and a more
+efficient way of finding the video they require. It will also provide the user with various options and tools to help make their search more relevant to the content
+that they need. The system will contain databases of the different websites that will
+be used within the search. These databases can be easily updated to provide a
+wider searching range.</text_body>
+</p>
+<p id="1.4">
+<title>References</title>
+<text_body>Separate studies conducted by Damien C Holmes, William J Josephy, Alan
+Woosnam, Mustapha A Sherrif, and Irshad A Qabool on video distribution within the
+home. All studies based on private homes of the authors’ choosing, all studies
+created on Feb 2009.
+<itemize>
+<item>http://www.youtube.com</item>
+<item>http://www.megavideo.com</item>
+<item>http://www.facebook.com</item>
+<item>http://www.surfthechannel.com</item>
+<item>http://www.bbc.co.uk/iplayer/</item>
+<item>http://www.google.com</item>
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="2">
+<title>Overall Description</title>
+<p id="2.1">
+<title>Product Perspective</title>
+<text_body>The program is a new self-contained product. It has come about due to the demand
+for such a product being identified in a series of Ethnography studies. From these
+studies we saw that the main activity people used video for was the watch content
+found online. These people would regularly spend periods of time searching
+websites to try and find the videos they wanted to watch, either somewhere to
+stream the video from or the files to download the video. This was especially true of
+the studies by Alan Woosnam, Irshad Qabool and Will Josephy. Our system will aim
+to speed up this process.</text_body>
+</p>
+<p id="2.2">
+<title>Product Features</title>
+<text_body>The main feature of the system will be a search engine for finding the location of
+torrents and streaming sites for videos on the internet. The user can specify which
+of the 2 or both to look for. The results will be divided into the types that were
+specified using different tabs, and then the results will be orderable by different
+categories, such as name, size, site, etc. The user will have the option to filter out
+videos containing certain content depending on age restrictions, for example adult
+content. In addition the user will have the option to filter out or only search certain
+websites; for example a user may only want to look at videos on YouTube. They will
+have the facility for users to store their favorite videos, so that they can come back
+to the video at another time.</text_body>
+</p>
+<p id="2.3">
+<title>User Classes and Characteristics</title>
+<text_body>There will be two levels of user for our system. The first will be the general user that
+will be using our software to find their videos. They will only see the front end of the
+system. The second level will be the system developers. They will be able to edit
+which sites the system will search, depending on whether they think the site is safe,
+compatible with our software, the speed at which the site can be searched, and how
+useful the site is to us, i.e. how many results have come back from that site.</text_body>
+</p>
+<p id="2.4">
+<title>Operating Environment</title>
+<text_body>The system will be portable; this means it will work across different operating
+systems including Microsoft XP and Vista, Mac OS X and a range of Linux
+platforms. Also it will work with different web browsers, for example Internet
+Explorer, Firefox, and Safari.
+The hardware needed for our system will be a reasonably up-to-date computer that
+is connected to the internet via a modem.</text_body>
+</p>
+</p>
+<p id="3">
+<title>System Features</title>
+<p id="3.1">
+<title>Torrent Search</title>
+<p id="3.1.1">
+<title>Description and Priority</title>
+<text_body>The user will give a search-term that will search through a database of compatible
+torrent websites that are added by the development team. The results of this search
+will be displayed as web links in a tab on the program’s main window. This is one of
+the main features of the software and therefore has a high priority for development.</text_body>
+</p>
+<p id="3.1.2">
+<title>Stimulus/Response Sequences</title>
+<text_body>User ticks torrent tick box – system will now query the torrent websites in its
+database when a search is started.
+User enters search term and starts search – system sends queries to the torrent
+websites in its database based on the search term. Results for this query will then be
+sent to the torrent tab in the program where they will display information such as
+website, seeds, peers, size, date posted and a link for the webpage.
+User sorts the search results by clicking once on a column header – system sorts all
+results by descending/ascending order.
+User clicks on next page button – system displays the next set of results for the
+search.</text_body>
+</p>
+<p id="3.1.3">
+<title>Functional Requirements</title>
+<text_body>
+<itemize>
+<item>
+REQ-1:
+Torrent search will share the same search bar with the streaming search.
+</item>
+<item>
+REQ-2:
+Database of torrent sites can be updated via the internet.
+</item>
+<item>
+REQ-3:
+There will be a tick box to allow the user to choose to include torrent
+searching in the search.
+</item>
+<item>
+REQ-4:
+Query will retrieve the no. of seed and peers, size of the file, date posted
+and a link to the webpage itself.
+</item>
+<item>
+REQ-5:
+If no results are found on a search it will display a message “No results were
+found for this search.”
+</item>
+<item>
+REQ-6:
+Results will be arranged in size/date/alphabetical order by clicking on the
+column headers.
+</item>
+<item>
+REQ-7:
+There will be page button for the user to navigate the results.
+</item>
+</itemize>
+</text_body>
+</p>
+</p>
+<p id="3.2">
+<title>Video Stream Search</title>
+<p id="3.2.1">
+<title></title>
+<text_body>Description and Priority</text_body>
+</p>
+<p id="3.2.2">
+<title>Stimulus/Response Sequences</title>
+<text_body>User ticks streaming host tick box – system will now query the video hosting sites in
+its database when a search is started. Hosting sites will include the actual videos on
+their servers, e.g. YouTube.
+User ticks streaming links tick box – system will now query the video link sites in its
+database when a search is started. The link sites will include external video links to
+different video hosting sites, e.g. surfthechannel.com.
+User enters search term and starts search – system sends queries to the video
+websites in its database based on the search term. Results for this query will then be
+sent to the video stream tab in the program. The hosting half of the tab displays the
+website, full video name, length and date posted. The link half of the tab displays the
+website and video name (e.g. combination of the show’s name and the episode
+name).
+User sorts the search results by clicking once on the column header – system sorts
+all results by descending/ascending order.
+User filters websites they want to be shown in the results – system removes
+unselected websites from the results.
+User clicks on next page button – system displays the next set of results for the
+search.</text_body>
+</p>
+<p id="3.2.3">
+<title>Functional Requirements</title>
+<text_body>
+<itemize>
+<item>
+REQ-1:
+Streaming search will share the same search bar with the torrent search.
+</item>
+<item>
+REQ-2:
+Database of video hosting and video linking sites can be updated via the
+internet.
+</item>
+<item>
+REQ-3:
+There will be a tick box to allow the user to choose to include video host
+searching in the search.
+</item>
+<item>
+REQ-4:
+There will be a tick box to allow the user to choose to include video link
+searching in the search.
+</item>
+<item>
+REQ-5:
+Query to video hosting sites will retrieve full video name, length, date posted
+and a link to the video itself.
+</item>
+<item>
+REQ-6:
+Query to video link sites will retrieve the show’s name, episode name and a
+link to the webpage itself.
+</item>
+<item>
+REQ-7:
+If no results are found on a search it will display a message “No results were
+found for this search.”
+</item>
+<item>
+REQ-8:
+Results will be arranged in length/date/alphabetical order by clicking on the
+column headers.
+</item>
+<item>
+REQ-9:
+There will be page button for the user to navigate the results.
+</item>
+</itemize>
+</text_body>
+</p>
+</p>
+</p>
+<p id="4">
+<title>External Interface Requirements</title>
+<p id="4.1">
+<title>User Interfaces</title>
+<text_body>The user Interface will consist of one main screen, allowing all the functionally to
+come from this one screen. This allows the user to use the software with ease by
+not flicking through a number of different screens. In addition to this the user can
+always see the videos they are looking for. The main screen will be laid out as in
+Appendix: B Diagram along with the description of the diagram. We decided on this
+type of interface because we felt that it would be very simple for the user to
+navigate. From our reports we found that the simpler the interface was, the more
+people liked it.
+With all these features complied into one screen it will give the software more
+flexibility and allows for easy and simple usage. This will appeal to both naïve
+computer users and experienced computer users with a higher selling market.</text_body>
+</p>
+<p id="4.2">
+<title>Software Interfaces</title>
+<text_body>The software will use hyperlinks to allow the user to open websites in their default
+web browser.</text_body>
+</p>
+<p id="4.3">
+<title>Communications Interfaces</title>
+<text_body>Communication standards that will be used through the software will be PHP or
+other such languages. These will be used to query the different servers that the
+websites use and will give us back</text_body>
+</p>
+</p>
+<p id="5">
+<title>Other Nonfunctional Requirements</title>
+<p id="5.1">
+<title>Performance Requirements</title>
+<text_body>
+<itemize>
+<item>
+REQ-1:
+Query times will take no longer than 5 seconds to any website.
+</item>
+<item>
+REQ-2:
+Sending the hyperlink to the default browser will take less than 1 second.
+</item>
+<item>
+REQ-3:
+Loading the program will take less than 10 seconds.
+</item>
+<item>
+REQ-4:
+Any torrent result with 0 seeds will not be displayed.
+</item>
+<item>
+REQ-5:
+Sorting results should take less than 0.1 seconds.
+</item>
+<item>
+REQ-6:
+A results page will display 100 results.
+</item>
+<item>
+REQ-7:
+Any torrent result with a rating of less than 1 will not be displayed.
+</item>
+</itemize>
+</text_body>
+</p>
+<p id="5.2">
+<title>Safety Requirements</title>
+<text_body>Our development team must thoroughly investigate each website within our
+database each month, to ensure that no illegal or harmful content is exposed to our
+users.</text_body>
+</p>
+<p id="5.3">
+<title>Security Requirements</title>
+<text_body>We don’t maintain any user data or host any content.</text_body>
+</p>
+<p id="5.4">
+<title>Legal Requirements</title>
+<text_body>While all safety measures resulting from the site may not be fully identified, a
+recommendation of a full legal review of the software should be undertaken before
+the site is available to the public. In doing so, the site will be subject to full
+indemnification of liability.
+The system we produce will stay within all the legal requirements on our behalf, as
+our software is only listing links for video streams and video download, and this is
+not illegal. Our system will not host any videos.</text_body>
+</p>
+</p>
+<p id="Appendix A">
+<p id="Glossary 1200">
+</p>
+</p>
+<p id="Appendix B">
+<p id="Diagrams 1201">
+</p>
+</p>
+<p id="Appendix C">
+<title>Issues List</title>
+<text_body>In the next version we will consider adding a system to also search UseNet Binaries.</text_body>
+</p>
+</req_document>
