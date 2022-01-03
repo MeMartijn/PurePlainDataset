@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This document describes the schema for a requirement document in XML format-->
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="req_document.xsd"
+xmlns="req_document.xsd">
+
+
+
+<!-- definition of simple elements -->
+<xs:element name="version" type="xs:string"/>
+<xs:element name="issue_date" type="xs:date"/>
+<xs:element name="file_number" type="xs:string"/>
+<xs:element name="source" type="xs:string"/>
+
+<xs:element name="change_date" type="xs:date"/>
+
+<xs:element name="change" type="xs:string"/>
+
+
+<xs:element name="modifier" type="xs:string"/>
+
+
+
+<xs:element name="text_body" type="structured_content"/>
+<xs:element name="crossref" type="xs:string"/>
+<xs:element name="description" type="list"/>
+<xs:element name="enum" type="list"/>
+<xs:element name="itemize" type="list"/>
+<xs:element name="item" type="structured_content"/>
+
+<xs:element name="term" type="xs:string"/>
+
+<xs:element name="meaning" type="structured_content"/>
+
+
+
+<!-- definition of complex elements -->
+
+<!--a title can be a plain text title or a list of nested titles, which are intended as the sub-titles-->
+<xs:element name="title">
+	<xs:complexType mixed="true">
+		<xs:sequence minOccurs="0">
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="title"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<!--p is the paragraph, which can optionally have a title, can have nested paragraphs, 
+requirements, plain text  (text_body) and can contain a glossary-->
+<xs:element name="p">
+	<xs:complexType mixed="false">
+		<xs:sequence>
+			<xs:element ref="title" minOccurs="0" maxOccurs="1"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="req" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="text_body" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="glossary" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string"/>
+	</xs:complexType>
+</xs:element>
+
+<!--
+chance_log_item is the item for the list of changes in a document (the change_log element)-->
+<xs:element name="change_log_item">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="version"  maxOccurs="1"/>
+			<xs:element ref="change" maxOccurs="1"/>
+			<xs:element ref="change_date" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<!--
+change_log defines a list of changes to the requirements document in the form of change_log_item(s)-->
+<xs:element name="change_log">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="change_log_item" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<!--glossary_item is a couple term-meaning used in the glossary, if this is contained in the document-->
+<xs:element name="glossary_item">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="term"/>
+			<xs:element ref="meaning"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<!--
+glossary is a list of glossary_item-->
+<xs:element name="glossary">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="glossary_item" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+
+<xs:element name="req">
+	<xs:complexType mixed="false">
+			<xs:sequence>
+				<xs:element ref="text_body"/>
+				<xs:element ref="modifier" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="required"/>
+			<xs:attribute name="part" type="xs:string" use="optional"/>
+			<xs:attribute name="part_id" type="xs:string" use="optional"/>
+	</xs:complexType>
+</xs:element>
+
+<!-- req_document is the root tag for the overall document.
+a requirement document can have requirements without paragraphs or paragraphs with requirements-->
+<xs:element name="req_document">
+	<xs:complexType mixed="true">
+		<xs:sequence>
+			<xs:element ref="title" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="version" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="issue_date" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="file_number" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="source" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="change_log" minOccurs="0" maxOccurs="1"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="p"/>
+				<xs:element ref="req"/>
+			</xs:choice> 
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+
+<!-- definition of complex types -->
+
+<!-- a list is a set of items which are structured_content objects-->
+<xs:complexType name="list" mixed="false">
+	<xs:sequence>
+		<xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+<!-- this type defines a textual structured content which might contain possibly nested item lists, enumerations, etc. -->
+<xs:complexType name="structured_content" mixed="true">
+	<xs:sequence minOccurs="0">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="crossref" minOccurs="0"/>
+			<xs:element ref="enum" minOccurs="0"/>
+			<xs:element ref="description" minOccurs="0"/>
+			<xs:element ref="itemize" minOccurs="0"/>
+		</xs:choice>
+	</xs:sequence>
+</xs:complexType>
+
+
+
+</xs:schema>
